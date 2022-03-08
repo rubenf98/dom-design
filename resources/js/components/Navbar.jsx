@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
+import { constant } from '../helper';
 import styled from 'styled-components';
 
 const Container = styled.div`
     width: 100%;
-    height: 150px;
+    height: ${constant.navbarHeight + "px"};
     padding: 30px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    
 
     img {
         height: 80px;
