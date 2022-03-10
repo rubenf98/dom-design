@@ -911,17 +911,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper */ "./resources/js/helper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
-function Links() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    children: "Links"
+
+
+
+
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: ", ";\n    margin: auto;\n    width: 100%; \n    padding: 130px 0px;\n    box-sizing: border-box;\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px");
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 60%;\n        margin: auto;\n        display: block;\n"])));
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    \n    img {\n        width: 70px;\n        margin: auto;\n        display: block;\n    }\n\n    h2 {\n        font-size: 50px;\n        font-weight: 900;\n        letter-spacing: -3px;\n        text-align: center;\n        text-transform: uppercase;\n        margin: 33px auto;\n        \n        span {\n            color: ", ";\n            text-shadow: ", ";\n        }\n\n    }\n"])), function (props) {
+  return props.theme.background;
+}, function (props) {
+  return "-1px -1px 0 " + props.theme.text + ",0   -1px 0 " + props.theme.text + ",1px -1px 0 " + props.theme.text + ",1px  0   0 " + props.theme.text + ",1px  1px 0 " + props.theme.text + ",0    1px 0 " + props.theme.text + ",-1px  1px 0 " + props.theme.text + ",-1px  0   0 " + props.theme.text;
+});
+var Pages = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-bottom: 80px;\n\n    p {\n        font-size: 20px;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n        margin: 0px 30px;\n    }\n"])));
+var Copyright = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    font-size: 20px;\n    font-weight: 300;\n    letter-spacing: -1.2px;\n    text-align: center;\n\n    span {\n        font-weight: 900;\n        text-decoration: underline;\n    }\n"])));
+
+function Links(_ref) {
+  var theme = _ref.theme;
+  var themeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(styled_components__WEBPACK_IMPORTED_MODULE_4__.ThemeContext);
+  console.log('Current theme: ', themeContext);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Container, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Content, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Logo, {
+        theme: themeContext,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: theme === 'light' ? "light_logo.svg" : "dark_logo.svg",
+          alt: "logo"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: "dom"
+          }), " design"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Pages, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          children: "sobre n\xF3s"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          children: "portf\xF3lio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          children: "contactos"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Copyright, {
+      children: ["\xA9 All rights reserved ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        children: "dom design"
+      })]
+    })]
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Links);
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    theme: state.application.theme
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, null)(Links));
 
 /***/ }),
 

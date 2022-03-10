@@ -35,15 +35,15 @@ const ScrollingRow = styled.div`
         font-weight: 900;
         color: ${props => props.color};
         text-shadow: ${props =>
-        "-1px -1px 0 " + props.stroke +
-        ",0   -1px 0 " + props.stroke +
-        ",1px -1px 0 " + props.stroke +
-        ",1px  0   0 " + props.stroke +
-        ",1px  1px 0 " + props.stroke +
-        ",0    1px 0 " + props.stroke +
-        ",-1px  1px 0 " + props.stroke +
-        ",-1px  0   0 " + props.stroke
-    };
+            "-1px -1px 0 " + props.stroke +
+            ",0   -1px 0 " + props.stroke +
+            ",1px -1px 0 " + props.stroke +
+            ",1px  0   0 " + props.stroke +
+            ",1px  1px 0 " + props.stroke +
+            ",0    1px 0 " + props.stroke +
+            ",-1px  1px 0 " + props.stroke +
+            ",-1px  0   0 " + props.stroke
+        };
         &:after {
             content: "-";
             margin: 0px 50px;
