@@ -8,8 +8,7 @@ import { connect } from "react-redux";
 import { setLightTheme, setDarkTheme } from "../redux/application/actions";
 
 const Container = styled.div`
-    font-size: 18px;
-    line-height: 24px;
+//
 `;
 
 
@@ -19,11 +18,11 @@ function Layout({ children, theme }) {
         <ThemeProvider theme={theme === 'light' ? light : dark}>
             <>
                 <GlobalStyles />
-                <Container>
-                    <Navbar></Navbar>
 
-                    {children}
-                </Container>
+                <Navbar></Navbar>
+
+                {children}
+
             </>
         </ThemeProvider>
     )

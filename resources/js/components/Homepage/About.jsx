@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import Citation from './Citation';
 import { fetchTheme } from '../themes';
 import { connect } from "react-redux";
+import { constant } from '../../helper';
 
 const scroll = keyframes`
   0% {
@@ -56,23 +57,27 @@ const CitationContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-	width: 60%;
-    height: 700px;
+	width: 90%;
+    max-width: ${constant.maxWidth + "px"};
+    height: 70vh;
     margin: auto;
     display: block;
     position: relative;
 
     img {
         position: absolute;
+        height: 50vh;
 
         &:first-child {
             top: 0; right: 0px;
             width: 70%;
+            object-fit: cover;
         }
 
         &:nth-child(2) {
             bottom: 0; left: 0px;
             width: 50%;
+            object-fit: cover;
         }
     }
 

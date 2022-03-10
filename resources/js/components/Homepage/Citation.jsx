@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
+import { constant } from '../../helper';
 
 const Container = styled.div`
-    max-width: 1270px;
+    max-width: ${constant.maxWidth + "px"};
     width: 90%;
     margin: auto;
     display: flex;
@@ -16,6 +17,8 @@ const Container = styled.div`
     letter-spacing: -6.12px;
     padding: 20vh 0px;
     box-sizing: border-box;
+    z-index: 2;
+    position: relative;
 `;
 
 

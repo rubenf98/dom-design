@@ -3,6 +3,7 @@ import About from './Homepage/About';
 import Citation from './Homepage/Citation';
 import Header from './Homepage/Header';
 import Portfolio from './Homepage/Portfolio';
+import Process from './Homepage/Process';
 
 function Homepage() {
     return (
@@ -13,6 +14,8 @@ function Homepage() {
             <div style={{ position: "relative", overflowX: "hidden" }}>
                 <About />
             </div>
+
+            <Process />
         </div>
     )
 }

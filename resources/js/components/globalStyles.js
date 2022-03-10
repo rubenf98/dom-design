@@ -6,5 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-family: 'Raleway', sans-serif, Tahoma, Helvetica, Arial;
     transition: all 0.50s linear;
+    font-stretch: normal;
+    font-style: normal;
   }
 `

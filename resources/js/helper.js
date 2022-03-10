@@ -1,6 +1,7 @@
 export const constant = {
-    navbarHeight: 150,
-    horizontalPadding: 100
+	navbarHeight: 150,
+	horizontalPadding: 100,
+	maxWidth: 1270,
 };
 
 export function getCarouselBreakpoints(aItems, aBreakpoints = [[0, 600], [600, 1024], [1024, 1400], [1400, 1800], [1800, 100000]], aItemsToSlide = [1, 1, 1, 1, 1]) {
