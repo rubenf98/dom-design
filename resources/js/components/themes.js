@@ -15,3 +15,7 @@ export const dark = {
 export function fetchTheme(aTheme) {
     return aTheme === 'light' ? light : dark;
 }
+
+export function fetchReverseTheme(aTheme) {
+    return aTheme === 'light' ? dark : light;
+}

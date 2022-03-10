@@ -103,7 +103,7 @@ function About({ theme }) {
 
     useEffect(() => {
         var aTheme = fetchTheme(theme);
-        console.log(aTheme);
+
         setScrollingTheme({
             background: aTheme.background,
             text: aTheme.text,

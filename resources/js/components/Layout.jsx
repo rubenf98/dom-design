@@ -6,6 +6,7 @@ import { GlobalStyles } from "./globalStyles";
 import { light, dark } from "./themes"
 import { connect } from "react-redux";
 import { setLightTheme, setDarkTheme } from "../redux/application/actions";
+import Footer from './Footer';
 
 const Container = styled.div`
 //
@@ -19,9 +20,11 @@ function Layout({ children, theme }) {
             <>
                 <GlobalStyles />
 
-                <Navbar></Navbar>
+                <Navbar />
 
                 {children}
+
+                <Footer />
 
             </>
         </ThemeProvider>
