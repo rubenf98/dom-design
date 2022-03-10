@@ -5,7 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 const Container = styled.div`
-    margin: 400px 0px 400px ${constant.horizontalPadding + "px"};
+    margin: 20vh 0px 20vh ${constant.horizontalPadding + "px"};
     box-sizing: border-box;
     
 `;

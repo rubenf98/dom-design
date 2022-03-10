@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
+import About from './Homepage/About';
 import Citation from './Homepage/Citation';
 import Header from './Homepage/Header';
 import Portfolio from './Homepage/Portfolio';
@@ -8,8 +8,11 @@ function Homepage() {
     return (
         <div>
             <Header />
-            <Citation />
+            <Citation quote="através das ideias da nossa equipa, idealize o que deseja." />
             <Portfolio />
+            <div style={{ position: "relative", overflowX: "hidden" }}>
+                <About />
+            </div>
         </div>
     )
 }

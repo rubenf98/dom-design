@@ -5,7 +5,6 @@ const Container = styled.div`
     max-width: 1270px;
     width: 90%;
     margin: auto;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,12 +14,14 @@ const Container = styled.div`
     font-style: normal;
     line-height: 0.84;
     letter-spacing: -6.12px;
+    padding: 20vh 0px;
+    box-sizing: border-box;
 `;
 
 
-function Citation() {
+function Citation({ quote }) {
     return (
-        <Container>"através das ideias da nossa equipa, idealize o que deseja."</Container>
+        <Container>"{quote}"</Container>
     )
 }
 

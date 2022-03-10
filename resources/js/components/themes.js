@@ -11,3 +11,7 @@ export const dark = {
     toggleBorder: '#6B8096',
     background: '#000000',
 }
+
+export function fetchTheme(aTheme) {
+    return aTheme === 'light' ? light : dark;
+}
