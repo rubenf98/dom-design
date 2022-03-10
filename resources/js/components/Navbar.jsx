@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { constant } from '../helper';
 import styled from 'styled-components';
+import { connect } from "react-redux";
 
 const Container = styled.div`
     width: 100%;
@@ -32,19 +33,19 @@ const Container = styled.div`
 `;
 
 const LanguageIndicator = styled.span`
-    color: ${props => props.active ? "#fff" : "rgba(255,255,255,.38)"};
+    filter: ${props => props.active ? "opacity(1)" : "opacity(.4)"};
     
     &:nth-child(2) {
         margin-left: 13px;
     }
 `;
 
-function Navbar() {
+function Navbar({ theme }) {
     const [active, setActive] = useState(0)
 
     return (
         <Container>
-            <img src="logo.svg" alt="" />
+            <img src={theme === 'light' ? "light_logo.svg" : "dark_logo.svg"} alt="logo" />
             <p>menu</p>
             <div>
                 <LanguageIndicator active={active == 0} onClick={() => setActive(0)}>pt</LanguageIndicator>
@@ -54,4 +55,13 @@ function Navbar() {
     )
 }
 
-export default Navbar
+const mapStateToProps = (state) => {
+    return {
+        theme: state.application.theme,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(Navbar);

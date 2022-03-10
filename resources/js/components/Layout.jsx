@@ -1,23 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import Navbar from './Navbar';
-
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./globalStyles";
+import { light, dark } from "./themes"
+import { connect } from "react-redux";
+import { setLightTheme, setDarkTheme } from "../redux/application/actions";
 
 const Container = styled.div`
-    background: #000000;
-    color: #ffffff;
     font-size: 18px;
     line-height: 24px;
 `;
 
 
-function Layout({ children }) {
+function Layout({ children, theme }) {
+
     return (
-        <Container>
-            <Navbar></Navbar>
-            {children}
-        </Container>
+        <ThemeProvider theme={theme === 'light' ? light : dark}>
+            <>
+                <GlobalStyles />
+                <Container>
+                    <Navbar></Navbar>
+
+                    {children}
+                </Container>
+            </>
+        </ThemeProvider>
     )
 }
 
-export default Layout
+const mapStateToProps = (state) => {
+    return {
+        theme: state.application.theme,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(Layout);

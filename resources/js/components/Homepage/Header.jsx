@@ -1,6 +1,8 @@
 import React from 'react'
 import { constant } from '../../helper';
 import styled from 'styled-components';
+import { connect } from "react-redux";
+import { setLightTheme, setDarkTheme } from "../../redux/application/actions";
 
 const Container = styled.div`
     width: 100%;
@@ -10,6 +12,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 `;
 
 const TitleContainer = styled.div`
@@ -50,7 +53,30 @@ const SocialContainer = styled.div`
     }
 `;
 
-function Header() {
+const ThemeSwitch = styled.div`
+    position: absolute;
+    right: 90px;
+    bottom: 5vh;
+    width: 35px; height: 35px; border-radius: 35px;
+    background: red;
+    cursor: pointer;
+`;
+
+const ScrollContainer = styled.div`
+    position: absolute;
+    left: 100px;
+    bottom: 5vh;
+    cursor: pointer;
+    font-size: 27px;
+    line-height: 0.85;
+    letter-spacing: -1.62px;
+
+    img {
+        width: 15px;
+    }
+`;
+
+function Header({ theme, setDarkTheme, setLightTheme }) {
     return (
         <Container>
             <TitleContainer>
@@ -61,8 +87,26 @@ function Header() {
                 </Title>
                 <SocialContainer><span>facebook</span><span>instagram</span></SocialContainer>
             </TitleContainer>
+            <ScrollContainer>Scroll <img src={theme === 'light' ? "/icon/light_down_arrow.svg" : "/icon/dark_down_arrow.svg"} /></ScrollContainer>
+            <ThemeSwitch onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
         </Container>
     )
 }
 
-export default Header
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setLightTheme: () => dispatch(setLightTheme()),
+        setDarkTheme: () => dispatch(setDarkTheme()),
+    };
+};
+
+const mapStateToProps = (state) => {
+    return {
+        theme: state.application.theme,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Header);

@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Container = styled.div`
-width: 1270px;
-margin: auto;
+    max-width: 1270px;
+    width: 90%;
+    margin: auto;
     min-height: 100vh;
     display: flex;
     align-items: center;
