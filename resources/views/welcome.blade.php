@@ -17,7 +17,7 @@
             margin: 0;
             min-height: 100%;
             font-family: 'Raleway', sans-serif;
-
+            scroll-behavior: smooth;
         }
     </style>
 </head>

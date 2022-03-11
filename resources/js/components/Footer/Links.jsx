@@ -86,7 +86,7 @@ function Links({ theme }) {
         <Container>
             <Content>
                 <Logo theme={themeContext}>
-                    <img src={theme === 'light' ? "light_logo.svg" : "dark_logo.svg"} alt="logo" />
+                    <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
                     <h2><span>dom</span> design</h2>
                 </Logo>
                 <Pages>

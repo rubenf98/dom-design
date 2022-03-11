@@ -18,7 +18,7 @@ const ScrollingRow = styled.div`
 	position: absolute;
 	display: flex;
 	align-items: center;
-    top: calc(20vh - 120px);
+    top: 0px;
     z-index: 1;
 
     p {

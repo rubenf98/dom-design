@@ -3,6 +3,7 @@ import { constant, getCarouselBreakpoints } from '../../helper';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     margin: 20vh 0px 20vh ${constant.horizontalPadding + "px"};
@@ -53,7 +54,7 @@ const Item = styled.div`
 
 
 const items = [
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
+    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "/project/braseiro351" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
@@ -72,10 +73,12 @@ function Portfolio() {
                 responsive={getCarouselBreakpoints([1, 1, 2, 2, 2])}
             >
                 {items.map((item, index) => (
-                    <Item key={index}>
-                        <div className='overlay' />
-                        <img src={item.image} alt={item.title} />
-                    </Item>
+                    <Link to={item.to}>
+                        <Item key={index} >
+                            <div className='overlay' />
+                            <img src={item.image} alt={item.title} />
+                        </Item>
+                    </Link>
                 ))}
             </CarouselContainer>
 

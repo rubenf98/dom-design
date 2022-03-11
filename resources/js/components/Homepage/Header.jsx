@@ -3,6 +3,7 @@ import { constant } from '../../helper';
 import styled from 'styled-components';
 import { connect } from "react-redux";
 import { setLightTheme, setDarkTheme } from "../../redux/application/actions";
+import ScrollIndicator from '../Common/ScrollIndicator';
 
 const Container = styled.div`
     width: 100%;
@@ -67,13 +68,6 @@ const ScrollContainer = styled.div`
     left: 100px;
     bottom: 5vh;
     cursor: pointer;
-    font-size: 27px;
-    line-height: 0.85;
-    letter-spacing: -1.62px;
-
-    img {
-        width: 15px;
-    }
 `;
 
 function Header({ theme, setDarkTheme, setLightTheme }) {
@@ -87,7 +81,9 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
                 </Title>
                 <SocialContainer><span>facebook</span><span>instagram</span></SocialContainer>
             </TitleContainer>
-            <ScrollContainer>Scroll <img src={theme === 'light' ? "/icon/light_down_arrow.svg" : "/icon/dark_down_arrow.svg"} /></ScrollContainer>
+            <ScrollContainer>
+                <ScrollIndicator />
+            </ScrollContainer>
             <ThemeSwitch onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
         </Container>
     )
