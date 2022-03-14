@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { constant } from '../helper';
 import styled from 'styled-components';
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     width: 100%;
@@ -45,7 +46,10 @@ function Navbar({ theme }) {
 
     return (
         <Container>
-            <img src={theme === 'light' ? "light_logo.svg" : "dark_logo.svg"} alt="logo" />
+            <Link to="/">
+                <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
+            </Link>
+
             <p>menu</p>
             <div>
                 <LanguageIndicator active={active == 0} onClick={() => setActive(0)}>pt</LanguageIndicator>

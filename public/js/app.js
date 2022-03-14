@@ -751,34 +751,6 @@ var unitlessKeys = {
 
 /***/ }),
 
-/***/ "./resources/js/components/Braseiro351.jsx":
-/*!*************************************************!*\
-  !*** ./resources/js/components/Braseiro351.jsx ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Common_ProjectTemplate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Common/ProjectTemplate */ "./resources/js/components/Common/ProjectTemplate.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function Braseiro351() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Common_ProjectTemplate__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Braseiro351);
-
-/***/ }),
-
 /***/ "./resources/js/components/Common/ProjectTemplate.jsx":
 /*!************************************************************!*\
   !*** ./resources/js/components/Common/ProjectTemplate.jsx ***!
@@ -841,40 +813,41 @@ var InformationTemplate = function InformationTemplate(_ref2) {
   });
 };
 
-function ProjectTemplate() {
+function ProjectTemplate(_ref3) {
+  var data = _ref3.data;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Title, {
-      children: "Braseiro 351"
+      children: data.title
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ScrollContainer, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ScrollIndicator__WEBPACK_IMPORTED_MODULE_1__["default"], {})
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(DetailsContainer, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DetailTemplate, {
-        fieldDesc: "design de espa\xE7os",
+        fieldDesc: data.details[0],
         fieldTitle: "servi\xE7o"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DetailTemplate, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DetailTemplate, {
-        fieldDesc: "design de espa\xE7os",
-        fieldTitle: "servi\xE7o"
+        fieldDesc: data.details[1],
+        fieldTitle: "cliente"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DetailTemplate, {
-        fieldDesc: "design de espa\xE7os",
-        fieldTitle: "servi\xE7o"
+        fieldDesc: data.details[2],
+        fieldTitle: "ano"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Image, {
-      src: "/image/portfolio/placeholder.jpg",
-      alt: "sad",
+      src: data.images[2],
+      alt: "project cover",
       loading: "eager"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(InformationTemplate, {
       fieldTitle: "descri\xE7\xE3o",
-      fieldDesc: ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+      fieldDesc: data.description
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Image, {
-      src: "/image/portfolio/placeholder.jpg",
-      alt: "sad",
+      src: data.images[1],
+      alt: "description",
       loading: "lazy"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(InformationTemplate, {
       fieldTitle: "conceito",
-      fieldDesc: ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+      fieldDesc: data.concept
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Image, {
-      src: "/image/portfolio/placeholder.jpg",
-      alt: "sad",
+      src: data.images[2],
+      alt: "concept",
       loading: "lazy"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(TopContainer, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_TopIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], {})
@@ -1538,10 +1511,10 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin: 20vh 0px 20vh ", ";\n    box-sizing: border-box;\n    \n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.horizontalPadding + "px");
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-size: 102px;\n    font-weight: 900;\n    margin-bottom: 20px;\n    z-index: 2;\n    position: relative;\n"])));
 var CarouselContainer = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(react_multi_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    min-height: 300px;\n    width: 100%;\n\n    .image-item {\n        padding-right: 50px;\n    }\n\n    .react-multiple-carousel__arrow {\n        z-index: 8 !important;\n    }\n\n"])));
-var Item = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 100%;\n    z-index: 1;\n    position: relative;\n\n    img {\n        width: 100%;\n        height: 100%;\n    }\n\n    .overlay {\n        position: absolute;\n        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(56, 56, 56, 0.78) 78%, #000);\n        top: 0; bottom: 0;left: 0%; right: 0;\n        width: 100%;\n        height: 100%;\n    }\n"])));
+var Item = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 100%;\n    z-index: 1;\n    position: relative;\n\n    img {\n        width: 100%;\n        height: 100%;\n    }\n\n    .overlay {\n        position: absolute;\n        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(56, 56, 56, 0.78) 78%, #000);\n        top: 0; bottom: 0;left: 0%; right: 0;\n        width: 100%;\n        height: 100%;\n    }\n    .info {\n        position: absolute;\n        bottom: 20px;left: 20px;\n        color:  white;\n\n        h3 {\n            font-size: 28px;\n            letter-spacing: 1.4px;\n            font-weight: 900;\n            text-transform: uppercase;\n            margin-bottom: 0px;\n        }\n\n        p {\n            margin: 0px;\n            font-size: 24px;\n            letter-spacing: -1.2px;\n            font-weight: 300;\n        }\n    }\n\n"])));
 var items = [{
-  title: "lorem",
-  category: "lorem",
+  title: "braseiro burguer",
+  category: "restaurante",
   image: "/image/portfolio/placeholder.jpg",
   to: "/project/braseiro351"
 }, {
@@ -1590,6 +1563,13 @@ function Portfolio() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
               src: item.image,
               alt: item.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              className: "info",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                children: item.title
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                children: item.category
+              })]
             })]
           }, index)
         });
@@ -1753,6 +1733,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper */ "./resources/js/helper.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject, _templateObject2;
 
@@ -1776,6 +1757,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 100%;\n    height: ", ";\n    padding: 30px 100px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    \n\n    img {\n        height: 80px;\n    }\n\n    p, span {\n        font-weight: 900;\n        font-size: 27px;\n        font-stretch: normal;\n        font-style: normal;\n        line-height: 0.85;\n        letter-spacing: -2.62px;\n        cursor: pointer;\n\n        &::after {\n            content: \".\";\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.navbarHeight + "px");
 var LanguageIndicator = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    filter: ", ";\n    \n    &:nth-child(2) {\n        margin-left: 13px;\n    }\n"])), function (props) {
   return props.active ? "opacity(1)" : "opacity(.4)";
@@ -1790,9 +1772,12 @@ function Navbar(_ref) {
       setActive = _useState2[1];
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Container, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-      src: theme === 'light' ? "light_logo.svg" : "dark_logo.svg",
-      alt: "logo"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+      to: "/",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        src: theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg",
+        alt: "logo"
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       children: "menu"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -1820,6 +1805,43 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps, null)(Navbar));
+
+/***/ }),
+
+/***/ "./resources/js/components/Portfolio/Braseiro351.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Portfolio/Braseiro351.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Common_ProjectTemplate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Common/ProjectTemplate */ "./resources/js/components/Common/ProjectTemplate.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Braseiro351() {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.scrollTo(0, 0);
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Common_ProjectTemplate__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: {
+      title: "Braseiro 351",
+      details: ["design de espaços", "351 empresa", "2021"],
+      images: ["/image/portfolio/placeholder.jpg", "/image/portfolio/placeholder.jpg", "/image/portfolio/placeholder.jpg"],
+      description: ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."],
+      concept: ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."]
+    }
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Braseiro351);
 
 /***/ }),
 
@@ -2085,7 +2107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var history__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
 /* harmony import */ var _components_Homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Homepage */ "./resources/js/components/Homepage.jsx");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Layout */ "./resources/js/components/Layout.jsx");
-/* harmony import */ var _components_Braseiro351__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Braseiro351 */ "./resources/js/components/Braseiro351.jsx");
+/* harmony import */ var _components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Portfolio/Braseiro351 */ "./resources/js/components/Portfolio/Braseiro351.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -2106,7 +2128,7 @@ var Router = function Router() {
         exact: true,
         path: "/project/braseiro351",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Braseiro351__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__["default"], {})
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
         exact: true,

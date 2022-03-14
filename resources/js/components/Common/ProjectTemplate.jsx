@@ -101,44 +101,38 @@ const InformationTemplate = ({ fieldTitle, fieldDesc }) => (
     </Info>
 )
 
-function ProjectTemplate() {
+function ProjectTemplate({ data }) {
     return (
         <div>
-            <Title>Braseiro 351</Title>
+            <Title>{data.title}</Title>
 
             <ScrollContainer>
                 <ScrollIndicator />
             </ScrollContainer>
 
             <DetailsContainer>
-                <DetailTemplate fieldDesc="design de espaços" fieldTitle="serviço" />
+                <DetailTemplate fieldDesc={data.details[0]} fieldTitle="serviço" />
                 <DetailTemplate />
-                <DetailTemplate fieldDesc="design de espaços" fieldTitle="serviço" />
-                <DetailTemplate fieldDesc="design de espaços" fieldTitle="serviço" />
+                <DetailTemplate fieldDesc={data.details[1]} fieldTitle="cliente" />
+                <DetailTemplate fieldDesc={data.details[2]} fieldTitle="ano" />
 
             </DetailsContainer>
 
-            <Image src="/image/portfolio/placeholder.jpg" alt="sad" loading='eager' />
+            <Image src={data.images[2]} alt="project cover" loading='eager' />
 
             <InformationTemplate
                 fieldTitle="descrição"
-                fieldDesc={[
-                    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-                    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                ]}
+                fieldDesc={data.description}
             />
 
-            <Image src="/image/portfolio/placeholder.jpg" alt="sad" loading='lazy' />
+            <Image src={data.images[1]} alt="description" loading='lazy' />
 
             <InformationTemplate
                 fieldTitle="conceito"
-                fieldDesc={[
-                    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-                    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                ]}
+                fieldDesc={data.concept}
             />
 
-            <Image src="/image/portfolio/placeholder.jpg" alt="sad" loading='lazy' />
+            <Image src={data.images[2]} alt="concept" loading='lazy' />
 
             <TopContainer>
                 <TopIndicator />

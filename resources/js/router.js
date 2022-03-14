@@ -5,7 +5,7 @@ import { createBrowserHistory } from "history";
 //public pages
 import Homepage from "./components/Homepage";
 import Layout from "./components/Layout";
-import Braseiro351 from "./components/Braseiro351";
+import Braseiro351 from "./components/Portfolio/Braseiro351";
 
 export const history = createBrowserHistory();
 

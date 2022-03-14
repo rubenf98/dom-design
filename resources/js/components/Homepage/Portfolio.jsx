@@ -50,11 +50,32 @@ const Item = styled.div`
         width: 100%;
         height: 100%;
     }
+    .info {
+        position: absolute;
+        bottom: 20px;left: 20px;
+        color:  white;
+
+        h3 {
+            font-size: 28px;
+            letter-spacing: 1.4px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 0px;
+        }
+
+        p {
+            margin: 0px;
+            font-size: 24px;
+            letter-spacing: -1.2px;
+            font-weight: 300;
+        }
+    }
+
 `;
 
 
 const items = [
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "/project/braseiro351" },
+    { title: "braseiro burguer", category: "restaurante", image: "/image/portfolio/placeholder.jpg", to: "/project/braseiro351" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
@@ -77,6 +98,10 @@ function Portfolio() {
                         <Item key={index} >
                             <div className='overlay' />
                             <img src={item.image} alt={item.title} />
+                            <div className='info' >
+                                <h3>{item.title}</h3>
+                                <p>{item.category}</p>
+                            </div>
                         </Item>
                     </Link>
                 ))}
