@@ -2159,6 +2159,84 @@ function Team() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Team/Carolina.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Team/Carolina.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Common_TeamMemberTemplate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Common/TeamMemberTemplate */ "./resources/js/components/Common/TeamMemberTemplate.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Carolina() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Common_TeamMemberTemplate__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: {
+      title: "carolina andrade",
+      previous: "michael",
+      next: "",
+      image: "/image/team/placeholder",
+      about: {
+        title: "designer de espaços",
+        paragraphs: ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."],
+        social: {
+          facebook: "/sadsadsad",
+          instagram: "/asdasdsa",
+          linkedin: "/asdsadsad"
+        }
+      },
+      skills: [{
+        title: "modelador 3d",
+        value: 90
+      }, {
+        title: "designer UX/UI",
+        value: 70
+      }, {
+        title: "designer gráfico",
+        value: 60
+      }],
+      education: [{
+        title: "universidade da madeira",
+        subtitle: "International Master of Interactive Media Design",
+        date: "2020-2022"
+      }, {
+        title: "universidade da madeira",
+        subtitle: "Design",
+        date: "2015-2019"
+      }, {
+        title: "escola b+s d. lucinda andrade",
+        subtitle: "artes visuais",
+        date: "2011-2014"
+      }],
+      work: [{
+        title: "iti",
+        subtitle: "Maritimo Traning Lab",
+        date: "2021-2022"
+      }, {
+        title: "miti",
+        subtitle: "Largescale",
+        date: "2019-2021"
+      }, {
+        title: "dom design",
+        subtitle: "designer / modelador",
+        date: "2019-2022"
+      }]
+    }
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Carolina);
+
+/***/ }),
+
 /***/ "./resources/js/components/Team/Michael.jsx":
 /*!**************************************************!*\
   !*** ./resources/js/components/Team/Michael.jsx ***!
@@ -2494,16 +2572,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "history": () => (/* binding */ history)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
 /* harmony import */ var _components_Homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Homepage */ "./resources/js/components/Homepage.jsx");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Layout */ "./resources/js/components/Layout.jsx");
 /* harmony import */ var _components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Portfolio/Braseiro351 */ "./resources/js/components/Portfolio/Braseiro351.jsx");
 /* harmony import */ var _components_Team__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Team */ "./resources/js/components/Team.jsx");
 /* harmony import */ var _components_Common_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Common/ScrollToTop */ "./resources/js/components/Common/ScrollToTop.jsx");
 /* harmony import */ var _components_Team_Michael__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Team/Michael */ "./resources/js/components/Team/Michael.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Team_Carolina__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Team/Carolina */ "./resources/js/components/Team/Carolina.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
  //public pages
@@ -2516,42 +2595,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var history = (0,history__WEBPACK_IMPORTED_MODULE_8__.createBrowserHistory)();
+
+var history = (0,history__WEBPACK_IMPORTED_MODULE_9__.createBrowserHistory)();
 
 var Router = function Router() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.BrowserRouter, {
     history: history,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Common_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Common_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/team/carolina",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Team__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Team_Carolina__WEBPACK_IMPORTED_MODULE_7__["default"], {})
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/team/michael",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Team_Michael__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Team_Michael__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/team",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Team__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Team__WEBPACK_IMPORTED_MODULE_4__["default"], {})
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/project/braseiro351",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Homepage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Homepage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
           })
         })]
       })

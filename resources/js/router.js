@@ -9,6 +9,7 @@ import Braseiro351 from "./components/Portfolio/Braseiro351";
 import Team from "./components/Team";
 import ScrollToTop from "./components/Common/ScrollToTop";
 import Michael from "./components/Team/Michael";
+import Carolina from "./components/Team/Carolina";
 
 export const history = createBrowserHistory();
 
@@ -17,7 +18,7 @@ const Router = () => {
         <BrowserRouter history={history}>
             <ScrollToTop>
                 <Routes>
-                    <Route exact path="/team/carolina" element={<Layout><Team /></Layout>} />
+                    <Route exact path="/team/carolina" element={<Layout><Carolina /></Layout>} />
                     <Route exact path="/team/michael" element={<Layout><Michael /></Layout>} />
                     <Route exact path="/team" element={<Layout><Team /></Layout>} />
                     <Route exact path="/project/braseiro351" element={<Layout><Braseiro351 /></Layout>} />
