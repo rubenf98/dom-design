@@ -805,10 +805,10 @@ var InformationTemplate = function InformationTemplate(_ref2) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Info, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       children: fieldTitle
-    }), fieldDesc.map(function (paragraph) {
+    }), fieldDesc.map(function (paragraph, index) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         children: paragraph
-      });
+      }, index);
     })]
   });
 };
@@ -901,6 +901,230 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, null)(ScrollIndicator));
+
+/***/ }),
+
+/***/ "./resources/js/components/Common/ScrollToTop.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Common/ScrollToTop.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var ScrollToTop = function ScrollToTop(props) {
+  var location = (0,react_router__WEBPACK_IMPORTED_MODULE_2__.useLocation)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.scrollTo(0, 0);
+  }, [location]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: props.children
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollToTop);
+
+/***/ }),
+
+/***/ "./resources/js/components/Common/TeamMemberTemplate.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Common/TeamMemberTemplate.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helper */ "./resources/js/helper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n\n    h1, .next, .previous {\n        font-size: 102px;\n        letter-spacing: -6.12px;\n        font-weight: 900;\n        text-align: center;\n        text-transform: uppercase;\n        align-items: center;\n        flex: 1;\n        display: flex;\n        justify-content: center;\n        margin: 0px;\n        white-space:nowrap;\n\n    }\n\n    .next, .previous {\n        opacity: .3;\n    }\n\n    .previous {\n        margin-right: auto;\n        text-align: left;\n\n        p {\n            margin-right: auto;\n        }\n    }\n\n    .next {\n        margin-left: auto;\n        text-align: right;\n\n        p {\n            margin-left: auto;\n        }\n    }\n\n\n"])));
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 80%;\n    margin: auto;\n    max-width: ", ";\n    display: block;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
+var SkillsContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 70%;\n    margin: auto;\n    max-width: ", ";\n    margin-bottom: 175px;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
+var Skill = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 100%;\n    display: block;\n\n    h3 {\n        font-size: 35px;\n        letter-spacing: -2.1px;\n        font-weight: bold;\n        margin: 20px 0px;\n        text-transform: uppercase;\n    }\n\n    .value-container {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n\n        .bar {\n            height: 10px;\n            background: ", ";\n            width: ", ";\n            \n        }\n\n        p {\n            font-size: 30px;\n            letter-spacing: -1.8px;\n            font-weight: 300;\n            padding-left: 30px;\n            box-sizing: border-box;\n            margin: 0px;\n        }\n    }\n\n    \n"])), function (props) {
+  return props.barBackground;
+}, function (props) {
+  return props.width + "%";
+});
+var SkillsTitle = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h2(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    font-size: 102px;\n    letter-spacing: -6.12px;\n    font-weight: 900;\n    text-transform: uppercase;\n    color: ", ";\n        text-shadow: ", ";\n"])), function (props) {
+  return props.color;
+}, function (props) {
+  return "-1px -1px 0 " + props.stroke + ",0   -1px 0 " + props.stroke + ",1px -1px 0 " + props.stroke + ",1px  0   0 " + props.stroke + ",1px  1px 0 " + props.stroke + ",0    1px 0 " + props.stroke + ",-1px  1px 0 " + props.stroke + ",-1px  0   0 " + props.stroke;
+});
+var AboutTitle = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h2(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    font-size: 28px;\n    letter-spacing: -1.68px;\n    font-weight: 300;\n    text-transform: uppercase;\n"])));
+var AboutContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    margin-bottom: 40vh;\n\n    picture {\n        width: 40%;\n        img {\n            width: 100%;\n        }\n    }\n\n    .info-container {\n        width: 50%;\n\n        h3 {\n            font-size: 28px;\n            letter-spacing: -1.68px;\n            font-weight: bold;\n            margin-top: 0px;\n            text-transform: uppercase;\n        }\n\n        .paragraph {\n            letter-spacing: -1.2px;\n            font-size: 20px;\n            font-weight: 300;\n            margin-bottom: 50px;\n            line-height: 2.05;\n        }\n\n        .social-container {\n            a {\n                color:", ";\n                text-decoration: none;\n                text-transform: uppercase;\n                font-size: 22px;\n                letter-spacing: -1.36px;\n                font-weight: 300;\n                \n\n                &:nth-child(2) {\n                    margin: 0px 50px;\n                }\n            }\n        }\n                \n    }\n"])), function (props) {
+  return props.color;
+});
+var ExperienceContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    margin-bottom: 250px;\n\n    .item-container {\n        width: 50%;\n        padding: 0px 70px;\n        box-sizing: border-box;\n\n        h2 {\n            font-size: 44px;\n            letter-spacing: 4.4px;\n            font-weight: 900;\n            text-transform: uppercase;\n        }\n\n        .item {\n            width: 100%;\n            padding: 20px 0px;\n            box-sizing: border-box;\n            border-bottom: ", ";\n\n            h3 {\n                letter-spacing: -2.1px;\n                font-size: 35px;\n                font-weight: bold;\n                margin-bottom: 20px;\n            }\n\n            .information-container {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n\n                p {\n                    font-size: 15px;\n                    letter-spacing: -0.9px;\n                    font-weight: 300;\n                }\n            }\n        }\n    }\n\n    \n"])), function (props) {
+  return "1px solid " + props.borderColor;
+});
+
+var SkillTemplate = function SkillTemplate(_ref) {
+  var fieldTitle = _ref.fieldTitle,
+      fieldVal = _ref.fieldVal,
+      themeContext = _ref.themeContext;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Skill, {
+    barBackground: themeContext.text,
+    width: fieldVal,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+      children: fieldTitle
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "value-container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "bar"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+        children: [fieldVal, "%"]
+      })]
+    })]
+  });
+};
+
+function TeamMemberTemplate(_ref2) {
+  var data = _ref2.data;
+  var themeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ThemeContext);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(TitleContainer, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "previous",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: data.previous
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        children: data.title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "next",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: data.next
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Content, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(AboutTitle, {
+        children: "about me"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(AboutContainer, {
+        color: themeContext.text,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("picture", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("source", {
+            srcSet: data.image + ".jpg",
+            type: "image/jpg"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            className: "profile",
+            src: data.image + ".webp",
+            alt: "profile",
+            loading: "eager"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "info-container",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: data.about.title
+          }), data.about.paragraphs.map(function (paragraph, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              className: "paragraph",
+              children: paragraph
+            }, index);
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "social-container",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              target: "_blank",
+              href: data.about.social.facebook,
+              children: "facebook"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              target: "_blank",
+              href: data.about.social.instagram,
+              children: "instagram"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              target: "_blank",
+              href: data.about.social.linkedin,
+              children: "linkedin"
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SkillsTitle, {
+        color: themeContext.background,
+        stroke: themeContext.text,
+        children: "habilidades"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SkillsContainer, {
+        children: data.skills.map(function (skill, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SkillTemplate, {
+            themeContext: themeContext,
+            fieldVal: skill.value,
+            fieldTitle: skill.title
+          }, index);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(ExperienceContainer, {
+        borderColor: themeContext.text,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "item-container",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+            children: "educa\xE7\xE3o"
+          }), data.education.map(function (item) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                children: item.title
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "information-container",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  className: "subtitle",
+                  children: item.title
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  className: "date",
+                  children: item.date
+                })]
+              })]
+            });
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "item-container",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+            children: "trabalhos"
+          }), data.work.map(function (item) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                children: item.title
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "information-container",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  className: "subtitle",
+                  children: item.title
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  className: "date",
+                  children: item.date
+                })]
+              })]
+            });
+          })]
+        })]
+      })]
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TeamMemberTemplate);
 
 /***/ }),
 
@@ -1001,24 +1225,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _themes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../themes */ "./resources/js/components/themes.js");
-/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helper */ "./resources/js/helper.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helper */ "./resources/js/helper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -1028,65 +1238,56 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: ", ";\n    color: ", ";\n    padding: 200px 0px;\n    box-sizing: border-box;\n"])), function (props) {
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: ", ";\n    color: ", ";\n    padding: 200px 0px;\n    box-sizing: border-box;\n"])), function (props) {
   return props.background;
 }, function (props) {
   return props.text;
 });
-var Content = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: auto;\n    max-width: ", ";\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-end;\n"])), _helper__WEBPACK_IMPORTED_MODULE_3__.constant.maxWidth + "px");
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    h2 {\n        text-transform: uppercase;\n        font-size: 50px;\n        letter-spacing: -3px;\n        font-weight: 300;\n\n        span {\n            font-size: 79px;\n            font-weight: 900;\n            letter-spacing: -4.74px;\n            display: block;\n        }\n    }\n\n    h3 {\n        text-transform: uppercase;\n        font-size: 20px;\n        font-weight: 300;\n        letter-spacing: -1.2px;\n        margin: 30px 0px 70px 0px;\n    }\n\n    h4 {\n        font-size: 23px;\n        font-weight: 300;\n        letter-spacing: -1.38px;\n         margin: 0px;\n         text-transform: uppercase;\n    }\n\n    p {\n        margin: 7px 0px 40px 0;\n        font-size: 31px;\n        font-weight: 900;\n        letter-spacing: 1.55px;\n\n        &:last-child {\n            margin-bottom:  0px;\n        }\n    }\n"])));
-var Form = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    .container {\n        width: 90%;\n        margin: auto;\n        display: block;\n\n        input, textarea  {\n            width: 100%;\n            padding: 20px;\n            margin: 20px 0px;\n            border: 0px;\n            border-bottom: 1px solid black;\n            outline: none;\n\n            &:focus, &:active, &:focus-visible {\n                border-bottom: 2px solid black;\n            }\n\n            &::placeholder {\n                letter-spacing: -0.9px;\n                font-size: 15px;\n                color: ", ";\n            }\n\n        }\n\n        input  {\n            margin: 10px 0px;\n        }\n\n        textarea {\n            margin: 60px 0px;\n            resize: none;\n        }\n\n        button {\n            font-size: 38px;\n            letter-spacing: -2.28px;\n            font-weight: 900;\n            padding: 10px 50px;\n            box-sizing: border-box;\n            cursor: pointer;\n            filter: invert(1);\n            border-radius: 0px;\n        }\n    }\n"])), function (props) {
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: auto;\n    max-width: ", ";\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-end;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    h2 {\n        text-transform: uppercase;\n        font-size: 50px;\n        letter-spacing: -3px;\n        font-weight: 300;\n\n        span {\n            font-size: 79px;\n            font-weight: 900;\n            letter-spacing: -4.74px;\n            display: block;\n        }\n    }\n\n    h3 {\n        text-transform: uppercase;\n        font-size: 20px;\n        font-weight: 300;\n        letter-spacing: -1.2px;\n        margin: 30px 0px 70px 0px;\n    }\n\n    h4 {\n        font-size: 23px;\n        font-weight: 300;\n        letter-spacing: -1.38px;\n         margin: 0px;\n         text-transform: uppercase;\n    }\n\n    p {\n        margin: 7px 0px 40px 0;\n        font-size: 31px;\n        font-weight: 900;\n        letter-spacing: 1.55px;\n\n        &:last-child {\n            margin-bottom:  0px;\n        }\n    }\n"])));
+var Form = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    .container {\n        width: 90%;\n        margin: auto;\n        display: block;\n\n        input, textarea  {\n            width: 100%;\n            padding: 20px;\n            margin: 20px 0px;\n            border: 0px;\n            border-bottom: ", ";\n            outline: none;\n            background: transparent;\n\n            &:focus, &:active, &:focus-visible {\n                border-bottom: ", ";\n            }\n\n            &::placeholder {\n                letter-spacing: -0.9px;\n                font-size: 15px;\n                color: ", ";\n            }\n\n        }\n\n        input  {\n            margin: 10px 0px;\n        }\n\n        textarea {\n            margin: 60px 0px;\n            resize: none;\n        }\n\n        button {\n            font-size: 38px;\n            letter-spacing: -2.28px;\n            font-weight: 900;\n            padding: 10px 50px;\n            box-sizing: border-box;\n            cursor: pointer;\n            filter: invert(1);\n            border-radius: 0px;\n        }\n    }\n"])), function (props) {
+  return "1px solid " + props.borderColor;
+}, function (props) {
+  return "2px solid " + props.borderColor;
+}, function (props) {
   return props.text;
 });
 
-function Contact(_ref) {
-  var theme = _ref.theme;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    background: undefined,
-    text: undefined
-  }),
-      _useState2 = _slicedToArray(_useState, 2),
-      reverseTheme = _useState2[0],
-      setReverseTheme = _useState2[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var aTheme = (0,_themes__WEBPACK_IMPORTED_MODULE_2__.fetchReverseTheme)(theme);
-    setReverseTheme(aTheme);
-  }, [theme]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Container, {
-    background: reverseTheme.background,
-    text: reverseTheme.text,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Content, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Info, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h2", {
-          children: ["vamos ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+function Contact() {
+  var themeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ThemeContext);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Container, {
+    background: themeContext.text,
+    text: themeContext.background,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Content, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Info, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h2", {
+          children: ["vamos ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: "falar."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           children: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
           children: "EMAIL"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           children: "domdesign@outlook.pt"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
           children: "numero de telemovel"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           children: "968137466"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Form, {
-        text: reverseTheme.text,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Form, {
+        borderColor: themeContext.background,
+        text: themeContext.background,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
             placeholder: "nome"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
             placeholder: "email"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
             rows: "6",
             placeholder: "fale connosco"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",
             children: "enviar"
           })]
@@ -1096,13 +1297,7 @@ function Contact(_ref) {
   });
 }
 
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    theme: state.application.theme
-  };
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, null)(Contact));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Contact);
 
 /***/ }),
 
@@ -1248,6 +1443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _themes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../themes */ "./resources/js/components/themes.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helper */ "./resources/js/helper.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
@@ -1264,6 +1460,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -1336,12 +1533,15 @@ function About(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         src: "/image/about/design.jpg",
         alt: ""
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          color: scrollingTheme.background,
-          background: scrollingTheme.text
-        },
-        children: "sobre n\xF3s"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+        to: "/team",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          style: {
+            color: scrollingTheme.background,
+            background: scrollingTheme.text
+          },
+          children: "sobre n\xF3s"
+        })
       })]
     })]
   });
@@ -1827,9 +2027,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Braseiro351() {
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    window.scrollTo(0, 0);
-  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Common_ProjectTemplate__WEBPACK_IMPORTED_MODULE_1__["default"], {
     data: {
       title: "Braseiro 351",
@@ -1842,6 +2039,201 @@ function Braseiro351() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Braseiro351);
+
+/***/ }),
+
+/***/ "./resources/js/components/Team.jsx":
+/*!******************************************!*\
+  !*** ./resources/js/components/Team.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper */ "./resources/js/helper.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 90%;\n    display: block;\n    max-width: ", ";\n    margin: auto;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h1(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    text-transform: uppercase;\n    font-size: 102px;\n    letter-spacing: -4.08px;\n    font-weight: 900;\n    text-align: center;\n"])));
+var TeamContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n"])));
+var Member = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 45%;\n    margin: auto;\n    display: block;\n    max-width: 400px;\n    text-decoration: none;\n\n    .profile {\n        width: 100%;\n        margin-bottom: 40px;\n    }\n\n    h3, p {\n        text-align: center;\n        color: ", ";\n    }\n\n    h3 {\n        font-size: 44px;\n        letter-spacing: -2.64px;\n        font-weight: 900; \n        margin: 0px;\n    }\n\n    p {\n        margin: 10px 0px;\n        font-size: 28px;\n        letter-spacing: -1.68px;\n        font-weight: 300; \n        text-transform: uppercase;\n    }\n"])), function (props) {
+  return props.themeContext.text;
+});
+var SocialContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin: 40px 0px 100px 0px;\n\n    a {\n        display: inline;\n        margin: 0px 9px 0px 9px;\n\n        img {\n            width: 33px;\n        }\n    }\n\n    \n"])));
+var teamMember = [{
+  to: "/team/michael",
+  name: "louis michael",
+  job: "designer 3d",
+  image: "/image/team/placeholder",
+  social: {
+    facebook: "/sadsadsad",
+    instagram: "/asdasdsa",
+    linkedin: "/asdsadsad"
+  }
+}, {
+  to: "/team/carolina",
+  name: "carolina andrade",
+  job: "interior designer",
+  image: "/image/team/placeholder",
+  social: {
+    facebook: "/sadsadsad",
+    instagram: "/asdasdsa",
+    linkedin: "/asdsadsad"
+  }
+}];
+
+function Team() {
+  var themeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ThemeContext);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Container, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Title, {
+      children: "A equipa incr\xEDvel por tr\xE1s da nossa empresa."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(TeamContainer, {
+      children: teamMember.map(function (member, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Member, {
+          themeContext: themeContext,
+          to: member.to,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("picture", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("source", {
+              srcSet: member.image + ".jpg",
+              type: "image/jpg"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+              className: "profile",
+              src: member.image + ".webp",
+              alt: "profile",
+              loading: "eager"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: member.name
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: member.job
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(SocialContainer, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              target: "_blank",
+              href: member.social.facebook,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: "/image/team/facebook.svg",
+                alt: "facebook",
+                loading: "lazy"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              target: "_blank",
+              href: member.social.instagram,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: "/image/team/instagram.svg",
+                alt: "instagram",
+                loading: "lazy"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              target: "_blank",
+              href: member.social.linkedin,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: "/image/team/linkedin.svg",
+                alt: "linkedin",
+                loading: "lazy"
+              })
+            })]
+          })]
+        }, index);
+      })
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Team);
+
+/***/ }),
+
+/***/ "./resources/js/components/Team/Michael.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Team/Michael.jsx ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Common_TeamMemberTemplate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Common/TeamMemberTemplate */ "./resources/js/components/Common/TeamMemberTemplate.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Michael() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Common_TeamMemberTemplate__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: {
+      title: "louis michael",
+      previous: "",
+      next: "carolina",
+      image: "/image/team/placeholder",
+      about: {
+        title: "designer 3d",
+        paragraphs: ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."],
+        social: {
+          facebook: "/sadsadsad",
+          instagram: "/asdasdsa",
+          linkedin: "/asdsadsad"
+        }
+      },
+      skills: [{
+        title: "modelador 3d",
+        value: 90
+      }, {
+        title: "designer UX/UI",
+        value: 70
+      }, {
+        title: "designer gráfico",
+        value: 60
+      }],
+      education: [{
+        title: "universidade da madeira",
+        subtitle: "International Master of Interactive Media Design",
+        date: "2020-2022"
+      }, {
+        title: "universidade da madeira",
+        subtitle: "Design",
+        date: "2015-2019"
+      }, {
+        title: "escola b+s d. lucinda andrade",
+        subtitle: "artes visuais",
+        date: "2011-2014"
+      }],
+      work: [{
+        title: "iti",
+        subtitle: "Maritimo Traning Lab",
+        date: "2021-2022"
+      }, {
+        title: "miti",
+        subtitle: "Largescale",
+        date: "2019-2021"
+      }, {
+        title: "dom design",
+        subtitle: "designer / modelador",
+        date: "2019-2022"
+      }]
+    }
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Michael);
 
 /***/ }),
 
@@ -1862,7 +2254,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var GlobalStyles = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  body {\n    background: ", ";\n    color: ", ";\n    font-family: 'Raleway', sans-serif, Tahoma, Helvetica, Arial;\n    transition: all 0.50s linear;\n    font-stretch: normal;\n    font-style: normal;\n  }\n"])), function (_ref) {
+var GlobalStyles = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  body {\n    background: ", " !important;\n    color: ", " !important;\n    font-family: 'Raleway', sans-serif, Tahoma, Helvetica, Arial;\n    transition: all 0.50s linear;\n    font-stretch: normal;\n    font-style: normal;\n  }\n"])), function (_ref) {
   var theme = _ref.theme;
   return theme.background;
 }, function (_ref2) {
@@ -2102,13 +2494,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "history": () => (/* binding */ history)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
 /* harmony import */ var _components_Homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Homepage */ "./resources/js/components/Homepage.jsx");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Layout */ "./resources/js/components/Layout.jsx");
 /* harmony import */ var _components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Portfolio/Braseiro351 */ "./resources/js/components/Portfolio/Braseiro351.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Team__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Team */ "./resources/js/components/Team.jsx");
+/* harmony import */ var _components_Common_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Common/ScrollToTop */ "./resources/js/components/Common/ScrollToTop.jsx");
+/* harmony import */ var _components_Team_Michael__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Team/Michael */ "./resources/js/components/Team/Michael.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
  //public pages
@@ -2118,25 +2513,48 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var history = (0,history__WEBPACK_IMPORTED_MODULE_5__.createBrowserHistory)();
+
+
+
+var history = (0,history__WEBPACK_IMPORTED_MODULE_8__.createBrowserHistory)();
 
 var Router = function Router() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
     history: history,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-        exact: true,
-        path: "/project/braseiro351",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-        exact: true,
-        path: "/",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Homepage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-        })
-      })]
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Common_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+          exact: true,
+          path: "/team/carolina",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Team__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+          exact: true,
+          path: "/team/michael",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Team_Michael__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+          exact: true,
+          path: "/team",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Team__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+          exact: true,
+          path: "/project/braseiro351",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Portfolio_Braseiro351__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+          exact: true,
+          path: "/",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Homepage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+          })
+        })]
+      })
     })
   });
 };

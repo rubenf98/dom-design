@@ -95,8 +95,8 @@ const DetailTemplate = ({ fieldTitle, fieldDesc }) => (
 const InformationTemplate = ({ fieldTitle, fieldDesc }) => (
     <Info>
         <h3>{fieldTitle}</h3>
-        {fieldDesc.map((paragraph) => (
-            <p>{paragraph}</p>
+        {fieldDesc.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
         ))}
     </Info>
 )

@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ProjectTemplate from '../Common/ProjectTemplate'
 
 function Braseiro351() {
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [])
-
     return (
         <ProjectTemplate
             data={{

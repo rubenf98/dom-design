@@ -4,6 +4,7 @@ import Citation from './Citation';
 import { fetchTheme } from '../themes';
 import { connect } from "react-redux";
 import { constant } from '../../helper';
+import { Link } from 'react-router-dom';
 
 const scroll = keyframes`
   0% {
@@ -35,15 +36,15 @@ const ScrollingRow = styled.div`
         font-weight: 900;
         color: ${props => props.color};
         text-shadow: ${props =>
-            "-1px -1px 0 " + props.stroke +
-            ",0   -1px 0 " + props.stroke +
-            ",1px -1px 0 " + props.stroke +
-            ",1px  0   0 " + props.stroke +
-            ",1px  1px 0 " + props.stroke +
-            ",0    1px 0 " + props.stroke +
-            ",-1px  1px 0 " + props.stroke +
-            ",-1px  0   0 " + props.stroke
-        };
+        "-1px -1px 0 " + props.stroke +
+        ",0   -1px 0 " + props.stroke +
+        ",1px -1px 0 " + props.stroke +
+        ",1px  0   0 " + props.stroke +
+        ",1px  1px 0 " + props.stroke +
+        ",0    1px 0 " + props.stroke +
+        ",-1px  1px 0 " + props.stroke +
+        ",-1px  0   0 " + props.stroke
+    };
         &:after {
             content: "-";
             margin: 0px 50px;
@@ -135,9 +136,11 @@ function About({ theme }) {
                 <img src="/image/about/brainstorming.jpg" alt="" />
                 <img src="/image/about/design.jpg" alt="" />
 
-                <div style={{ color: scrollingTheme.background, background: scrollingTheme.text }}>
-                    sobre nós
-                </div>
+                <Link to="/team">
+                    <div style={{ color: scrollingTheme.background, background: scrollingTheme.text }}>
+                        sobre nós
+                    </div>
+                </Link>
             </ImageContainer>
         </div>
     )

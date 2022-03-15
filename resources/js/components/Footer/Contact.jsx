@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { connect } from 'react-redux';
-import { fetchReverseTheme } from '../themes';
 import { constant } from '../../helper';
+import { ThemeContext } from 'styled-components'
 
 const Container = styled.div`
     background: ${props => props.background};
@@ -78,11 +77,12 @@ const Form = styled.div`
             padding: 20px;
             margin: 20px 0px;
             border: 0px;
-            border-bottom: 1px solid black;
+            border-bottom: ${props => "1px solid " + props.borderColor};
             outline: none;
+            background: transparent;
 
             &:focus, &:active, &:focus-visible {
-                border-bottom: 2px solid black;
+                border-bottom: ${props => "2px solid " + props.borderColor};
             }
 
             &::placeholder {
@@ -115,21 +115,11 @@ const Form = styled.div`
     }
 `;
 
-function Contact({ theme }) {
-    const [reverseTheme, setReverseTheme] = useState({
-        background: undefined,
-        text: undefined,
-    })
-
-    useEffect(() => {
-        var aTheme = fetchReverseTheme(theme);
-        setReverseTheme(aTheme)
-
-
-    }, [theme])
+function Contact() {
+    const themeContext = useContext(ThemeContext);
 
     return (
-        <Container background={reverseTheme.background} text={reverseTheme.text}>
+        <Container background={themeContext.text} text={themeContext.background}>
             <Content>
                 <Info>
                     <h2>vamos <span>falar.</span></h2>
@@ -140,7 +130,7 @@ function Contact({ theme }) {
                     <h4>numero de telemovel</h4>
                     <p>968137466</p>
                 </Info>
-                <Form text={reverseTheme.text}>
+                <Form borderColor={themeContext.background} text={themeContext.background}>
                     <div className='container'>
                         <input placeholder='nome' />
                         <input placeholder='email' />
@@ -153,15 +143,4 @@ function Contact({ theme }) {
         </Container>
     )
 }
-
-
-const mapStateToProps = (state) => {
-    return {
-        theme: state.application.theme,
-    };
-};
-
-export default connect(
-    mapStateToProps,
-    null
-)(Contact);
+export default Contact;
