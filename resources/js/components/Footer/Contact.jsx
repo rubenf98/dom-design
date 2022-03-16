@@ -119,7 +119,7 @@ function Contact() {
     const themeContext = useContext(ThemeContext);
 
     return (
-        <Container background={themeContext.text} text={themeContext.background}>
+        <Container id="Contact" background={themeContext.text} text={themeContext.background}>
             <Content>
                 <Info>
                     <h2>vamos <span>falar.</span></h2>

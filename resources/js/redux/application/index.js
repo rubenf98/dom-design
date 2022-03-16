@@ -2,6 +2,7 @@ import { types } from "./types";
 
 export const initialState = {
     theme: "dark",
+    menuVisible: false,
 }
 
 export default (state = initialState, action = {}) => {
@@ -11,6 +12,12 @@ export default (state = initialState, action = {}) => {
             return {
                 ...state,
                 theme: action.payload,
+            };
+
+        case `${types.HANDLE_MENU}`:
+            return {
+                ...state,
+                menuVisible: action.payload,
             };
         default:
             return state

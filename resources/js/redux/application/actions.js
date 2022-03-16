@@ -12,3 +12,9 @@ export function setDarkTheme() {
     };
 }
 
+export function handleMenu(state) {
+    return {
+        type: types.HANDLE_MENU, payload: state
+    };
+}
+

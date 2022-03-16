@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./globalStyles";
 import { light, dark } from "./themes"
 import { connect } from "react-redux";
-import { setLightTheme, setDarkTheme } from "../redux/application/actions";
 import Footer from './Footer';
 
 const Container = styled.div`
@@ -13,27 +12,33 @@ const Container = styled.div`
 `;
 
 
-function Layout({ children, theme }) {
+function Layout({ children, theme, menuVisible }) {
 
     return (
-        <ThemeProvider theme={theme === 'light' ? light : dark}>
-            <>
-                <GlobalStyles />
+        <div style={{ overflow: "hidden" }}>
+            <ThemeProvider theme={theme === 'light' ? light : dark}>
+                <>
 
-                <Navbar />
+                    <GlobalStyles overflow={menuVisible ? "hidden" : "auto"} />
 
-                {children}
+                    <Navbar />
 
-                <Footer />
+                    {children}
 
-            </>
-        </ThemeProvider>
+
+
+                    <Footer />
+
+                </>
+            </ThemeProvider>
+        </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
         theme: state.application.theme,
+        menuVisible: state.application.menuVisible,
     };
 };
 

@@ -8,5 +8,6 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
     font-stretch: normal;
     font-style: normal;
+    overflow-y: ${props => props.overflow};
   }
 `

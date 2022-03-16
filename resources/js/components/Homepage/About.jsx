@@ -113,7 +113,7 @@ function About({ theme }) {
 
 
     return (
-        <div>
+        <div >
             <CitationContainer>
                 <ScrollingRow stroke={scrollingTheme.text} color={scrollingTheme.background}>
                     <p>design</p>
@@ -132,7 +132,7 @@ function About({ theme }) {
                 <Citation quote="a nossa missão envolve sempre tornar os lugares ainda mais especiais." />
             </CitationContainer>
 
-            <ImageContainer>
+            <ImageContainer >
                 <img src="/image/about/brainstorming.jpg" alt="" />
                 <img src="/image/about/design.jpg" alt="" />
 
