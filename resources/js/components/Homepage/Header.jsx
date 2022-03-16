@@ -54,12 +54,11 @@ const SocialContainer = styled.div`
     }
 `;
 
-const ThemeSwitch = styled.div`
+const ThemeSwitch = styled.img`
     position: absolute;
     right: 90px;
     bottom: 5vh;
-    width: 35px; height: 35px; border-radius: 35px;
-    background: red;
+    width: 35px; height: 35px;
     cursor: pointer;
 `;
 
@@ -84,7 +83,7 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
             <ScrollContainer>
                 <ScrollIndicator />
             </ScrollContainer>
-            <ThemeSwitch onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
+            <ThemeSwitch src={theme === 'light' ? "/icon/light_theme_switch.svg" : "/icon/dark_theme_switch.svg"} onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
         </Container>
     )
 }

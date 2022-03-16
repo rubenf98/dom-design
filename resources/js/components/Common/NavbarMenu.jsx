@@ -52,7 +52,6 @@ function NavbarMenu({ visible, handleMenu }) {
                     <p onClick={() => handleClick('Contact')} >contactos</p>
                 </div>
             }
-
         </Container>
     )
 }
