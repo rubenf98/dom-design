@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import NavbarMenu from './Common/NavbarMenu';
 import { handleMenu } from '../redux/application/actions';
+import { dimensions } from '../helper';
 
 const Container = styled.div`
     width: 100%;
@@ -31,6 +32,19 @@ const Container = styled.div`
 
         &::after {
             content: ".";
+        }
+    }
+
+    @media (max-width: ${dimensions.sm}) {
+        padding: 10px 30px;
+        height: calc(${constant.navbarHeight + "px"} - 50px);
+
+        span {
+            font-size: 16px;
+        }
+
+        img {
+            height: 35px;
         }
     }
 `;

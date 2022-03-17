@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { constant } from '../../helper';
+import { constant, dimensions } from '../../helper';
 
 const Container = styled.div`
     max-width: ${constant.maxWidth + "px"};
@@ -15,10 +15,15 @@ const Container = styled.div`
     font-style: normal;
     line-height: 0.84;
     letter-spacing: -6.12px;
-    padding: 20vh 0px;
     box-sizing: border-box;
     z-index: 2;
     position: relative;
+
+    @media (max-width: ${dimensions.md}) {
+        font-size: 43px;
+        text-align: center;
+        letter-spacing: -2.58px;
+    }
 `;
 
 

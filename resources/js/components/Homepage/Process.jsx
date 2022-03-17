@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { constant } from "../../helper"
+import { constant, dimensions } from "../../helper"
 
 const Container = styled.div`
     width: 90%;
@@ -13,6 +13,7 @@ const Container = styled.div`
 const TitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     h2 {
         width: 70%;
@@ -21,6 +22,12 @@ const TitleContainer = styled.div`
         line-height: 0.74;
         letter-spacing: -0.16px;
         margin: 0px;
+
+        @media (max-width: ${dimensions.md}) {
+            width: 100%;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
     }
 
     p {
@@ -30,6 +37,11 @@ const TitleContainer = styled.div`
         line-height: 1.45;
         letter-spacing: -1.2px;
         font-weight: 300;
+
+        @media (max-width: ${dimensions.md}) {
+            width: 100%;
+            font-size: 16px;
+        }
     }
     
 `;
@@ -38,13 +50,18 @@ const StepsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    flex-wrap: wrap;
 `;
 
 const Step = styled.div`
     width: 33%;
     padding: 40px;
     box-sizing: border-box;
+
+    @media (max-width: ${dimensions.md}) {
+        width: 50%;
+        padding: 10px;
+    }
 
     h3, h4, h5 {
         margin: 0px;
@@ -56,6 +73,11 @@ const Step = styled.div`
         font-weight: bold;
         letter-spacing: -0.41px;
         line-height: auto;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 69px;
+            text-align: left;
+        }
     }
 
     h4 {
@@ -63,12 +85,26 @@ const Step = styled.div`
         font-style: italic;
         font-weight: 900;
         letter-spacing: -0.08px;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 13px;
+        }
     }
 
     h5 {
         font-size: 31px;
         font-weight: 300;
         letter-spacing: -0.06px;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 9px;
+        }
+    }
+
+    p {
+        @media (max-width: ${dimensions.md}) {
+            font-size: 13px;
+        }
     }
 `;
 

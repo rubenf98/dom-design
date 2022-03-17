@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { constant } from '../../helper';
+import { constant, dimensions } from '../../helper';
 import { ThemeContext } from 'styled-components'
 
 const Container = styled.div`
@@ -10,16 +10,22 @@ const Container = styled.div`
     width: 100%; 
     padding: 130px 0px;
     box-sizing: border-box;
+
+    @media (max-width: ${dimensions.md}) {
+        padding: 70px 0px;
+    }
+        
 `;
 
 
 const Content = styled.div`
     width: 60%;
-        margin: auto;
-        display: block;
+    margin: auto;
+    display: block;
 `;
 const Logo = styled.div`
     cursor: pointer;
+
     img {
         width: 70px;
         margin: auto;
@@ -33,6 +39,11 @@ const Logo = styled.div`
         text-align: center;
         text-transform: uppercase;
         margin: 33px auto;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 32px;
+            letter-spacing: -1.92px;
+        }
         
         span {
             color: ${props => props.theme.background};
@@ -64,6 +75,12 @@ const Pages = styled.div`
         font-weight: 300;
         margin: 0px 30px;
         cursor: pointer;
+        white-space: nowrap;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 15px;
+            letter-spacing: -.8px;
+        }
     }
 `;
 
@@ -72,6 +89,11 @@ const Copyright = styled.div`
     font-weight: 300;
     letter-spacing: -1.2px;
     text-align: center;
+
+    @media (max-width: ${dimensions.md}) {
+        font-size: 12px;
+        letter-spacing: -.7px;
+    }
 
     span {
         font-weight: 900;

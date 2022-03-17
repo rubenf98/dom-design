@@ -864,13 +864,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-size: 150px;\n    letter-spacing: -9px;\n    font-weight: 900;\n    text-align: center;\n"])));
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-size: 150px;\n    letter-spacing: -9px;\n    font-weight: 900;\n    text-align: center;\n\n    @media (max-width: ", ") {\n        font-size: 51px;\n        letter-spacing: -3px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
 var ScrollContainer = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    margin: 40px 0px 130px 0px;\n"])));
-var DetailsContainer = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 50%;\n    margin: auto;\n    max-width: ", ";\n    margin-bottom: 175px;\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px");
-var Detail = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    padding: 10px;\n    box-sizing: border-box;\n    \n    h3 {\n        font-size: 25px;\n        letter-spacing: 1.25px;\n        font-weight: 900;\n        margin: 0px;\n        text-transform: uppercase;\n    }\n\n    p {\n        font-size: 19px;\n        letter-spacing: -1.14px;\n        font-weight: normal;\n        margin: 0px;\n    }\n"])));
+var DetailsContainer = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 50%;\n    margin: auto;\n    max-width: ", ";\n    margin-bottom: 175px;\n\n    @media (max-width: ", ") {\n        margin-bottom: 75px;\n        width: 100%;\n        padding: 0px 30px;\n        box-sizing: border-box;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px", _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
+var Detail = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    padding: 10px;\n    box-sizing: border-box;\n    \n    h3 {\n        font-size: 25px;\n        letter-spacing: 1.25px;\n        font-weight: 900;\n        margin: 0px;\n        text-transform: uppercase;\n\n        @media (max-width: ", ") {\n            font-size: 17px;\n            letter-spacing: .85px;\n        }\n    }\n\n    p {\n        font-size: 19px;\n        letter-spacing: -1.14px;\n        font-weight: normal;\n        margin: 0px;\n\n        @media (max-width: ", ") {\n            font-size: 13px;\n            letter-spacing: -.8px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: auto;\n    display: block;\n    max-width: ", ";\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px");
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    padding: 150px;\n    box-sizing: border-box;\n    width: 100%;\n    margin: auto;\n    display: block;\n    max-width: ", ";\n    \n    h3 {\n        font-size: 28px;\n        font-weight: bold;\n        letter-spacing: -1.68px;\n        text-transform: uppercase;\n    }\n\n    p {\n        font-size: 20px;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n        margin: 50px 0px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px");
-var TopContainer = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: 75px auto 0px auto;\n    display: flex;\n    max-width: ", ";\n    justify-content: end;\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px");
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    padding: 150px;\n    box-sizing: border-box;\n    width: 100%;\n    margin: auto;\n    display: block;\n    max-width: ", ";\n\n    @media (max-width: ", ") {\n        padding: 30px;\n    }\n    \n    h3 {\n        font-size: 28px;\n        font-weight: bold;\n        letter-spacing: -1.68px;\n        text-transform: uppercase;\n    }\n\n    p {\n        font-size: 20px;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n        margin: 50px 0px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px", _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
+var TopContainer = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: 75px auto 0px auto;\n    display: flex;\n    max-width: ", ";\n    justify-content: end;\n\n    @media (max-width: ", ") {\n        display: none;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px", _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
 
 var DetailTemplate = function DetailTemplate(_ref) {
   var fieldTitle = _ref.fieldTitle,
@@ -1323,20 +1323,24 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: ", ";\n    color: ", ";\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    min-height: 100vh;\n"])), function (props) {
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: ", ";\n    color: ", ";\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    min-height: 100vh;\n    padding: 0px 100px;\n    @media (max-width: ", ") {\n        padding: 0px 30px;\n    }\n"])), function (props) {
   return props.background;
 }, function (props) {
   return props.text;
-});
-var Content = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: auto;\n    max-width: ", ";\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-end;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    h2 {\n        text-transform: uppercase;\n        font-size: 50px;\n        letter-spacing: -3px;\n        font-weight: 300;\n\n        span {\n            font-size: 79px;\n            font-weight: 900;\n            letter-spacing: -4.74px;\n            display: block;\n        }\n    }\n\n    h3 {\n        text-transform: uppercase;\n        font-size: 20px;\n        font-weight: 300;\n        letter-spacing: -1.2px;\n        margin: 30px 0px 70px 0px;\n    }\n\n    h4 {\n        font-size: 23px;\n        font-weight: 300;\n        letter-spacing: -1.38px;\n         margin: 0px;\n         text-transform: uppercase;\n    }\n\n    p {\n        margin: 7px 0px 40px 0;\n        font-size: 31px;\n        font-weight: 900;\n        letter-spacing: 1.55px;\n\n        &:last-child {\n            margin-bottom:  0px;\n        }\n    }\n"])));
-var Form = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    .container {\n        width: 90%;\n        margin: auto;\n        display: block;\n\n        input, textarea  {\n            width: 100%;\n            padding: 20px;\n            margin: 20px 0px;\n            border: 0px;\n            border-bottom: ", ";\n            outline: none;\n            background: transparent;\n\n            &:focus, &:active, &:focus-visible {\n                border-bottom: ", ";\n            }\n\n            &::placeholder {\n                letter-spacing: -0.9px;\n                font-size: 15px;\n                color: ", ";\n            }\n\n        }\n\n        input  {\n            margin: 10px 0px;\n        }\n\n        textarea {\n            margin: 60px 0px;\n            resize: none;\n        }\n\n        button {\n            font-size: 38px;\n            letter-spacing: -2.28px;\n            font-weight: 900;\n            padding: 10px 50px;\n            box-sizing: border-box;\n            cursor: pointer;\n            filter: invert(1);\n            border-radius: 0px;\n        }\n    }\n"])), function (props) {
+}, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 100%;\n    margin: auto;\n    max-width: ", ";\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-end;\n    flex-wrap: wrap;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    @media (max-width: ", ") {\n        width: 100%;\n    }\n\n    h2 {\n        text-transform: uppercase;\n        font-size: 50px;\n        letter-spacing: -3px;\n        font-weight: 300;\n\n        span {\n            font-size: 79px;\n            font-weight: 900;\n            letter-spacing: -4.74px;\n            display: block;\n\n            @media (max-width: ", ") {\n                font-size: 39px;\n                letter-spacing: -1.5px;\n            }\n        }\n\n        @media (max-width: ", ") {\n            font-size: 25px;\n            letter-spacing: -1.5px;\n        }\n    }\n\n    h3 {\n        text-transform: uppercase;\n        font-size: 20px;\n        font-weight: 300;\n        letter-spacing: -1.2px;\n        margin: 30px 0px 70px 0px;\n\n        @media (max-width: ", ") {\n            font-size: 16px;\n        }\n\n        @media (max-width: ", ") {\n            font-size: 12px;\n            letter-spacing: -.72px;\n        }\n    }\n\n    h4 {\n        font-size: 23px;\n        font-weight: 300;\n        letter-spacing: -1.38px;\n        margin: 0px;\n        text-transform: uppercase;\n\n        @media (max-width: ", ") {\n            font-size: 18px;\n            letter-spacing: -1.08px;\n        }\n    }\n\n    p {\n        margin: 7px 0px 40px 0;\n        font-size: 31px;\n        font-weight: 900;\n        letter-spacing: 1.55px;\n\n        &:last-child {\n            margin-bottom:  0px;\n        }\n\n        @media (max-width: ", ") {\n            font-size: 25px;\n            letter-spacing: 1.25px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var Form = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 50%;\n\n    @media (max-width: ", ") {\n        width: 100%;\n    }\n\n    .container {\n        width: 90%;\n        margin: auto;\n        display: block;\n\n        @media (max-width: ", ") {\n            width: 100%;\n        }\n\n        input, textarea  {\n            width: 100%;\n            padding: 20px;\n            margin: 20px 0px;\n            border: 0px;\n            border-bottom: ", ";\n            outline: none;\n            background: transparent;\n            box-sizing: border-box;\n\n            &:focus, &:active, &:focus-visible {\n                border-bottom: ", ";\n            }\n\n            &::placeholder {\n                letter-spacing: -0.9px;\n                font-size: 15px;\n                color: ", ";\n            }\n\n        }\n\n        input  {\n            margin: 10px 0px;\n        }\n\n        textarea {\n            margin: 60px 0px;\n            resize: none;\n        }\n\n        button {\n            font-size: 38px;\n            letter-spacing: -2.28px;\n            font-weight: 900;\n            padding: 10px 50px;\n            box-sizing: border-box;\n            cursor: pointer;\n            color: ", ";\n            background: ", ";\n            border-radius: 0px;\n            margin: auto;\n            display: block;\n            border: 0px;\n\n            @media (max-width: ", ") {\n                margin-bottom: 60px;\n            }\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, function (props) {
   return "1px solid " + props.borderColor;
 }, function (props) {
   return "2px solid " + props.borderColor;
 }, function (props) {
   return props.text;
-});
+}, function (props) {
+  return props.buttonText;
+}, function (props) {
+  return props.buttonBackground;
+}, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
 
 function Contact() {
   var themeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ThemeContext);
@@ -1362,6 +1366,8 @@ function Contact() {
           children: "968137466"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Form, {
+        buttonText: themeContext.text,
+        buttonBackground: themeContext.background,
         borderColor: themeContext.background,
         text: themeContext.background,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -1414,15 +1420,15 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: ", ";\n    margin: auto;\n    width: 100%; \n    padding: 130px 0px;\n    box-sizing: border-box;\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px");
-var Content = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 60%;\n        margin: auto;\n        display: block;\n"])));
-var Logo = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    cursor: pointer;\n    img {\n        width: 70px;\n        margin: auto;\n        display: block;\n    }\n\n    h2 {\n        font-size: 50px;\n        font-weight: 900;\n        letter-spacing: -3px;\n        text-align: center;\n        text-transform: uppercase;\n        margin: 33px auto;\n        \n        span {\n            color: ", ";\n            text-shadow: ", ";\n        }\n\n    }\n"])), function (props) {
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: ", ";\n    margin: auto;\n    width: 100%; \n    padding: 130px 0px;\n    box-sizing: border-box;\n\n    @media (max-width: ", ") {\n        padding: 70px 0px;\n    }\n        \n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.constant.maxWidth + "px", _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    width: 60%;\n    margin: auto;\n    display: block;\n"])));
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    cursor: pointer;\n\n    img {\n        width: 70px;\n        margin: auto;\n        display: block;\n    }\n\n    h2 {\n        font-size: 50px;\n        font-weight: 900;\n        letter-spacing: -3px;\n        text-align: center;\n        text-transform: uppercase;\n        margin: 33px auto;\n\n        @media (max-width: ", ") {\n            font-size: 32px;\n            letter-spacing: -1.92px;\n        }\n        \n        span {\n            color: ", ";\n            text-shadow: ", ";\n        }\n\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md, function (props) {
   return props.theme.background;
 }, function (props) {
   return "-1px -1px 0 " + props.theme.text + ",0   -1px 0 " + props.theme.text + ",1px -1px 0 " + props.theme.text + ",1px  0   0 " + props.theme.text + ",1px  1px 0 " + props.theme.text + ",0    1px 0 " + props.theme.text + ",-1px  1px 0 " + props.theme.text + ",-1px  0   0 " + props.theme.text;
 });
-var Pages = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-bottom: 80px;\n\n    p {\n        font-size: 20px;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n        margin: 0px 30px;\n        cursor: pointer;\n    }\n"])));
-var Copyright = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    font-size: 20px;\n    font-weight: 300;\n    letter-spacing: -1.2px;\n    text-align: center;\n\n    span {\n        font-weight: 900;\n        text-decoration: underline;\n    }\n"])));
+var Pages = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-bottom: 80px;\n\n    p {\n        font-size: 20px;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n        margin: 0px 30px;\n        cursor: pointer;\n        white-space: nowrap;\n\n        @media (max-width: ", ") {\n            font-size: 15px;\n            letter-spacing: -.8px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
+var Copyright = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    font-size: 20px;\n    font-weight: 300;\n    letter-spacing: -1.2px;\n    text-align: center;\n\n    @media (max-width: ", ") {\n        font-size: 12px;\n        letter-spacing: -.7px;\n    }\n\n    span {\n        font-weight: 900;\n        text-decoration: underline;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_2__.dimensions.md);
 
 function Links(_ref) {
   var theme = _ref.theme;
@@ -1526,8 +1532,13 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div(_t
 
 function Homepage() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(Container, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Homepage_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Homepage_Citation__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      quote: "atrav\xE9s das ideias da nossa equipa, idealize o que deseja."
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Homepage_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      style: {
+        margin: "35vh 0px"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Homepage_Citation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        quote: "atrav\xE9s das ideias da nossa equipa, idealize o que deseja."
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Homepage_Portfolio__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       id: "about-container",
       style: {
@@ -1588,13 +1599,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var scroll = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__.keyframes)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  0% {\n    transform: translate3d(0, 0, 0);\n  }\n  100% {\n    transform: translate3d(-100vw, 0, 0);\n  }\n"])));
-var ScrollingRow = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n\tposition: absolute;\n\tdisplay: flex;\n\talign-items: center;\n    top: 0px;\n    z-index: 1;\n\n    p {\n        animation: ", " ;\n        animation-duration: 25s;\n        animation-iteration-count: infinite;\n        animation-timing-function: linear;\n        will-change: transform;\n        transform-style: preserve-3d;\n        display: inline-block;\n        margin: 100px 0px;\n        text-transform: uppercase;\n        font-size: 150px;\n        font-weight: 900;\n        color: ", ";\n        text-shadow: ", ";\n        &:after {\n            content: \"-\";\n            margin: 0px 50px;\n        }\n    }\n"])), scroll, function (props) {
+var ScrollingRow = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n\tposition: absolute;\n\tdisplay: flex;\n\talign-items: center;\n    top: 0px;\n    z-index: 1;\n\n    p {\n        animation: ", " ;\n        animation-duration: 25s;\n        animation-iteration-count: infinite;\n        animation-timing-function: linear;\n        will-change: transform;\n        transform-style: preserve-3d;\n        display: inline-block;\n        margin: 100px 0px;\n        text-transform: uppercase;\n        font-size: 150px;\n        font-weight: 900;\n        color: ", ";\n        text-shadow: ", ";\n        &:after {\n            content: \"-\";\n            margin: 0px 50px;\n\n            @media (max-width: ", ") {\n                margin: 0px 25px;\n            }\n        }\n\n        @media (max-width: ", ") {\n            font-size: 40px;\n        }\n    }\n"])), scroll, function (props) {
   return props.color;
 }, function (props) {
   return "-1px -1px 0 " + props.stroke + ",0   -1px 0 " + props.stroke + ",1px -1px 0 " + props.stroke + ",1px  0   0 " + props.stroke + ",1px  1px 0 " + props.stroke + ",0    1px 0 " + props.stroke + ",-1px  1px 0 " + props.stroke + ",-1px  0   0 " + props.stroke;
-});
-var CitationContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n\tz-index: 2;\n    position: relative;\n"])));
-var ImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n\twidth: 90%;\n    max-width: ", ";\n    height: 70vh;\n    margin: auto;\n    display: block;\n    position: relative;\n\n    img {\n        position: absolute;\n        height: 50vh;\n\n        &:first-child {\n            top: 0; right: 0px;\n            width: 70%;\n            object-fit: cover;\n        }\n\n        &:nth-child(2) {\n            bottom: 0; left: 0px;\n            width: 50%;\n            object-fit: cover;\n        }\n    }\n\n    div {\n        position: absolute;\n        bottom: 0; right: 0;\n        padding: 15px 60px;\n        font-size: 36px;\n        font-weight: 900;\n        font-stretch: normal;\n        font-style: normal;\n        line-height: 1.71;\n        letter-spacing: -2.88px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_4__.constant.maxWidth + "px");
+}, _helper__WEBPACK_IMPORTED_MODULE_4__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_4__.dimensions.md);
+var CitationContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n\tz-index: 2;\n    position: relative;\n    box-sizing: border-box;\n    padding: 25vh 0px;\n\n    @media (max-width: ", ") {\n        padding: 18vh 0px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_4__.dimensions.md);
+var ImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n\twidth: 90%;\n    max-width: ", ";\n    height: 70vh;\n    margin: auto;\n    display: block;\n    position: relative;\n\n    img {\n        position: absolute;\n        height: 50vh;\n\n        &:first-child {\n            top: 0; right: 0px;\n            width: 70%;\n            object-fit: cover;\n        }\n\n        &:nth-child(2) {\n            bottom: 0; left: 0px;\n            width: 50%;\n            object-fit: cover;\n        }\n    }\n\n    div {\n        position: absolute;\n        bottom: 0; right: 0;\n        padding: 15px 60px;\n        font-size: 36px;\n        font-weight: 900;\n        font-stretch: normal;\n        font-style: normal;\n        line-height: 1.71;\n        letter-spacing: -2.88px;\n\n        @media (max-width: ", ") {\n            padding: 10px 30px;\n            font-size: 18px;\n            letter-spacing: -1px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_4__.constant.maxWidth + "px", _helper__WEBPACK_IMPORTED_MODULE_4__.dimensions.md);
 
 function About(_ref) {
   var theme = _ref.theme;
@@ -1697,7 +1708,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: ", ";\n    width: 90%;\n    margin: auto;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 102px;\n    font-weight: 900;\n    font-stretch: normal;\n    font-style: normal;\n    line-height: 0.84;\n    letter-spacing: -6.12px;\n    padding: 20vh 0px;\n    box-sizing: border-box;\n    z-index: 2;\n    position: relative;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: ", ";\n    width: 90%;\n    margin: auto;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 102px;\n    font-weight: 900;\n    font-stretch: normal;\n    font-style: normal;\n    line-height: 0.84;\n    letter-spacing: -6.12px;\n    box-sizing: border-box;\n    z-index: 2;\n    position: relative;\n\n    @media (max-width: ", ") {\n        font-size: 43px;\n        text-align: center;\n        letter-spacing: -2.58px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px", _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
 
 function Citation(_ref) {
   var quote = _ref.quote;
@@ -1740,12 +1751,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 100%;\n    min-height: 100vh;\n    padding: 0px 100px ;\n    box-sizing: border-box;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    position: relative;\n"])));
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 100%;\n    min-height: calc(100vh - ", ");\n    padding: 0px 100px ;\n    box-sizing: border-box;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    position: relative;\n    white-space: nowrap;\n\n    @media (max-width: ", ") {\n        padding: 0px 30px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.navbarHeight + "px", _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm);
 var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding-bottom: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    position: relative;\n    width: 100%;\n    text-transform: uppercase;  \n    line-height: 0.85;\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.navbarHeight + "px");
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    font-size: 114px;\n    font-weight: 300;\n    letter-spacing: -6.84px;\n\n    span {\n        font-weight: 900;           \n    }\n"])));
-var SocialContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    transform: rotate(90deg);\n    padding-bottom: 300px;\n    display: block;\n    white-space: nowrap; \n    position: absolute;\n    right: 0px;\n    font-size: 22px;\n    font-weight: 500;\n    letter-spacing: -1.36px;\n    opacity: 0.7;\n\n    span {\n        margin: 0px 25px;\n    }\n"])));
-var ThemeSwitch = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 90px;\n    bottom: 5vh;\n    width: 35px; height: 35px;\n    cursor: pointer;\n"])));
-var ScrollContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    position: absolute;\n    left: 100px;\n    bottom: 5vh;\n    cursor: pointer;\n"])));
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    font-size: 6vw;\n    font-weight: 300;\n    letter-spacing: -6.84px;\n    \n    @media (max-width: ", ") {\n        letter-spacing: -2.22px;\n    }\n\n    @media (max-width: ", ") {\n        font-size: 37px;\n    }\n\n    span {\n        font-weight: 900;           \n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm);
+var SocialContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    transform: rotate(90deg);\n    padding-bottom: 300px;\n    display: block;\n    white-space: nowrap; \n    position: absolute;\n    right: 0px;\n    font-size: 22px;\n    font-weight: 500;\n    letter-spacing: -1.36px;\n    opacity: 0.7;\n\n    @media (max-width: ", ") {\n        display: none;\n\n    }\n\n    span {\n        margin: 0px 25px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var ThemeSwitch = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 90px;\n    bottom: 5vh;\n    width: 35px; height: 35px;\n    cursor: pointer;\n\n    @media (max-width: ", ") {\n        right: 20px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var ScrollContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    position: absolute;\n    left: 100px;\n    bottom: 5vh;\n    cursor: pointer;\n\n    @media (max-width: ", ") {\n        left: 30px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
 
 function Header(_ref) {
   var theme = _ref.theme,
@@ -1826,11 +1838,16 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin: 20vh 0px 20vh ", ";\n    box-sizing: border-box;\n    \n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.horizontalPadding + "px");
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-size: 102px;\n    font-weight: 900;\n    margin-bottom: -22px;\n    z-index: 2;\n    position: relative;\n"])));
-var CarouselContainer = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(react_multi_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    min-height: 300px;\n    width: 100%;\n\n    .image-item {\n        padding-right: 50px;\n    }\n\n    .react-multiple-carousel__arrow {\n        z-index: 8 !important;\n    }\n\n"])));
-var Item = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 100%;\n    z-index: 1;\n    \n\n    .image-container {\n        position: relative;\n        overflow: hidden;\n        width: 100%;\n        height: 500px;\n        background: ", ";\n        background-position: center;\n        background-size: cover;\n        background-repeat: no-repeat;\n        transition: scale 1s ease-in-out;\n\n        &:hover {\n            scale: 1.1;\n            .overlay {\n                opacity: .5;\n            }\n        }\n\n        .overlay {\n            position: absolute;\n            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.75) 80%, #000);\n            top: 0; bottom: 0;left: 0%; right: 0;\n            width: 100%;\n            height: 100%;\n            transition: opacity .5s ease-in-out;\n            opacity: 1;\n        }\n    }\n\n    \n\n\n    .info {\n        position: absolute;\n        bottom: 20px;left: 20px;\n        color:  white;\n\n        h3 {\n            font-size: 28px;\n            letter-spacing: 1.4px;\n            font-weight: 900;\n            text-transform: uppercase;\n            margin-bottom: 0px;\n        }\n\n        p {\n            margin: 0px;\n            font-size: 24px;\n            letter-spacing: -1.2px;\n            font-weight: 300;\n        }\n    }\n\n"])), function (props) {
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin: 20vh 0px 20vh ", ";\n    box-sizing: border-box;\n\n    @media (max-width: ", ") {\n        margin-left: 0px;\n    }\n    \n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.horizontalPadding + "px", _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-size: 102px;\n    font-weight: 900;\n    margin-bottom: 0px;\n    z-index: 2;\n    position: relative;\n\n    @media (max-width: ", ") {\n        font-size: 82px;\n        text-align: center;\n        margin-bottom: 40px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var CarouselContainer = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(react_multi_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    min-height: 300px;\n    width: 100%;\n\n    .image-item {\n        padding-right: 50px;\n\n        @media (max-width: ", ") {\n            padding: 0px;\n        }\n    }\n\n    .react-multiple-carousel__arrow {\n        z-index: 8 !important;\n    }\n\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm);
+var Item = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 100%;\n    z-index: 1;\n   \n\n    .image-container {\n        position: relative;\n        overflow: hidden;\n        width: 100%;\n        height: 500px;\n        background: ", ";\n        background-position: center;\n        background-size: cover;\n        background-repeat: no-repeat;\n        transition: scale 1s ease-in-out;\n\n        @media (min-width: ", ") {\n            &:hover {\n                scale: 1.1;\n                .overlay {\n                    opacity: .5;\n                }\n            }\n        }\n\n        @media (min-width: ", ") {\n            &:hover {\n                scale: 1.1;\n                .overlay {\n                    opacity: .5;\n                }\n            }\n        }\n\n        .overlay {\n            position: absolute;\n            background-image: ", ";\n            top: 0; bottom: 0;left: 0%; right: 0;\n            width: 100%;\n            height: 100%;\n            transition: opacity .5s ease-in-out;\n            opacity: 1;\n        }\n    }\n\n    \n\n\n    .info {\n        position: absolute;\n        bottom: 20px;left: 20px;\n        color: ", ";\n\n        h3 {\n            font-size: 28px;\n            letter-spacing: 1.4px;\n            font-weight: 900;\n            text-transform: uppercase;\n            margin-bottom: 0px;\n        }\n\n        p {\n            margin: 0px;\n            font-size: 24px;\n            letter-spacing: -1.2px;\n            font-weight: 300;\n        }\n    }\n\n"])), function (props) {
   return "url(" + props.background + ")";
+}, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, function (props) {
+  return "linear-gradient(to bottom, rgba(255, 255, 255, 0), " + props.backgroundWithOpacity + " 80%, " + props.backgroundcolor + ")";
+}, function (props) {
+  return props.textColor;
 });
 var items = [{
   title: "Golden Grill",
@@ -1865,11 +1882,14 @@ var items = [{
 }];
 
 function Portfolio() {
+  var themeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(styled_components__WEBPACK_IMPORTED_MODULE_5__.ThemeContext);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Container, {
     id: "Portfolio",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Title, {
       children: "portf\xF3lio"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CarouselContainer, {
+      autoPlay: false,
+      interval: 2000000000,
       arrows: false,
       itemClass: "image-item",
       partialVisible: true,
@@ -1879,7 +1899,10 @@ function Portfolio() {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
           to: item.to,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Item, {
+            textColor: themeContext.text,
             background: item.image,
+            backgroundWithOpacity: themeContext.backgroundWithOpacity,
+            backgroundcolor: themeContext.background,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "image-container",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -1929,9 +1952,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 90%;\n    display: block;\n    max-width: ", ";\n    margin: 20vh auto;\n    \n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.maxWidth + "px");
-var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n\n    h2 {\n        width: 70%;\n        font-size: 80px;\n        font-weight: 900;\n        line-height: 0.74;\n        letter-spacing: -0.16px;\n        margin: 0px;\n    }\n\n    p {\n        margin: 0px;\n        width: 30%;\n        font-size: 20px;\n        line-height: 1.45;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n    }\n    \n"])));
-var StepsContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    \n"])));
-var Step = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 33%;\n    padding: 40px;\n    box-sizing: border-box;\n\n    h3, h4, h5 {\n        margin: 0px;\n    }\n\n    h3 {\n        text-align: center;\n        font-size: 203px;\n        font-weight: bold;\n        letter-spacing: -0.41px;\n        line-height: auto;\n    }\n\n    h4 {\n        font-size: 39px;\n        font-style: italic;\n        font-weight: 900;\n        letter-spacing: -0.08px;\n    }\n\n    h5 {\n        font-size: 31px;\n        font-weight: 300;\n        letter-spacing: -0.06px;\n    }\n"])));
+var TitleContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n\n    h2 {\n        width: 70%;\n        font-size: 80px;\n        font-weight: 900;\n        line-height: 0.74;\n        letter-spacing: -0.16px;\n        margin: 0px;\n\n        @media (max-width: ", ") {\n            width: 100%;\n            font-size: 40px;\n            margin-bottom: 20px;\n        }\n    }\n\n    p {\n        margin: 0px;\n        width: 30%;\n        font-size: 20px;\n        line-height: 1.45;\n        letter-spacing: -1.2px;\n        font-weight: 300;\n\n        @media (max-width: ", ") {\n            width: 100%;\n            font-size: 16px;\n        }\n    }\n    \n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
+var StepsContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n"])));
+var Step = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 33%;\n    padding: 40px;\n    box-sizing: border-box;\n\n    @media (max-width: ", ") {\n        width: 50%;\n        padding: 10px;\n    }\n\n    h3, h4, h5 {\n        margin: 0px;\n    }\n\n    h3 {\n        text-align: center;\n        font-size: 203px;\n        font-weight: bold;\n        letter-spacing: -0.41px;\n        line-height: auto;\n\n        @media (max-width: ", ") {\n            font-size: 69px;\n            text-align: left;\n        }\n    }\n\n    h4 {\n        font-size: 39px;\n        font-style: italic;\n        font-weight: 900;\n        letter-spacing: -0.08px;\n\n        @media (max-width: ", ") {\n            font-size: 13px;\n        }\n    }\n\n    h5 {\n        font-size: 31px;\n        font-weight: 300;\n        letter-spacing: -0.06px;\n\n        @media (max-width: ", ") {\n            font-size: 9px;\n        }\n    }\n\n    p {\n        @media (max-width: ", ") {\n            font-size: 13px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
 
 function Process() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Container, {
@@ -2091,7 +2114,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 100%;\n    height: ", ";\n    padding: 30px 100px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    z-index: 100;\n\n    img {\n        height: 80px;\n    }\n\n    .menu, span {\n        font-weight: 900;\n        font-size: 27px;\n        font-stretch: normal;\n        font-style: normal;\n        line-height: 0.85;\n        letter-spacing: -2.62px;\n        cursor: pointer;\n\n        &::after {\n            content: \".\";\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.navbarHeight + "px");
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 100%;\n    height: ", ";\n    padding: 30px 100px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    z-index: 100;\n\n    img {\n        height: 80px;\n    }\n\n    .menu, span {\n        font-weight: 900;\n        font-size: 27px;\n        font-stretch: normal;\n        font-style: normal;\n        line-height: 0.85;\n        letter-spacing: -2.62px;\n        cursor: pointer;\n\n        &::after {\n            content: \".\";\n        }\n    }\n\n    @media (max-width: ", ") {\n        padding: 10px 30px;\n        height: calc(", " - 50px);\n\n        span {\n            font-size: 16px;\n        }\n\n        img {\n            height: 35px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.navbarHeight + "px", _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm, _helper__WEBPACK_IMPORTED_MODULE_1__.constant.navbarHeight + "px");
 var LanguageIndicator = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    filter: ", ";\n    z-index: 100;\n    &:nth-child(2) {\n        margin-left: 13px;\n    }\n"])), function (props) {
   return props.active ? "opacity(1)" : "opacity(.4)";
 });
@@ -2520,12 +2544,14 @@ __webpack_require__.r(__webpack_exports__);
 var light = {
   body: '#FFF',
   text: '#000000',
+  backgroundWithOpacity: 'rgba(255, 255, 255, 0.75)',
   toggleBorder: '#FFF',
   background: '#ffffff'
 };
 var dark = {
   body: '#363537',
   text: '#ffffff',
+  backgroundWithOpacity: 'rgba(0, 0, 0, 0.75)',
   toggleBorder: '#6B8096',
   background: '#000000'
 };
@@ -2548,6 +2574,7 @@ function fetchReverseTheme(aTheme) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "constant": () => (/* binding */ constant),
+/* harmony export */   "dimensions": () => (/* binding */ dimensions),
 /* harmony export */   "getCarouselBreakpoints": () => (/* binding */ getCarouselBreakpoints)
 /* harmony export */ });
 var constant = {
@@ -2555,8 +2582,16 @@ var constant = {
   horizontalPadding: 100,
   maxWidth: 1270
 };
+var dimensions = {
+  "xs": "575px",
+  "sm": "576px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1200px",
+  "xxl": "1600px"
+};
 function getCarouselBreakpoints(aItems) {
-  var aBreakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [[0, 600], [600, 1024], [1024, 1400], [1400, 1800], [1800, 100000]];
+  var aBreakpoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [[0, 800], [800, 1024], [1024, 1400], [1400, 1800], [1800, 100000]];
   var aItemsToSlide = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [1, 1, 1, 1, 1];
   return {
     desktop: {
@@ -2593,7 +2628,7 @@ function getCarouselBreakpoints(aItems) {
       },
       items: aItems[1],
       itemsToSlide: aItemsToSlide[1],
-      partialVisibilityGutter: 40
+      partialVisibilityGutter: 100
     },
     mobile: {
       breakpoint: {
@@ -2602,7 +2637,7 @@ function getCarouselBreakpoints(aItems) {
       },
       items: aItems[0],
       itemsToSlide: aItemsToSlide[0],
-      partialVisibilityGutter: 40
+      partialVisibilityGutter: 0
     }
   };
 }

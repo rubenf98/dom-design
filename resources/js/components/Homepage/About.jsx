@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import Citation from './Citation';
 import { fetchTheme } from '../themes';
 import { connect } from "react-redux";
-import { constant } from '../../helper';
+import { constant, dimensions } from '../../helper';
 import { Link } from 'react-router-dom';
 
 const scroll = keyframes`
@@ -48,6 +48,14 @@ const ScrollingRow = styled.div`
         &:after {
             content: "-";
             margin: 0px 50px;
+
+            @media (max-width: ${dimensions.md}) {
+                margin: 0px 25px;
+            }
+        }
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 40px;
         }
     }
 `;
@@ -55,6 +63,12 @@ const ScrollingRow = styled.div`
 const CitationContainer = styled.div`
 	z-index: 2;
     position: relative;
+    box-sizing: border-box;
+    padding: 25vh 0px;
+
+    @media (max-width: ${dimensions.md}) {
+        padding: 18vh 0px;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -92,6 +106,12 @@ const ImageContainer = styled.div`
         font-style: normal;
         line-height: 1.71;
         letter-spacing: -2.88px;
+
+        @media (max-width: ${dimensions.md}) {
+            padding: 10px 30px;
+            font-size: 18px;
+            letter-spacing: -1px;
+        }
     }
 `;
 

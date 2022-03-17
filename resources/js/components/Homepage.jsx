@@ -16,7 +16,12 @@ function Homepage() {
     return (
         <Container >
             <Header />
-            <Citation quote="através das ideias da nossa equipa, idealize o que deseja." />
+
+            <div style={{ margin: "35vh 0px" }}>
+                <Citation quote="através das ideias da nossa equipa, idealize o que deseja." />
+            </div>
+
+
             <Portfolio />
             <div id="about-container" style={{ position: "relative", overflowX: "hidden" }}>
                 <About />

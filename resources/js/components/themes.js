@@ -1,6 +1,7 @@
 export const light = {
     body: '#FFF',
     text: '#000000',
+    backgroundWithOpacity: 'rgba(255, 255, 255, 0.75)',
     toggleBorder: '#FFF',
     background: '#ffffff',
 }
@@ -8,6 +9,7 @@ export const light = {
 export const dark = {
     body: '#363537',
     text: '#ffffff',
+    backgroundWithOpacity: 'rgba(0, 0, 0, 0.75)',
     toggleBorder: '#6B8096',
     background: '#000000',
 }

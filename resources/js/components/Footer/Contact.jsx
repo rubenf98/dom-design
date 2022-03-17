@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { constant } from '../../helper';
+import { constant, dimensions } from '../../helper';
 import { ThemeContext } from 'styled-components'
 
 const Container = styled.div`
@@ -10,6 +10,10 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 0px 100px;
+    @media (max-width: ${dimensions.md}) {
+        padding: 0px 30px;
+    }
 `;
 
 const Content = styled.div`
@@ -19,10 +23,15 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
 `;
 
 const Info = styled.div`
     width: 50%;
+
+    @media (max-width: ${dimensions.md}) {
+        width: 100%;
+    }
 
     h2 {
         text-transform: uppercase;
@@ -35,6 +44,16 @@ const Info = styled.div`
             font-weight: 900;
             letter-spacing: -4.74px;
             display: block;
+
+            @media (max-width: ${dimensions.md}) {
+                font-size: 39px;
+                letter-spacing: -1.5px;
+            }
+        }
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 25px;
+            letter-spacing: -1.5px;
         }
     }
 
@@ -44,14 +63,28 @@ const Info = styled.div`
         font-weight: 300;
         letter-spacing: -1.2px;
         margin: 30px 0px 70px 0px;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 16px;
+        }
+
+        @media (max-width: ${dimensions.sm}) {
+            font-size: 12px;
+            letter-spacing: -.72px;
+        }
     }
 
     h4 {
         font-size: 23px;
         font-weight: 300;
         letter-spacing: -1.38px;
-         margin: 0px;
-         text-transform: uppercase;
+        margin: 0px;
+        text-transform: uppercase;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 18px;
+            letter-spacing: -1.08px;
+        }
     }
 
     p {
@@ -63,16 +96,29 @@ const Info = styled.div`
         &:last-child {
             margin-bottom:  0px;
         }
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 25px;
+            letter-spacing: 1.25px;
+        }
     }
 `;
 
 const Form = styled.div`
     width: 50%;
 
+    @media (max-width: ${dimensions.md}) {
+        width: 100%;
+    }
+
     .container {
         width: 90%;
         margin: auto;
         display: block;
+
+        @media (max-width: ${dimensions.md}) {
+            width: 100%;
+        }
 
         input, textarea  {
             width: 100%;
@@ -82,6 +128,7 @@ const Form = styled.div`
             border-bottom: ${props => "1px solid " + props.borderColor};
             outline: none;
             background: transparent;
+            box-sizing: border-box;
 
             &:focus, &:active, &:focus-visible {
                 border-bottom: ${props => "2px solid " + props.borderColor};
@@ -111,8 +158,16 @@ const Form = styled.div`
             padding: 10px 50px;
             box-sizing: border-box;
             cursor: pointer;
-            filter: invert(1);
+            color: ${props => props.buttonText};
+            background: ${props => props.buttonBackground};
             border-radius: 0px;
+            margin: auto;
+            display: block;
+            border: 0px;
+
+            @media (max-width: ${dimensions.md}) {
+                margin-bottom: 60px;
+            }
         }
     }
 `;
@@ -132,7 +187,7 @@ function Contact() {
                     <h4>numero de telemovel</h4>
                     <p>968137466</p>
                 </Info>
-                <Form borderColor={themeContext.background} text={themeContext.background}>
+                <Form buttonText={themeContext.text} buttonBackground={themeContext.background} borderColor={themeContext.background} text={themeContext.background}>
                     <div className='container'>
                         <input placeholder='nome' />
                         <input placeholder='email' />

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ScrollIndicator from './ScrollIndicator'
-import { constant } from "../../helper"
+import { constant, dimensions } from "../../helper"
 import TopIndicator from './TopIndicator';
 
 const Title = styled.h1`
@@ -9,6 +9,11 @@ const Title = styled.h1`
     letter-spacing: -9px;
     font-weight: 900;
     text-align: center;
+
+    @media (max-width: ${dimensions.md}) {
+        font-size: 51px;
+        letter-spacing: -3px;
+    }
 `;
 
 const ScrollContainer = styled.div`
@@ -25,6 +30,13 @@ const DetailsContainer = styled.div`
     margin: auto;
     max-width: ${constant.maxWidth + "px"};
     margin-bottom: 175px;
+
+    @media (max-width: ${dimensions.md}) {
+        margin-bottom: 75px;
+        width: 100%;
+        padding: 0px 30px;
+        box-sizing: border-box;
+    }
 `;
 
 const Detail = styled.div`
@@ -37,6 +49,11 @@ const Detail = styled.div`
         font-weight: 900;
         margin: 0px;
         text-transform: uppercase;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 17px;
+            letter-spacing: .85px;
+        }
     }
 
     p {
@@ -44,6 +61,11 @@ const Detail = styled.div`
         letter-spacing: -1.14px;
         font-weight: normal;
         margin: 0px;
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 13px;
+            letter-spacing: -.8px;
+        }
     }
 `;
 
@@ -61,6 +83,10 @@ const Info = styled.div`
     margin: auto;
     display: block;
     max-width: ${constant.maxWidth + "px"};
+
+    @media (max-width: ${dimensions.md}) {
+        padding: 30px;
+    }
     
     h3 {
         font-size: 28px;
@@ -83,6 +109,10 @@ const TopContainer = styled.div`
     display: flex;
     max-width: ${constant.maxWidth + "px"};
     justify-content: end;
+
+    @media (max-width: ${dimensions.md}) {
+        display: none;
+    }
 `;
 
 const DetailTemplate = ({ fieldTitle, fieldDesc }) => (
