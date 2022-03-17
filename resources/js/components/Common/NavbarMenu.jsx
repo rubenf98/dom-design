@@ -6,7 +6,7 @@ import { handleMenu } from '../../redux/application/actions';
 
 const Container = styled.div`
     width: 100%;
-    height: ${props => props.visible ? "100%" : "0%"};
+    height: ${props => props.visible ? "100vh" : "0%"};
     z-index: 99;
     position: absolute;
     top: 0px; right: 0px; left: 0px; bottom: 0px;

@@ -6,8 +6,10 @@ import { ThemeContext } from 'styled-components'
 const Container = styled.div`
     background: ${props => props.background};
     color: ${props => props.text};
-    padding: 200px 0px;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 `;
 
 const Content = styled.div`

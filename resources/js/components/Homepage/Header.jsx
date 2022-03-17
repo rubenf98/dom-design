@@ -7,7 +7,7 @@ import ScrollIndicator from '../Common/ScrollIndicator';
 
 const Container = styled.div`
     width: 100%;
-    min-height: calc(100vh - ${constant.navbarHeight + "px"});
+    min-height: 100vh;
     padding: 0px 100px ;
     box-sizing: border-box;
     display: flex;

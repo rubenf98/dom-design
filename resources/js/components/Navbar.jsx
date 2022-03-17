@@ -15,7 +15,6 @@ const Container = styled.div`
     align-items: center;
     box-sizing: border-box;
     z-index: 100;
-    
 
     img {
         height: 80px;

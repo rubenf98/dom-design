@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import Footer from './Footer';
 
 const Container = styled.div`
-//
+ //
 `;
 
 

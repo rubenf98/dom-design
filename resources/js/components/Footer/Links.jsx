@@ -19,7 +19,7 @@ const Content = styled.div`
         display: block;
 `;
 const Logo = styled.div`
-    
+    cursor: pointer;
     img {
         width: 70px;
         margin: auto;
@@ -63,6 +63,7 @@ const Pages = styled.div`
         letter-spacing: -1.2px;
         font-weight: 300;
         margin: 0px 30px;
+        cursor: pointer;
     }
 `;
 
@@ -78,21 +79,24 @@ const Copyright = styled.div`
     }
 `;
 function Links({ theme }) {
-    const themeContext = useContext(ThemeContext)
+    const themeContext = useContext(ThemeContext);
 
-    console.log('Current theme: ', themeContext)
+    const handleClick = (filter) => {
+        var element = document.getElementById(filter);
+        window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
+    }
 
     return (
         <Container>
             <Content>
-                <Logo theme={themeContext}>
+                <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} theme={themeContext}>
                     <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
                     <h2><span>dom</span> design</h2>
                 </Logo>
                 <Pages>
-                    <p>sobre nós</p>
-                    <p>portfólio</p>
-                    <p>contactos</p>
+                    <p onClick={() => handleClick('about-container')} >sobre nós</p>
+                    <p onClick={() => handleClick('Portfolio')} >portfólio</p>
+                    <p onClick={() => handleClick('Contact')} >contactos</p>
                 </Pages>
             </Content>
             <Copyright>

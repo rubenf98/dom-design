@@ -9,5 +9,6 @@ export const GlobalStyles = createGlobalStyle`
     font-stretch: normal;
     font-style: normal;
     overflow-y: ${props => props.overflow};
+    position: relative;
   }
 `

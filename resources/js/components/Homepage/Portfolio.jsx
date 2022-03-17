@@ -14,7 +14,7 @@ const Container = styled.div`
 const Title = styled.h2`
     font-size: 102px;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: -22px;
     z-index: 2;
     position: relative;
 `;
@@ -36,20 +36,40 @@ const CarouselContainer = styled(Carousel)`
 const Item = styled.div`
     width: 100%;
     z-index: 1;
-    position: relative;
+    
 
-    img {
+    .image-container {
+        position: relative;
+        overflow: hidden;
         width: 100%;
-        height: 100%;
+        height: 500px;
+        background: ${props => "url(" + props.background + ")"};
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: scale 1s ease-in-out;
+
+        &:hover {
+            scale: 1.1;
+            .overlay {
+                opacity: .5;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.75) 80%, #000);
+            top: 0; bottom: 0;left: 0%; right: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity .5s ease-in-out;
+            opacity: 1;
+        }
     }
 
-    .overlay {
-        position: absolute;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(56, 56, 56, 0.78) 78%, #000);
-        top: 0; bottom: 0;left: 0%; right: 0;
-        width: 100%;
-        height: 100%;
-    }
+    
+
+
     .info {
         position: absolute;
         bottom: 20px;left: 20px;
@@ -75,9 +95,9 @@ const Item = styled.div`
 
 
 const items = [
-    { title: "braseiro burguer", category: "restaurante", image: "/image/portfolio/placeholder.jpg", to: "/project/braseiro351" },
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
+    { title: "Golden Grill", category: "restaurante", image: "/image/portfolio/golden_grill/01.jpg", to: "/project/braseiro351" },
+    { title: "Hotel Calhau", category: "hotel", image: "/image/portfolio/hotel_calhau/01.jpg", to: "lorem" },
+    { title: "Barber", category: "barbeiro", image: "/image/portfolio/barber/01.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
     { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
@@ -95,9 +115,12 @@ function Portfolio() {
             >
                 {items.map((item, index) => (
                     <Link to={item.to}>
-                        <Item key={index} >
-                            <div className='overlay' />
-                            <img src={item.image} alt={item.title} />
+                        <Item key={index} background={item.image} >
+
+                            <div className='image-container'>
+                                <div className='overlay' />
+                            </div>
+
                             <div className='info' >
                                 <h3>{item.title}</h3>
                                 <p>{item.category}</p>
