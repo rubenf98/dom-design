@@ -1,8 +1,21 @@
 import React, { useContext } from 'react'
 import { connect } from 'react-redux';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { ThemeContext } from 'styled-components';
 import { handleMenu } from '../../redux/application/actions';
+import { dimensions } from '../../helper';
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 const Container = styled.div`
     width: 100%;
@@ -17,18 +30,26 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: height 1s ease-in-out;
 
     .links-container {
         margin: auto;
         text-align: center;
-
+        
         p {
+            opacity: ${props => props.visible ? "1" : "0"};
+            transition: opacity 3s ease-in-out;
             font-size: 86px;
             letter-spacing: -5.16px;
             font-weight: 900;
             margin: 10px 0px;
             display: block;
             cursor: pointer;
+            animation: ${props =>
+            props.visible &&
+            css`
+                ${fadeIn} 2s linear
+                `};
         }
     }
 `;

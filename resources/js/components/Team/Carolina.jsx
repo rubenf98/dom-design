@@ -8,7 +8,7 @@ function Carolina() {
                 title: "carolina andrade",
                 previous: "michael",
                 next: "",
-                image: "/image/team/placeholder",
+                image: "/image/team/carolina",
                 about: {
                     title: "designer de espaços",
                     paragraphs: [

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { constant, dimensions } from '../../helper';
 import { ThemeContext } from 'styled-components'
+import AnimationContainer from '../Common/AnimationContainer';
 
 const Container = styled.div`
     background: ${props => props.background};
@@ -29,7 +30,7 @@ const Content = styled.div`
 const Info = styled.div`
     width: 50%;
 
-    @media (max-width: ${dimensions.md}) {
+    @media (max-width: ${dimensions.lg}) {
         width: 100%;
     }
 
@@ -107,7 +108,7 @@ const Info = styled.div`
 const Form = styled.div`
     width: 50%;
 
-    @media (max-width: ${dimensions.md}) {
+    @media (max-width: ${dimensions.lg}) {
         width: 100%;
     }
 
@@ -116,7 +117,7 @@ const Form = styled.div`
         margin: auto;
         display: block;
 
-        @media (max-width: ${dimensions.md}) {
+        @media (max-width: ${dimensions.lg}) {
             width: 100%;
         }
 
@@ -165,7 +166,7 @@ const Form = styled.div`
             display: block;
             border: 0px;
 
-            @media (max-width: ${dimensions.md}) {
+            @media (max-width: ${dimensions.lg}) {
                 margin-bottom: 60px;
             }
         }
@@ -179,20 +180,30 @@ function Contact() {
         <Container id="Contact" background={themeContext.text} text={themeContext.background}>
             <Content>
                 <Info>
-                    <h2>vamos <span>falar.</span></h2>
-                    <h3>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </h3>
+                    <AnimationContainer animateIn="fadeInLeft">
+                        <h2>vamos <span>falar.</span></h2>
+                        <h3>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </h3>
 
-                    <h4>EMAIL</h4>
-                    <p>domdesign@outlook.pt</p>
-                    <h4>numero de telemovel</h4>
-                    <p>968137466</p>
+                        <h4>EMAIL</h4>
+                        <p>domdesign@outlook.pt</p>
+                        <h4>numero de telemovel</h4>
+                        <p>968137466</p>
+                    </AnimationContainer>
                 </Info>
                 <Form buttonText={themeContext.text} buttonBackground={themeContext.background} borderColor={themeContext.background} text={themeContext.background}>
                     <div className='container'>
-                        <input placeholder='nome' />
-                        <input placeholder='email' />
-                        <textarea rows="6" placeholder='fale connosco' />
-                        <button type="submit">enviar</button>
+                        <AnimationContainer animateIn="fadeInUp">
+                            <input placeholder='nome' />
+                        </AnimationContainer>
+                        <AnimationContainer animateIn="fadeInUp">
+                            <input placeholder='email' />
+                        </AnimationContainer>
+                        <AnimationContainer animateIn="fadeInUp">
+                            <textarea rows="6" placeholder='fale connosco' />
+                        </AnimationContainer>
+                        <AnimationContainer animateIn="fadeInUp">
+                            <button type="submit">enviar</button>
+                        </AnimationContainer>
                     </div>
                 </Form>
 

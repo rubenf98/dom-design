@@ -7,6 +7,8 @@
 
     <title>DOM DESIGN</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +22,15 @@
             scroll-behavior: smooth;
         }
 
-        html {
-            overflow: scroll;
-            overflow-x: hidden;
-            overflow: -moz-scrollbars-none;
+
+        @-webkit-keyframes close-loader {
+            0% {
+                height: 100vh;
+            }
+
+            100% {
+                height: 0vh;
+            }
         }
 
         .full-page-loader {
@@ -35,10 +42,25 @@
             background: black;
             box-sizing: border-box;
             overflow: hidden;
+
+
         }
 
         .logo-animation {
             width: 100px;
+            -webkit-animation: remove-logo 1s forwards;
+            animation: remove-logo 1s forwards;
+            animation-delay: 5s;
+        }
+
+        @-webkit-keyframes remove-logo {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
 
         @-webkit-keyframes animate-svg-stroke-1 {
@@ -65,7 +87,7 @@
             }
         }
 
-        @-webkit-keyframes animate-svg-fill-1 {
+        @-webkit-keyframes animate-svg-fill {
             0% {
                 fill: transparent
             }
@@ -75,7 +97,7 @@
             }
         }
 
-        @keyframes animate-svg-fill-1 {
+        @keyframes animate-svg-fill {
             0% {
                 fill: transparent
             }
@@ -86,8 +108,8 @@
         }
 
         .svg-elem-1 {
-            -webkit-animation: animate-svg-stroke-1 3s ease-in-out 0s both, animate-svg-fill-1 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3s both;
-            animation: animate-svg-stroke-1 3s ease-in-out 0s both, animate-svg-fill-1 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3s both
+            -webkit-animation: animate-svg-stroke-1 3s ease-in-out 0s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3s both;
+            animation: animate-svg-stroke-1 3s ease-in-out 0s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3s both
         }
 
         @-webkit-keyframes animate-svg-stroke-2 {
@@ -114,29 +136,9 @@
             }
         }
 
-        @-webkit-keyframes animate-svg-fill-2 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
-        @keyframes animate-svg-fill-2 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
         .svg-elem-2 {
-            -webkit-animation: animate-svg-stroke-2 3s ease-in-out 0.12s both, animate-svg-fill-2 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.1s both;
-            animation: animate-svg-stroke-2 3s ease-in-out 0.12s both, animate-svg-fill-2 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.1s both
+            -webkit-animation: animate-svg-stroke-2 3s ease-in-out 0.12s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.1s both;
+            animation: animate-svg-stroke-2 3s ease-in-out 0.12s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.1s both
         }
 
         @-webkit-keyframes animate-svg-stroke-3 {
@@ -163,29 +165,9 @@
             }
         }
 
-        @-webkit-keyframes animate-svg-fill-3 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
-        @keyframes animate-svg-fill-3 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
         .svg-elem-3 {
-            -webkit-animation: animate-svg-stroke-3 3s ease-in-out 0.24s both, animate-svg-fill-3 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.2s both;
-            animation: animate-svg-stroke-3 3s ease-in-out 0.24s both, animate-svg-fill-3 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.2s both
+            -webkit-animation: animate-svg-stroke-3 3s ease-in-out 0.24s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.2s both;
+            animation: animate-svg-stroke-3 3s ease-in-out 0.24s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.2s both
         }
 
         @-webkit-keyframes animate-svg-stroke-4 {
@@ -212,29 +194,9 @@
             }
         }
 
-        @-webkit-keyframes animate-svg-fill-4 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
-        @keyframes animate-svg-fill-4 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
         .svg-elem-4 {
-            -webkit-animation: animate-svg-stroke-4 3s ease-in-out 0.36s both, animate-svg-fill-4 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.3s both;
-            animation: animate-svg-stroke-4 3s ease-in-out 0.36s both, animate-svg-fill-4 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.3s both
+            -webkit-animation: animate-svg-stroke-4 3s ease-in-out 0.36s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.3s both;
+            animation: animate-svg-stroke-4 3s ease-in-out 0.36s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.3s both
         }
 
         @-webkit-keyframes animate-svg-stroke-5 {
@@ -261,29 +223,9 @@
             }
         }
 
-        @-webkit-keyframes animate-svg-fill-5 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
-        @keyframes animate-svg-fill-5 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
         .svg-elem-5 {
-            -webkit-animation: animate-svg-stroke-5 3s ease-in-out 0.48s both, animate-svg-fill-5 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.4s both;
-            animation: animate-svg-stroke-5 3s ease-in-out 0.48s both, animate-svg-fill-5 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.4s both
+            -webkit-animation: animate-svg-stroke-5 3s ease-in-out 0.48s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.4s both;
+            animation: animate-svg-stroke-5 3s ease-in-out 0.48s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.4s both
         }
 
         @-webkit-keyframes animate-svg-stroke-6 {
@@ -310,29 +252,9 @@
             }
         }
 
-        @-webkit-keyframes animate-svg-fill-6 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
-        @keyframes animate-svg-fill-6 {
-            0% {
-                fill: transparent
-            }
-
-            100% {
-                fill: rgb(255, 255, 255)
-            }
-        }
-
         .svg-elem-6 {
-            -webkit-animation: animate-svg-stroke-6 3s ease-in-out 0.6s both, animate-svg-fill-6 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.5s both;
-            animation: animate-svg-stroke-6 3s ease-in-out 0.6s both, animate-svg-fill-6 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.5s both
+            -webkit-animation: animate-svg-stroke-6 3s ease-in-out 0.6s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.5s both;
+            animation: animate-svg-stroke-6 3s ease-in-out 0.6s both, animate-svg-fill 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.5s both
         }
     </style>
 </head>
@@ -390,6 +312,6 @@
     script.src = "{{mix('js/app.js')}}";
     setTimeout(() => {
         document.getElementById('index').append(script);
-    }, 4500);
+    }, .6000);
     
 </script>

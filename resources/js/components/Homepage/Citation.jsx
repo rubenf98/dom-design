@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { constant, dimensions } from '../../helper';
+import AnimationContainer from '../Common/AnimationContainer';
 
 const Container = styled.div`
     max-width: ${constant.maxWidth + "px"};
@@ -29,7 +30,9 @@ const Container = styled.div`
 
 function Citation({ quote }) {
     return (
-        <Container>"{quote}"</Container>
+        <AnimationContainer animateIn="fadeInUp">
+            <Container>"{quote}"</Container>
+        </AnimationContainer>
     )
 }
 

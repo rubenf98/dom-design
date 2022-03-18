@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { constant, dimensions } from '../../helper';
 import { ThemeContext } from 'styled-components'
+import AnimationContainer from '../Common/AnimationContainer';
 
 const Container = styled.div`
     max-width: ${constant.maxWidth + "px"};
@@ -111,18 +112,24 @@ function Links({ theme }) {
     return (
         <Container>
             <Content>
-                <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} theme={themeContext}>
-                    <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
-                    <h2><span>dom</span> design</h2>
-                </Logo>
-                <Pages>
-                    <p onClick={() => handleClick('about-container')} >sobre nós</p>
-                    <p onClick={() => handleClick('Portfolio')} >portfólio</p>
-                    <p onClick={() => handleClick('Contact')} >contactos</p>
-                </Pages>
+                <AnimationContainer animateIn="fadeIn">
+                    <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} theme={themeContext}>
+                        <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
+                        <h2><span>dom</span> design</h2>
+                    </Logo>
+                </AnimationContainer>
+                <AnimationContainer animateIn="fadeInUp">
+                    <Pages>
+                        <p onClick={() => handleClick('about-container')} >sobre nós</p>
+                        <p onClick={() => handleClick('Portfolio')} >portfólio</p>
+                        <p onClick={() => handleClick('Contact')} >contactos</p>
+                    </Pages>
+                </AnimationContainer>
             </Content>
             <Copyright>
-                © All rights reserved <span>dom design</span>
+                <AnimationContainer animateIn="fadeInUp" offset={20}>
+                    © All rights reserved <span>dom design</span>
+                </AnimationContainer>
             </Copyright>
         </Container>
     )

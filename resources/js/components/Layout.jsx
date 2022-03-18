@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./globalStyles";
@@ -7,12 +6,13 @@ import { light, dark } from "./themes"
 import { connect } from "react-redux";
 import Footer from './Footer';
 
-const Container = styled.div`
- //
-`;
-
 
 function Layout({ children, theme, menuVisible }) {
+    useEffect(() => {
+        setTimeout(() => {
+            document.body.style.transition = "all 0.50s linear";
+        }, 1000);
+    }, [])
 
     return (
         <div style={{ overflow: "hidden" }}>

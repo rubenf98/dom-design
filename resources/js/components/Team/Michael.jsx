@@ -8,7 +8,7 @@ function Michael() {
                 title: "louis michael",
                 previous: "",
                 next: "carolina",
-                image: "/image/team/placeholder",
+                image: "/image/team/michael",
                 about: {
                     title: "designer 3d",
                     paragraphs: [

@@ -5,6 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from 'styled-components'
+import AnimationContainer from '../Common/AnimationContainer';
 
 const Container = styled.div`
     margin: 20vh 0px 20vh ${constant.horizontalPadding + "px"};
@@ -133,7 +134,10 @@ function Portfolio() {
 
     return (
         <Container id="Portfolio">
-            <Title>portfólio</Title>
+            <AnimationContainer animateIn="fadeIn">
+                <Title>portfólio</Title>
+            </AnimationContainer>
+
             <CarouselContainer
                 autoPlay={false}
                 interval={2000000000}
@@ -144,25 +148,27 @@ function Portfolio() {
                 responsive={getCarouselBreakpoints([1, 1, 2, 2, 2])}
             >
                 {items.map((item, index) => (
-                    <Link to={item.to}>
-                        <Item
-                            key={index}
-                            textColor={themeContext.text}
-                            background={item.image}
-                            backgroundWithOpacity={themeContext.backgroundWithOpacity}
-                            backgroundcolor={themeContext.background}
-                        >
+                    <AnimationContainer animateIn="fadeInRight">
+                        <Link to={item.to}>
+                            <Item
+                                key={index}
+                                textColor={themeContext.text}
+                                background={item.image}
+                                backgroundWithOpacity={themeContext.backgroundWithOpacity}
+                                backgroundcolor={themeContext.background}
+                            >
 
-                            <div className='image-container'>
-                                <div className='overlay' />
-                            </div>
+                                <div className='image-container'>
+                                    <div className='overlay' />
+                                </div>
 
-                            <div className='info' >
-                                <h3>{item.title}</h3>
-                                <p>{item.category}</p>
-                            </div>
-                        </Item>
-                    </Link>
+                                <div className='info' >
+                                    <h3>{item.title}</h3>
+                                    <p>{item.category}</p>
+                                </div>
+                            </Item>
+                        </Link>
+                    </AnimationContainer>
                 ))}
             </CarouselContainer>
 

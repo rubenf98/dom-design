@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { setLightTheme, setDarkTheme } from "../../redux/application/actions";
 import ScrollIndicator from '../Common/ScrollIndicator';
 import { dimensions } from '../../helper';
+import AnimationContainer from '../Common/AnimationContainer';
+
 
 const Container = styled.div`
     width: 100%;
@@ -40,6 +42,10 @@ const Title = styled.div`
     
     @media (max-width: ${dimensions.md}) {
         letter-spacing: -2.22px;
+    }
+
+    @media (min-width: ${dimensions.xxl}) {
+        font-size: 200px;
     }
 
     @media (max-width: ${dimensions.sm}) {
@@ -98,21 +104,25 @@ const ScrollContainer = styled.div`
 
 function Header({ theme, setDarkTheme, setLightTheme }) {
     return (
-        <Container>
-            <TitleContainer>
-                <Title>
-                    dom no <span>design</span>
-                    <br />
-                    & dom no <span>espaço.</span>
+        <AnimationContainer animateIn="fadeInUp" duration={1.5}>
+            <Container>
 
-                </Title>
-                <SocialContainer><span>facebook</span><span>instagram</span></SocialContainer>
-            </TitleContainer>
-            <ScrollContainer>
-                <ScrollIndicator />
-            </ScrollContainer>
-            <ThemeSwitch src={theme === 'light' ? "/icon/light_theme_switch.svg" : "/icon/dark_theme_switch.svg"} onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
-        </Container>
+                <TitleContainer>
+                    <Title>
+                        dom no <span>design</span>
+                        <br />
+                        & dom no <span>espaço.</span>
+
+                    </Title>
+                    <SocialContainer><span>facebook</span><span>instagram</span></SocialContainer>
+                </TitleContainer>
+                <ScrollContainer>
+                    <ScrollIndicator />
+                </ScrollContainer>
+                <ThemeSwitch src={theme === 'light' ? "/icon/light_theme_switch.svg" : "/icon/dark_theme_switch.svg"} onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
+
+            </Container>
+        </AnimationContainer>
     )
 }
 

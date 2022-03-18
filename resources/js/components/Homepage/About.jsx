@@ -5,6 +5,7 @@ import { fetchTheme } from '../themes';
 import { connect } from "react-redux";
 import { constant, dimensions } from '../../helper';
 import { Link } from 'react-router-dom';
+import AnimationContainer from '../Common/AnimationContainer';
 
 const scroll = keyframes`
   0% {
@@ -151,17 +152,22 @@ function About({ theme }) {
 
                 <Citation quote="a nossa missão envolve sempre tornar os lugares ainda mais especiais." />
             </CitationContainer>
+            <AnimationContainer animateIn="fadeIn">
+                <ImageContainer >
 
-            <ImageContainer >
-                <img src="/image/about/brainstorming.jpg" alt="" />
-                <img src="/image/about/design.jpg" alt="" />
+                    <img src="/image/about/brainstorming.jpg" alt="" />
 
-                <Link to="/team">
-                    <div style={{ color: scrollingTheme.background, background: scrollingTheme.text }}>
-                        sobre nós
-                    </div>
-                </Link>
-            </ImageContainer>
+                    <img src="/image/about/design.jpg" alt="" />
+
+
+
+                    <Link to="/team">
+                        <div style={{ color: scrollingTheme.background, background: scrollingTheme.text }}>
+                            sobre nós
+                        </div>
+                    </Link>
+                </ImageContainer>
+            </AnimationContainer>
         </div>
     )
 }

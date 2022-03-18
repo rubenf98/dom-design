@@ -10,7 +10,7 @@ export const dimensions = {
 	"md": "768px",
 	"lg": "992px",
 	"xl": "1200px",
-	"xxl": "1600px",
+	"xxl": "3600px",
 };
 
 export function getCarouselBreakpoints(aItems, aBreakpoints = [[0, 800], [800, 1024], [1024, 1400], [1400, 1800], [1800, 100000]], aItemsToSlide = [1, 1, 1, 1, 1]) {
