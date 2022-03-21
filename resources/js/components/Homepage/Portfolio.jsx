@@ -42,11 +42,6 @@ const CarouselContainer = styled(Carousel)`
             padding: 0px;
         }
     }
-
-    .react-multiconst [position, setPosition] = useState({ x: 0, y: 0 });ple-carousel__arrow {
-        z-index: 8 !important;
-    }
-
 `;
 
 const Item = styled.div`
@@ -149,7 +144,7 @@ function Portfolio() {
     }, []);
 
     useEffect(() => {
-        if (mousePosition) {
+        if (mousePosition && carouselRef) {
             if (mousePosition > .9) {
                 carouselRef.current.next();
             } else if (mousePosition < .15) {
@@ -169,6 +164,7 @@ function Portfolio() {
                 interval={2000000000}
                 autoPlaySpeed={2000000000}
                 arrows={false}
+                draggable={false}
                 itemClass="image-item"
                 partialVisible
                 swipeable

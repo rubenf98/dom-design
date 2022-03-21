@@ -1964,7 +1964,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    margin: 20vh 0px 20vh ", ";\n    box-sizing: border-box;\n\n    @media (max-width: ", ") {\n        margin-left: 0px;\n    }\n    \n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.constant.horizontalPadding + "px", _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-size: 102px;\n    font-weight: 900;\n    margin-bottom: 0px;\n    z-index: 2;\n    position: relative;\n\n    @media (max-width: ", ") {\n        font-size: 82px;\n        text-align: center;\n        margin-bottom: 40px;\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md);
-var CarouselContainer = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])(react_multi_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    min-height: 300px;\n    width: 100%;\n\n    .image-item {\n        padding-right: 50px;\n\n        @media (max-width: ", ") {\n            padding: 0px;\n        }\n    }\n\n    .react-multiconst [position, setPosition] = useState({ x: 0, y: 0 });ple-carousel__arrow {\n        z-index: 8 !important;\n    }\n\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm);
+var CarouselContainer = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])(react_multi_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    min-height: 300px;\n    width: 100%;\n\n    .image-item {\n        padding-right: 50px;\n\n        @media (max-width: ", ") {\n            padding: 0px;\n        }\n    }\n"])), _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.sm);
 var Item = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    width: 100%;\n    z-index: 1;\n   \n\n    .image-container {\n        position: relative;\n        overflow: hidden;\n        width: 100%;\n        height: 0px;\n        padding-top: 120%;\n        background: ", ";\n        background-position: center;\n        background-size: cover;\n        background-repeat: no-repeat;\n        transition: scale 1s ease-in-out;\n\n        @media (min-width: ", ") {\n            &:hover {\n                scale: 1.1;\n                .overlay {\n                    opacity: .5;\n                }\n            }\n        }\n\n        @media (min-width: ", ") {\n            &:hover {\n                scale: 1.1;\n                .overlay {\n                    opacity: .5;\n                }\n            }\n        }\n\n        .overlay {\n            position: absolute;\n            background-image: ", ";\n            top: 0; bottom: 0;left: 0%; right: 0;\n            width: 100%;\n            height: 100%;\n            transition: opacity .5s ease-in-out;\n            opacity: 1;\n        }\n    }\n\n    \n\n\n    .info {\n        position: absolute;\n        bottom: 20px;left: 20px;\n        color: ", ";\n\n        h3 {\n            font-size: 28px;\n            letter-spacing: 1.4px;\n            font-weight: 900;\n            text-transform: uppercase;\n            margin-bottom: 0px;\n        }\n\n        p {\n            margin: 0px;\n            font-size: 24px;\n            letter-spacing: -1.2px;\n            font-weight: 300;\n        }\n    }\n\n"])), function (props) {
   return "url(" + props.background + ")";
 }, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, _helper__WEBPACK_IMPORTED_MODULE_1__.dimensions.md, function (props) {
@@ -2026,7 +2026,7 @@ function Portfolio() {
     };
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (mousePosition) {
+    if (mousePosition && carouselRef) {
       if (mousePosition > .9) {
         carouselRef.current.next();
       } else if (mousePosition < .15) {
@@ -2046,6 +2046,7 @@ function Portfolio() {
       interval: 2000000000,
       autoPlaySpeed: 2000000000,
       arrows: false,
+      draggable: false,
       itemClass: "image-item",
       partialVisible: true,
       swipeable: true,
