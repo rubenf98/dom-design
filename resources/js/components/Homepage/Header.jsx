@@ -125,8 +125,8 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
 
                     </Title>
                     <SocialContainer color={themeContext.text}>
-                        <a href="/sjdjsa">facebook</a>
-                        <a href="/sjdjsa">instagram</a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">instagram</a>
                     </SocialContainer>
                 </TitleContainer>
                 <ScrollContainer>

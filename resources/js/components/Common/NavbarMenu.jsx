@@ -107,8 +107,8 @@ function NavbarMenu({ visible, handleMenu }) {
                         <UnderlineEffect ><p onClick={() => handleClick('Contact')} >contactos</p> </UnderlineEffect>
                     </div>
                     <div className='social-container'>
-                        <a href="sdasadasd">facebook</a>
-                        <a href="sdasadasd">instagram</a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">instagram</a>
                     </div>
                 </>
             }

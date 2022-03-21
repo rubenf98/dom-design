@@ -16,9 +16,9 @@ function Carolina() {
                         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
                     ],
                     social: {
-                        facebook: "/sadsadsad",
-                        instagram: "/asdasdsa",
-                        linkedin: "/asdsadsad"
+                        facebook: "https://www.facebook.com/caroliina.s.andrade",
+                        instagram: "https://www.instagram.com/carolii_andrade/",
+                        linkedin: "https://www.linkedin.com/in/carolina-andrade-81a80a18a/"
                     }
                 },
                 skills: [

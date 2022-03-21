@@ -106,13 +106,19 @@ const SocialContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin: 40px 0px 100px 0px;
+    
 
     a {
         display: inline;
         margin: 0px 9px 0px 9px;
 
         img {
-            width: 33px;
+            opacity: .25;
+            width: 25px;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
@@ -122,12 +128,20 @@ const SocialContainer = styled.div`
 const teamMember = [
     {
         to: "/team/michael", name: "louis michael", job: "designer 3d", image: "/image/team/michael", social:
-            { facebook: "/sadsadsad", instagram: "/asdasdsa", linkedin: "/asdsadsad" }
+        {
+            facebook: "https://www.facebook.com/michael.sousa.967",
+            instagram: "https://www.instagram.com/louismichaelsousa/",
+            linkedin: "https://www.linkedin.com/in/louisousa/"
+        }
 
     },
     {
         to: "/team/carolina", name: "carolina andrade", job: "interior designer", image: "/image/team/carolina", social:
-            { facebook: "/sadsadsad", instagram: "/asdasdsa", linkedin: "/asdsadsad" }
+        {
+            facebook: "https://www.facebook.com/caroliina.s.andrade",
+            instagram: "https://www.instagram.com/carolii_andrade/",
+            linkedin: "https://www.linkedin.com/in/carolina-andrade-81a80a18a/"
+        }
 
     }
 ]
@@ -163,15 +177,15 @@ function Team({ theme }) {
                         </Link>
                         <AnimationContainer animateIn="fadeInUp">
                             <SocialContainer>
-                                <a target="_blank" href={member.social.facebook}>
+                                <a rel="noreferrer noopener" target="_blank" href={member.social.facebook}>
                                     <img src={theme == "light" ? imageSource + "light_facebook.svg" : imageSource + "dark_facebook.svg"} alt="facebook" loading="lazy" />
                                 </a>
 
-                                <a target="_blank" href={member.social.instagram}>
+                                <a rel="noreferrer noopener" target="_blank" href={member.social.instagram}>
                                     <img src={theme == "light" ? imageSource + "light_instagram.svg" : imageSource + "dark_instagram.svg"} alt="instagram" loading="lazy" />
                                 </a>
 
-                                <a target="_blank" href={member.social.linkedin}>
+                                <a rel="noreferrer noopener" target="_blank" href={member.social.linkedin}>
                                     <img src={theme == "light" ? imageSource + "light_linkedin.svg" : imageSource + "dark_linkedin.svg"} alt="linkedin" loading="lazy" />
                                 </a>
                             </SocialContainer>

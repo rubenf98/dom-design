@@ -389,13 +389,13 @@ function TeamMemberTemplate({ data }) {
                             ))}
 
                             <div className='social-container'>
-                                <a target="_blank" href={data.about.social.facebook}>
+                                <a rel="noreferrer noopener" target="_blank" href={data.about.social.facebook}>
                                     <UnderlineEffect inline> facebook </UnderlineEffect>
                                 </a>
-                                <a target="_blank" href={data.about.social.instagram}>
+                                <a rel="noreferrer noopener" target="_blank" href={data.about.social.instagram}>
                                     <UnderlineEffect inline> instagram</UnderlineEffect>
                                 </a>
-                                <a target="_blank" href={data.about.social.linkedin}>
+                                <a rel="noreferrer noopener" target="_blank" href={data.about.social.linkedin}>
                                     <UnderlineEffect inline>linkedin</UnderlineEffect>
                                 </a>
                             </div>
