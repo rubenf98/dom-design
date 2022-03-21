@@ -312,6 +312,6 @@
     script.src = "{{mix('js/app.js')}}";
     setTimeout(() => {
         document.getElementById('index').append(script);
-    }, 6000);
+    }, .6000);
     
 </script>

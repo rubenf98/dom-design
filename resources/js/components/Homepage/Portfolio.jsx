@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { constant, getCarouselBreakpoints, dimensions } from '../../helper';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
@@ -43,7 +43,7 @@ const CarouselContainer = styled(Carousel)`
         }
     }
 
-    .react-multiple-carousel__arrow {
+    .react-multiconst [position, setPosition] = useState({ x: 0, y: 0 });ple-carousel__arrow {
         z-index: 8 !important;
     }
 
@@ -58,7 +58,8 @@ const Item = styled.div`
         position: relative;
         overflow: hidden;
         width: 100%;
-        height: 500px;
+        height: 0px;
+        padding-top: 120%;
         background: ${props => "url(" + props.background + ")"};
         background-position: center;
         background-size: cover;
@@ -131,6 +132,31 @@ const items = [
 ]
 function Portfolio() {
     const themeContext = useContext(ThemeContext);
+    const [mousePosition, setMousePosition] = useState(undefined);
+    const carouselRef = useRef(null);
+
+    useEffect(() => {
+        const DOM = document.getElementById("Portfolio");
+
+        const setFromEvent = (e) => setMousePosition(e.clientX / window.innerWidth);
+
+        DOM.addEventListener("mousemove", setFromEvent);
+
+        return () => {
+            DOM.removeEventListener("mousemove", setFromEvent);
+        };
+
+    }, []);
+
+    useEffect(() => {
+        if (mousePosition) {
+            if (mousePosition > .9) {
+                carouselRef.current.next();
+            } else if (mousePosition < .15) {
+                carouselRef.current.previous();
+            }
+        }
+    }, [mousePosition]);
 
     return (
         <Container id="Portfolio">
@@ -141,11 +167,13 @@ function Portfolio() {
             <CarouselContainer
                 autoPlay={false}
                 interval={2000000000}
+                autoPlaySpeed={2000000000}
                 arrows={false}
                 itemClass="image-item"
                 partialVisible
                 swipeable
                 responsive={getCarouselBreakpoints([1, 1, 2, 2, 2])}
+                ref={carouselRef}
             >
                 {items.map((item, index) => (
                     <AnimationContainer animateIn="fadeInRight">
