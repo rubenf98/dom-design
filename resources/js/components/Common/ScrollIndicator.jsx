@@ -4,16 +4,16 @@ import styled, { keyframes } from 'styled-components';
 
 const scroll = keyframes`
   0% {
-    top: 2px;
-  }
-  15% {
-    top: 5px;
+    top: 1px;
   }
   30% {
-    top: 2px;
+    top: 6px;
+  }
+  60% {
+    top: 1px;
   }
   100% {
-    top: 2px;
+    top: 1px;
   }
 `;
 
@@ -28,31 +28,29 @@ const Container = styled.div`
         width: 15px;
         margin-left: 5px;
         animation: ${scroll} ;
-        animation-duration: 3s;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         position: absolute;
-        animation-delay: 3s;
-        transition: all .1s ease;
     }
 `;
 
 function ScrollIndicator({ theme }) {
-    return (
-        <Container>
-            Scroll
-            <img src={theme === 'light' ? "/icon/light_down_arrow.svg" : "/icon/dark_down_arrow.svg"} />
-        </Container>
-    )
+  return (
+    <Container>
+      Scroll
+      <img src={theme === 'light' ? "/icon/light_down_arrow.svg" : "/icon/dark_down_arrow.svg"} />
+    </Container>
+  )
 }
 
 const mapStateToProps = (state) => {
-    return {
-        theme: state.application.theme,
-    };
+  return {
+    theme: state.application.theme,
+  };
 };
 
 export default connect(
-    mapStateToProps,
-    null
+  mapStateToProps,
+  null
 )(ScrollIndicator);

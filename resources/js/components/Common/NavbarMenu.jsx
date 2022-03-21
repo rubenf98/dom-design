@@ -31,6 +31,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     transition: height 1s ease-in-out;
 
     .links-container {
@@ -58,6 +59,28 @@ const Container = styled.div`
             }
         }
     }
+
+    .social-container {
+        position: absolute;
+        bottom: 100px;
+        justify-content: space-around;
+        display: none;
+
+        @media (max-width: ${dimensions.md}) {
+            display: flex;
+        }
+
+        a {
+            text-decoration: none;
+            color: ${props => props.color};
+            text-transform: uppercase;
+            font-size: 17px;
+            letter-spacing: -1.05px;
+            font-weight: 600;
+            margin: 0px 15px;
+            opacity: .7;
+        }
+    }
 `;
 
 function NavbarMenu({ visible, handleMenu }) {
@@ -77,11 +100,17 @@ function NavbarMenu({ visible, handleMenu }) {
         <Container visible={visible} color={themeContext.text} background={themeContext.background}>
             {
                 visible &&
-                <div className='links-container'>
-                    <UnderlineEffect ><p onClick={() => handleClick('about-container')} >sobre nós</p> </UnderlineEffect>
-                    <UnderlineEffect ><p onClick={() => handleClick('Portfolio')} >portfólio</p> </UnderlineEffect>
-                    <UnderlineEffect ><p onClick={() => handleClick('Contact')} >contactos</p> </UnderlineEffect>
-                </div>
+                <>
+                    <div className='links-container'>
+                        <UnderlineEffect ><p onClick={() => handleClick('about-container')} >sobre nós</p> </UnderlineEffect>
+                        <UnderlineEffect ><p onClick={() => handleClick('Portfolio')} >portfólio</p> </UnderlineEffect>
+                        <UnderlineEffect ><p onClick={() => handleClick('Contact')} >contactos</p> </UnderlineEffect>
+                    </div>
+                    <div className='social-container'>
+                        <a href="sdasadasd">facebook</a>
+                        <a href="sdasadasd">instagram</a>
+                    </div>
+                </>
             }
         </Container>
     )

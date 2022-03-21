@@ -106,11 +106,13 @@ const Info = styled.div`
 const TopContainer = styled.div`
     width: 100%;
     margin: 75px auto 0px auto;
+    padding-right: 20px;
+    box-sizing: border-box;
     display: flex;
     max-width: ${constant.maxWidth + "px"};
     justify-content: end;
 
-    @media (max-width: ${dimensions.md}) {
+    @media (max-width: ${dimensions.lg}) {
         display: none;
     }
 `;

@@ -2,18 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
 
-const animate = keyframes`
+const scroll = keyframes`
   0% {
-    top: 5px;
+    top: 1px;
   }
-  10% {
-    top: 2px;
+  30% {
+    top: 6px;
   }
-  20% {
-    top: 5px;
+  60% {
+    top: 1px;
   }
   100% {
-    top: 5px;
+    top: 1px;
   }
 `;
 
@@ -27,12 +27,11 @@ const Container = styled.div`
     img {
         width: 15px;
         margin-left: 5px;
-        animation: ${animate} ;
-        animation-duration: 4s;
+        animation: ${scroll} ;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         position: absolute;
-        animation-delay: 3s;
     }
 `;
 
