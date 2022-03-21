@@ -95,6 +95,7 @@ const Info = styled.div`
         font-size: 31px;
         font-weight: 900;
         letter-spacing: 1.55px;
+        font-family: 'Poppins', sans-serif;
 
         &:last-child {
             margin-bottom:  0px;
