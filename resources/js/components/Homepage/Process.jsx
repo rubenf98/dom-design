@@ -7,7 +7,7 @@ const Container = styled.div`
     width: 90%;
     display: block;
     max-width: ${constant.maxWidth + "px"};
-    margin: 20vh auto;
+    margin: 10vh auto 20vh auto;
     
 `;
 

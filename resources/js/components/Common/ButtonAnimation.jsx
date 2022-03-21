@@ -40,11 +40,20 @@ const Container = styled.div`
     @media (max-width: ${dimensions.lg}) {
         margin-bottom: 60px;
     }
+
+    @media (max-width: ${dimensions.md}) {
+      width: 200px;
+      height: 50px;
+    }
    
 
     button,span {
-        font-size: 38px;
+      font-size: 38px;
         font-weight: 900;
+
+        @media (max-width: ${dimensions.md}) {
+          font-size: 22px;
+        }
     }
 
     button {

@@ -64,7 +64,7 @@ const CitationContainer = styled.div`
 	z-index: 2;
     position: relative;
     box-sizing: border-box;
-    padding: 25vh 0px;
+    padding: 25vh 0px 10vh 0px;
 
     @media (max-width: ${dimensions.md}) {
         padding: 18vh 0px;
@@ -72,42 +72,70 @@ const CitationContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-	width: 90%;
+	width: 60%;
     max-width: ${constant.maxWidth + "px"};
-    height: 70vh;
+    min-height: 70vh;
     margin: auto;
     display: flex;
     align-items: flex-end;
     position: relative;
+    flex-wrap: wrap;
+    padding: 0px 30px ;
+    box-sizing: border-box;
+
+    @media (max-width: ${dimensions.lg}) {
+        width: 80%;
+    }
+
+    @media (max-width: ${dimensions.md}) {
+        width: 100%;
+    }
 
     a {
         text-decoration: none;
+
+        @media (max-width: ${dimensions.lg}) {
+                flex-grow: 1
+        }
     }
 
     img {
-        
         height: 50vh;
+        width: 55%;
+        object-fit: cover;
+
+        @media (max-width: ${dimensions.lg}) {
+            height: 40vh;
+            width: 70%;
+        }
+
+        @media (max-width: ${dimensions.md}) {
+            height: 30vh;
+        }
 
         &:first-child {
             top: 0; right: 0px;
-            width: 70%;
-            object-fit: cover;
             position: absolute;
-            
+
+            @media (max-width: ${dimensions.lg}) {
+                right: 30px;
+            }
         }
 
-        &:nth-child(2) {
-            width: 50%;
-            object-fit: cover;
+        &:nth-child(2) {       
             margin-top: 20vh;
             z-index: -1;
+            padding-right: 50px;
+            box-sizing: border-box;
         }
     }
 
     div {
-        margin-top: 20vh;
-        margin-left: 80px;
-        margin-bottom: auto;
+        margin: 20vh auto auto auto;
+
+        @media (max-width: ${dimensions.lg}) {
+            margin: 40px auto 0px auto;
+        }
     }
 `;
 
@@ -137,9 +165,9 @@ function About() {
             <AnimationContainer animateIn="fadeIn">
                 <ImageContainer >
 
-                    <img src="/image/about/brainstorming.jpg" alt="" />
-
                     <img src="/image/about/design.jpg" alt="" />
+
+                    <img src="/image/about/brainstorming.jpg" alt="" />
 
 
 
