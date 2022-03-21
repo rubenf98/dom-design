@@ -7,6 +7,8 @@ import NavbarMenu from './Common/NavbarMenu';
 import { handleMenu } from '../redux/application/actions';
 import { dimensions } from '../helper';
 import AnimationContainer from './Common/AnimationContainer';
+import UnderlineEffect from './Common/UnderlineEffect';
+
 
 const Container = styled.div`
     width: 100%;
@@ -64,6 +66,7 @@ const LanguageIndicator = styled.span`
 
 function Navbar({ theme, menuVisible, handleMenu }) {
     const [active, setActive] = useState(0)
+    
 
     return (
 
@@ -74,9 +77,11 @@ function Navbar({ theme, menuVisible, handleMenu }) {
                     <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
                 </Link></AnimationContainer>
             <AnimationContainer animateIn="fadeInUp" offset={0}>
-                <p className='menu' style={{ zIndex: 100 }} onClick={() => handleMenu(!menuVisible)}>
-                    {menuVisible ? "close" : "menu"}
-                </p>
+                <UnderlineEffect>
+                    <p className='menu' style={{ zIndex: 100 }} onClick={() => handleMenu(!menuVisible)}>
+                        {menuVisible ? "close" : "menu"}
+                    </p>
+                </UnderlineEffect>
             </AnimationContainer>
             <AnimationContainer animateIn="fadeInUp" offset={0}>
                 <div style={{ zIndex: 100 }} >

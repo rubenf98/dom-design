@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components';
+import React, { useContext } from 'react'
+import styled, { keyframes, ThemeContext } from 'styled-components';
 import Citation from './Citation';
-import { fetchTheme } from '../themes';
-import { connect } from "react-redux";
 import { constant, dimensions } from '../../helper';
 import { Link } from 'react-router-dom';
 import AnimationContainer from '../Common/AnimationContainer';
+import ButtonAnimation from '../Common/ButtonAnimation';
 
 const scroll = keyframes`
   0% {
@@ -21,7 +20,7 @@ const ScrollingRow = styled.div`
 	display: flex;
 	align-items: center;
     top: 0px;
-    z-index: 1;
+    z-index: -1;
 
     p {
         animation: ${scroll} ;
@@ -77,66 +76,49 @@ const ImageContainer = styled.div`
     max-width: ${constant.maxWidth + "px"};
     height: 70vh;
     margin: auto;
-    display: block;
+    display: flex;
+    align-items: flex-end;
     position: relative;
 
+    a {
+        text-decoration: none;
+    }
+
     img {
-        position: absolute;
+        
         height: 50vh;
 
         &:first-child {
             top: 0; right: 0px;
             width: 70%;
             object-fit: cover;
+            position: absolute;
+            
         }
 
         &:nth-child(2) {
-            bottom: 0; left: 0px;
             width: 50%;
             object-fit: cover;
+            margin-top: 20vh;
+            z-index: -1;
         }
     }
 
     div {
-        position: absolute;
-        bottom: 0; right: 0;
-        padding: 15px 60px;
-        font-size: 36px;
-        font-weight: 900;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.71;
-        letter-spacing: -2.88px;
-
-        @media (max-width: ${dimensions.md}) {
-            padding: 10px 30px;
-            font-size: 18px;
-            letter-spacing: -1px;
-        }
+        margin-top: 20vh;
+        margin-left: 80px;
+        margin-bottom: auto;
     }
 `;
 
 
-function About({ theme }) {
-    const [scrollingTheme, setScrollingTheme] = useState({
-        background: undefined,
-        text: undefined,
-    })
-
-    useEffect(() => {
-        var aTheme = fetchTheme(theme);
-
-        setScrollingTheme({
-            background: aTheme.background,
-            text: aTheme.text,
-        })
-    }, [theme])
-
+function About() {
+    const themeContext = useContext(ThemeContext);
 
     return (
         <div >
             <CitationContainer>
-                <ScrollingRow stroke={scrollingTheme.text} color={scrollingTheme.background}>
+                <ScrollingRow stroke={themeContext.text} color={themeContext.background}>
                     <p>design</p>
                     <p>interior</p>
                     <p>espaço</p>
@@ -162,9 +144,12 @@ function About({ theme }) {
 
 
                     <Link to="/team">
-                        <div style={{ color: scrollingTheme.background, background: scrollingTheme.text }}>
-                            sobre nós
-                        </div>
+                        <ButtonAnimation
+                            background={themeContext.text}
+                            color={themeContext.background}
+                            text="sobre nós"
+                        />
+
                     </Link>
                 </ImageContainer>
             </AnimationContainer>
@@ -172,14 +157,4 @@ function About({ theme }) {
     )
 }
 
-
-const mapStateToProps = (state) => {
-    return {
-        theme: state.application.theme,
-    };
-};
-
-export default connect(
-    mapStateToProps,
-    null
-)(About);
+export default About;

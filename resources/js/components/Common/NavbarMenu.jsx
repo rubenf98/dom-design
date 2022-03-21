@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { connect } from 'react-redux';
-import styled, { keyframes, css } from 'styled-components';
-import { ThemeContext } from 'styled-components';
+import styled, { keyframes, css, ThemeContext } from 'styled-components';
 import { handleMenu } from '../../redux/application/actions';
 import { dimensions } from '../../helper';
+import UnderlineEffect from './UnderlineEffect';
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const fadeIn = keyframes`
   0% {
@@ -35,6 +36,11 @@ const Container = styled.div`
     .links-container {
         margin: auto;
         text-align: center;
+        animation: ${props =>
+        props.visible &&
+        css`
+                ${fadeIn} 2s linear
+                `};
         
         p {
             opacity: ${props => props.visible ? "1" : "0"};
@@ -45,22 +51,26 @@ const Container = styled.div`
             margin: 10px 0px;
             display: block;
             cursor: pointer;
-            animation: ${props =>
-            props.visible &&
-            css`
-                ${fadeIn} 2s linear
-                `};
+            
+
+            @media (max-width: ${dimensions.sm}) {
+                font-size: 63px;
+            }
         }
     }
 `;
 
 function NavbarMenu({ visible, handleMenu }) {
     const themeContext = useContext(ThemeContext);
+    let navigate = useNavigate();
+    const { pathname } = useLocation();
 
     const handleClick = (filter) => {
-        var element = document.getElementById(filter);
         handleMenu(false);
-        window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
+        if (pathname == "/") {
+            var element = document.getElementById(filter);
+            window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
+        } else return navigate("/?scrollTo=" + filter);
     }
 
     return (
@@ -68,9 +78,9 @@ function NavbarMenu({ visible, handleMenu }) {
             {
                 visible &&
                 <div className='links-container'>
-                    <p onClick={() => handleClick('about-container')} >sobre nós</p>
-                    <p onClick={() => handleClick('Portfolio')} >portfólio</p>
-                    <p onClick={() => handleClick('Contact')} >contactos</p>
+                    <UnderlineEffect ><p onClick={() => handleClick('about-container')} >sobre nós</p> </UnderlineEffect>
+                    <UnderlineEffect ><p onClick={() => handleClick('Portfolio')} >portfólio</p> </UnderlineEffect>
+                    <UnderlineEffect ><p onClick={() => handleClick('Contact')} >contactos</p> </UnderlineEffect>
                 </div>
             }
         </Container>

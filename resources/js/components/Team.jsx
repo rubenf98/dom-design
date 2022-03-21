@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { constant, dimensions } from '../helper';
 import { ThemeContext } from 'styled-components'
 import AnimationContainer from './Common/AnimationContainer';
+import { connect } from 'react-redux';
 
 const Container = styled.div`
     width: 100%;
@@ -40,14 +41,14 @@ const TeamContainer = styled.div`
     flex-wrap: wrap;
 `;
 
-const Member = styled(Link)`
+const Member = styled.div`
     width: 50%;
     margin: auto;
     display: block;
     max-width: 500px;
-    text-decoration: none;
     padding: 0px 40px;
     box-sizing: border-box;
+    
 
     img {
             filter: grayscale(1);
@@ -73,8 +74,12 @@ const Member = styled(Link)`
         width: 100%;
         margin-bottom: 40px;
     }
+    a {
+        text-decoration: none;
+    }
 
     h3, p {
+        text-decoration: none;
         text-align: center;
         color: ${props => props.theme.text};
     }
@@ -126,9 +131,9 @@ const teamMember = [
 
     }
 ]
-function Team() {
+function Team({ theme }) {
     const themeContext = useContext(ThemeContext);
-
+    const imageSource = "image/team/";
     return (
         <Container>
             <AnimationContainer animateIn="fadeInUp" offset={0}>
@@ -141,31 +146,33 @@ function Team() {
 
             <TeamContainer>
                 {teamMember.map((member, index) => (
-                    <Member theme={themeContext} to={member.to} key={index}>
-                        <AnimationContainer animateIn="fadeInUp">
-                            <picture>
-                                <source srcSet={member.image + ".jpg"} type="image/jpg" />
-                                <img className='profile' src={member.image + ".webp"} alt="profile" loading="eager" />
-                            </picture>
-                        </AnimationContainer>
-                        <AnimationContainer animateIn="fadeIn">
-                            <h3>{member.name}</h3>
-                        </AnimationContainer>
-                        <AnimationContainer animateIn="fadeIn">
-                            <p>{member.job}</p>
-                        </AnimationContainer>
+                    <Member theme={themeContext} key={index}>
+                        <Link to={member.to}>
+                            <AnimationContainer animateIn="fadeInUp">
+                                <picture>
+                                    <source srcSet={member.image + ".jpg"} type="image/jpg" />
+                                    <img className='profile' src={member.image + ".webp"} alt="profile" loading="eager" />
+                                </picture>
+                            </AnimationContainer>
+                            <AnimationContainer animateIn="fadeIn">
+                                <h3>{member.name}</h3>
+                            </AnimationContainer>
+                            <AnimationContainer animateIn="fadeIn">
+                                <p>{member.job}</p>
+                            </AnimationContainer>
+                        </Link>
                         <AnimationContainer animateIn="fadeInUp">
                             <SocialContainer>
                                 <a target="_blank" href={member.social.facebook}>
-                                    <img src="/image/team/facebook.svg" alt="facebook" loading="lazy" />
+                                    <img src={theme == "light" ? imageSource + "light_facebook.svg" : imageSource + "dark_facebook.svg"} alt="facebook" loading="lazy" />
                                 </a>
 
                                 <a target="_blank" href={member.social.instagram}>
-                                    <img src="/image/team/instagram.svg" alt="instagram" loading="lazy" />
+                                    <img src={theme == "light" ? imageSource + "light_instagram.svg" : imageSource + "dark_instagram.svg"} alt="instagram" loading="lazy" />
                                 </a>
 
                                 <a target="_blank" href={member.social.linkedin}>
-                                    <img src="/image/team/linkedin.svg" alt="linkedin" loading="lazy" />
+                                    <img src={theme == "light" ? imageSource + "light_linkedin.svg" : imageSource + "dark_linkedin.svg"} alt="linkedin" loading="lazy" />
                                 </a>
                             </SocialContainer>
                         </AnimationContainer>
@@ -177,4 +184,15 @@ function Team() {
     )
 }
 
-export default Team
+const mapStateToProps = (state) => {
+    return {
+        theme: state.application.theme,
+    };
+};
+
+
+
+export default connect(
+    mapStateToProps,
+    null
+)(Team); 

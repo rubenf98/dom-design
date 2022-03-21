@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32.393"
+   height="32.393"
+   viewBox="0 0 32.393 32.393"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="light_linkedin.svg"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="22.196152"
+     inkscape:cx="16.196501"
+     inkscape:cy="16.173974"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M28.435,0a3.959,3.959,0,0,1,3.958,3.958V28.435a3.96,3.96,0,0,1-3.958,3.958H3.958A3.96,3.96,0,0,1,0,28.435V3.958A3.959,3.959,0,0,1,3.958,0H28.435ZM10.152,26.779V12.5H5.4v14.28Zm17.116,0V18.59c0-4.386-2.342-6.427-5.465-6.427a4.715,4.715,0,0,0-4.278,2.358V12.5H12.779c.063,1.34,0,14.28,0,14.28h4.746V18.8a3.246,3.246,0,0,1,.157-1.159,2.6,2.6,0,0,1,2.435-1.736c1.717,0,2.4,1.31,2.4,3.229v7.641h4.747ZM7.81,5.613a2.474,2.474,0,1,0-.063,4.935h.031A2.475,2.475,0,1,0,7.81,5.613Z"
+     fill="#fff"
+     fill-rule="evenodd"
+     id="path2"
+     style="fill:#000000" />
+</svg>

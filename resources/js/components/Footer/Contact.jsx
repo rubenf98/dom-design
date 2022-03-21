@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 import { constant, dimensions } from '../../helper';
-import { ThemeContext } from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 import AnimationContainer from '../Common/AnimationContainer';
+import ButtonAnimation from '../Common/ButtonAnimation';
+
+
 
 const Container = styled.div`
     background: ${props => props.background};
@@ -117,6 +119,10 @@ const Form = styled.div`
         margin: auto;
         display: block;
 
+        input, textarea{
+            color: ${props => props.buttonBackground};
+        }
+
         @media (max-width: ${dimensions.lg}) {
             width: 100%;
         }
@@ -151,27 +157,9 @@ const Form = styled.div`
             margin: 60px 0px;
             resize: none;
         }
-
-        button {
-            font-size: 38px;
-            letter-spacing: -2.28px;
-            font-weight: 900;
-            padding: 10px 50px;
-            box-sizing: border-box;
-            cursor: pointer;
-            color: ${props => props.buttonText};
-            background: ${props => props.buttonBackground};
-            border-radius: 0px;
-            margin: auto;
-            display: block;
-            border: 0px;
-
-            @media (max-width: ${dimensions.lg}) {
-                margin-bottom: 60px;
-            }
-        }
     }
 `;
+
 
 function Contact() {
     const themeContext = useContext(ThemeContext);
@@ -202,7 +190,11 @@ function Contact() {
                             <textarea rows="6" placeholder='fale connosco' />
                         </AnimationContainer>
                         <AnimationContainer animateIn="fadeInUp">
-                            <button type="submit">enviar</button>
+                            <ButtonAnimation
+                                background={themeContext.background}
+                                color={themeContext.text}
+                                text="enviar"
+                            />
                         </AnimationContainer>
                     </div>
                 </Form>

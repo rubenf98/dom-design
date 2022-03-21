@@ -17,7 +17,6 @@ const Container = styled.div`
     line-height: 0.84;
     letter-spacing: -6.12px;
     box-sizing: border-box;
-    z-index: 2;
     position: relative;
 
     @media (max-width: ${dimensions.md}) {

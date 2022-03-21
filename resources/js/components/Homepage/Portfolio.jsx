@@ -168,14 +168,14 @@ function Portfolio() {
                 itemClass="image-item"
                 partialVisible
                 swipeable
+                transitionDuration={700}
                 responsive={getCarouselBreakpoints([1, 1, 2, 2, 2])}
                 ref={carouselRef}
             >
                 {items.map((item, index) => (
-                    <AnimationContainer animateIn="fadeInRight">
+                    <AnimationContainer key={index} animateIn="fadeInRight">
                         <Link to={item.to}>
                             <Item
-                                key={index}
                                 textColor={themeContext.text}
                                 background={item.image}
                                 backgroundWithOpacity={themeContext.backgroundWithOpacity}

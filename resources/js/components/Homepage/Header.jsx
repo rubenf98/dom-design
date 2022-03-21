@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { constant } from '../../helper';
 import styled from 'styled-components';
 import { connect } from "react-redux";
@@ -6,7 +6,8 @@ import { setLightTheme, setDarkTheme } from "../../redux/application/actions";
 import ScrollIndicator from '../Common/ScrollIndicator';
 import { dimensions } from '../../helper';
 import AnimationContainer from '../Common/AnimationContainer';
-
+import UnderlineEffect from '../Common/UnderlineEffect';
+import { ThemeContext } from 'styled-components';
 
 const Container = styled.div`
     width: 100%;
@@ -67,15 +68,22 @@ const SocialContainer = styled.div`
     font-size: 22px;
     font-weight: 500;
     letter-spacing: -1.36px;
-    opacity: 0.7;
+    
 
     @media (max-width: ${dimensions.md}) {
         display: none;
-
     }
 
-    span {
+    a {
+        opacity: 0.7;
         margin: 0px 25px;
+        text-decoration: none;
+        color: ${props => props.color};
+        transition: opacity .3s linear;
+
+        &:hover {
+            opacity:1;
+        }
     }
 `;
 
@@ -103,6 +111,8 @@ const ScrollContainer = styled.div`
 `;
 
 function Header({ theme, setDarkTheme, setLightTheme }) {
+    const themeContext = useContext(ThemeContext);
+
     return (
         <AnimationContainer animateIn="fadeInUp" duration={1.5}>
             <Container>
@@ -114,7 +124,10 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
                         & dom no <span>espaço.</span>
 
                     </Title>
-                    <SocialContainer><span>facebook</span><span>instagram</span></SocialContainer>
+                    <SocialContainer color={themeContext.text}>
+                        <a href="/sjdjsa">facebook</a>
+                        <a href="/sjdjsa">instagram</a>
+                    </SocialContainer>
                 </TitleContainer>
                 <ScrollContainer>
                     <ScrollIndicator />

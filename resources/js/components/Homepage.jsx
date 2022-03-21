@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import About from './Homepage/About';
 import Citation from './Homepage/Citation';
 import Header from './Homepage/Header';
 import Portfolio from './Homepage/Portfolio';
 import Process from './Homepage/Process';
-
+import { useSearchParams } from "react-router-dom";
 
 const Container = styled.div`
     scroll-behavior: smooth;
@@ -13,6 +13,16 @@ const Container = styled.div`
 
 
 function Homepage() {
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        var filter = searchParams.get("scrollTo");
+        var element = document.getElementById(filter);
+        setTimeout(() => {
+            window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
+        }, 0);
+    }, [])
+
     return (
         <Container >
             <Header />

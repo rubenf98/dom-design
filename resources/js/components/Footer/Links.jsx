@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { constant, dimensions } from '../../helper';
 import { ThemeContext } from 'styled-components'
 import AnimationContainer from '../Common/AnimationContainer';
+import { useNavigate, useLocation } from 'react-router-dom'
+import UnderlineEffect from '../Common/UnderlineEffect';
 
 const Container = styled.div`
     max-width: ${constant.maxWidth + "px"};
@@ -103,14 +105,22 @@ const Copyright = styled.div`
 `;
 function Links({ theme }) {
     const themeContext = useContext(ThemeContext);
+    let navigate = useNavigate();
+    const { pathname } = useLocation();
 
     const handleClick = (filter) => {
-        var element = document.getElementById(filter);
-        window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
+        if (pathname == "/") {
+            var element = document.getElementById(filter);
+            window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
+        } else return navigate("/?scrollTo=" + filter);
     }
+
+
+
 
     return (
         <Container>
+
             <Content>
                 <AnimationContainer animateIn="fadeIn">
                     <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} theme={themeContext}>
@@ -120,15 +130,15 @@ function Links({ theme }) {
                 </AnimationContainer>
                 <AnimationContainer animateIn="fadeInUp">
                     <Pages>
-                        <p onClick={() => handleClick('about-container')} >sobre nós</p>
-                        <p onClick={() => handleClick('Portfolio')} >portfólio</p>
-                        <p onClick={() => handleClick('Contact')} >contactos</p>
+                        <UnderlineEffect><p onClick={() => handleClick('about-container')} >sobre nós</p></UnderlineEffect>
+                        <UnderlineEffect><p onClick={() => handleClick('Portfolio')} >portfólio</p></UnderlineEffect>
+                        <UnderlineEffect><p onClick={() => handleClick('Contact')} >contactos</p></UnderlineEffect>
                     </Pages>
                 </AnimationContainer>
             </Content>
             <Copyright>
                 <AnimationContainer animateIn="fadeInUp" offset={20}>
-                    © All rights reserved <span>dom design</span>
+                    © Designed by <span>dom design</span> and developed by Rúben Freitas
                 </AnimationContainer>
             </Copyright>
         </Container>

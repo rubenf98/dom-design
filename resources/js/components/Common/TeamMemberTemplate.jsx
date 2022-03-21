@@ -1,8 +1,19 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { constant, dimensions } from "../../helper"
 import { ThemeContext } from 'styled-components'
 import AnimationContainer from './AnimationContainer';
+import { Link } from 'react-router-dom';
+import UnderlineEffect from './UnderlineEffect';
+
+const scroll = keyframes`
+  0% {
+    transform: translate3d(-10vw, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100vw, 0, 0);
+  }
+`;
 
 const TitleContainer = styled.div`
     display: flex;
@@ -13,12 +24,12 @@ const TitleContainer = styled.div`
         font-weight: 900;
         text-align: center;
         text-transform: uppercase;
-        align-items: center;
+       
         flex: 1;
         display: flex;
         justify-content: center;
         margin: 0px;
-        white-space:nowrap;
+        white-space: nowrap;
         padding: 0px;
 
         @media (max-width: ${dimensions.lg}) {
@@ -33,15 +44,19 @@ const TitleContainer = styled.div`
 
     .next, .previous {
         opacity: .3;
+        width: 25%;
+        text-decoration: none;
+        color: ${props => props.color};
+    }
+
+    h1 {
+        width: 50%;
+        align-items: center;
     }
 
     .previous {
         margin-right: auto;
         text-align: left;
-        transform: translate3d(-5vw, 0, 0);
-        @media (max-width: ${dimensions.sm}) {
-            transform: translate3d(-30vw, 0, 0);
-        }
         
 
         p {
@@ -52,11 +67,11 @@ const TitleContainer = styled.div`
     .next {
         margin-left: auto;
         text-align: right;
-        transform: translate3d(5vw, 0, 0);
 
         @media (max-width: ${dimensions.sm}) {
-            transform: translate3d(30vw, 0, 0);
+            transform: translate3d(12vw, 0, 0);
         }
+        
 
         p {
             margin-left: auto;
@@ -117,6 +132,50 @@ const Skill = styled.div`
     
 `;
 
+const ScrollingRow = styled.div`
+	display: flex;
+	align-items: center;
+    flex-wrap: nowrap;
+
+    p {
+        animation: ${scroll} ;
+        animation-duration: 25s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        will-change: transform;
+        transform-style: preserve-3d;
+        display: inline-block;
+        margin: 100px 0px;
+        text-transform: uppercase;
+        font-size: 150px;
+        font-weight: 900;
+        white-space: nowrap;
+        color: ${props => props.color};
+        text-shadow: ${props =>
+        "-1px -1px 0 " + props.stroke +
+        ",0   -1px 0 " + props.stroke +
+        ",1px -1px 0 " + props.stroke +
+        ",1px  0   0 " + props.stroke +
+        ",1px  1px 0 " + props.stroke +
+        ",0    1px 0 " + props.stroke +
+        ",-1px  1px 0 " + props.stroke +
+        ",-1px  0   0 " + props.stroke
+    };
+        &:after {
+            content: "-";
+            margin: 0px 50px;
+
+            @media (max-width: ${dimensions.md}) {
+                margin: 0px 25px;
+            }
+        }
+
+        @media (max-width: ${dimensions.md}) {
+            font-size: 40px;
+        }
+    }
+`;
+
 const SkillsTitle = styled.h2`
     font-size: 102px;
     letter-spacing: -6.12px;
@@ -150,17 +209,13 @@ const AboutContainer = styled.div`
     .fadeInLeft {
         width: 40%;
 
-        picture {
+        @media (max-width: ${dimensions.lg}) {
             width: 100%;
+            margin-bottom: 20px;
+        }
 
-            @media (max-width: ${dimensions.lg}) {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            img {
-                width: 100%;
-            }
+        picture, img {
+            width: 100%;
         }
     }
         
@@ -202,6 +257,7 @@ const AboutContainer = styled.div`
                 font-size: 22px;
                 letter-spacing: -1.36px;
                 font-weight: 300;
+
                 
                 @media (max-width: ${dimensions.md}) {
                     font-size: 16px;
@@ -302,16 +358,11 @@ function TeamMemberTemplate({ data }) {
     return (
         <div>
             <AnimationContainer animateIn="fadeIn">
-                <TitleContainer>
-                    <div className='previous'><p>{data.previous}</p></div>
+                <TitleContainer color={themeContext.text}>
 
-
+                    <Link to={"/team/" + data.previous} className='previous'><p>{data.previous}</p></Link>
                     <h1>{data.title}</h1>
-
-
-                    <div className='next'><p>{data.next}</p></div>
-
-
+                    <Link to={"/team/" + data.next} className='next'><p>{data.next}</p></Link>
                 </TitleContainer>
             </AnimationContainer>
 
@@ -339,21 +390,25 @@ function TeamMemberTemplate({ data }) {
 
                             <div className='social-container'>
                                 <a target="_blank" href={data.about.social.facebook}>
-                                    facebook
+                                    <UnderlineEffect inline> facebook </UnderlineEffect>
                                 </a>
-
                                 <a target="_blank" href={data.about.social.instagram}>
-                                    instagram
+                                    <UnderlineEffect inline> instagram</UnderlineEffect>
                                 </a>
-
                                 <a target="_blank" href={data.about.social.linkedin}>
-                                    linkedin
+                                    <UnderlineEffect inline>linkedin</UnderlineEffect>
                                 </a>
                             </div>
                         </AnimationContainer>
                     </div>
 
                 </AboutContainer>
+
+                <ScrollingRow stroke={themeContext.text} color={themeContext.background}>
+                    {data.skills.map((skill, index) => (
+                        <p key={index}>{skill.title}</p>
+                    ))}
+                </ScrollingRow>
 
                 {false &&
                     <>
