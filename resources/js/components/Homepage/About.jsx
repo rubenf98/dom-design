@@ -116,7 +116,7 @@ const ImageContainer = styled.div`
         &:first-child {
             top: 0; right: 0px;
             position: absolute;
-
+            z-index: -1;
             @media (max-width: ${dimensions.lg}) {
                 right: 30px;
             }
@@ -124,9 +124,8 @@ const ImageContainer = styled.div`
 
         &:nth-child(2) {       
             margin-top: 20vh;
-            z-index: -1;
+            
             padding-right: 50px;
-            box-sizing: border-box;
         }
     }
 
