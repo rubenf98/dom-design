@@ -29,7 +29,7 @@ const TitleContainer = styled.div`
         display: flex;
         justify-content: center;
         margin: 0px;
-        white-space: nowrap;
+        white-space: wrap;
         padding: 0px;
 
         @media (max-width: ${dimensions.lg}) {
@@ -57,7 +57,10 @@ const TitleContainer = styled.div`
     .previous {
         margin-right: auto;
         text-align: left;
-        
+
+        @media (max-width: ${dimensions.sm}) {
+            transform: translate3d(-13vw, 0, 0);
+        }
 
         p {
             margin-right: auto;
@@ -69,7 +72,7 @@ const TitleContainer = styled.div`
         text-align: right;
 
         @media (max-width: ${dimensions.sm}) {
-            transform: translate3d(12vw, 0, 0);
+            transform: translate3d(13vw, 0, 0);
         }
         
 
@@ -199,6 +202,10 @@ const AboutTitle = styled.h2`
     letter-spacing: -1.68px;
     font-weight: 300;
     text-transform: uppercase;
+
+    @media (max-width: ${dimensions.sm}) {
+        font-size: 18px;
+    }
 `;
 
 const AboutContainer = styled.div`
@@ -278,6 +285,10 @@ const ExperienceContainer = styled.div`
     align-items: flex-start;
     flex-wrap: wrap;
     margin: 120px 0px;
+
+    @media (max-width: ${dimensions.md}) {
+        margin: 0px 0px 50px 0px;
+    }
 
     .item-container {
         width: 50%;
@@ -360,9 +371,9 @@ function TeamMemberTemplate({ data }) {
             <AnimationContainer animateIn="fadeIn">
                 <TitleContainer color={themeContext.text}>
 
-                    <Link to={"/team/" + data.previous} className='previous'><p>{data.previous}</p></Link>
+                    <Link to={"/team/" + data.previous.link} className='previous'><p>{data.previous.name}</p></Link>
                     <h1>{data.title}</h1>
-                    <Link to={"/team/" + data.next} className='next'><p>{data.next}</p></Link>
+                    <Link to={"/team/" + data.next.link} className='next'><p>{data.next.name}</p></Link>
                 </TitleContainer>
             </AnimationContainer>
 
@@ -432,8 +443,8 @@ function TeamMemberTemplate({ data }) {
                         <AnimationContainer animateIn="fadeInUp">
                             <h2>educação</h2>
                         </AnimationContainer>
-                        {data.education.map((item) => (
-                            <div className='item'>
+                        {data.education.map((item, index) => (
+                            <div key={index} className='item'>
                                 <AnimationContainer animateIn="fadeInUp">
                                     <h3>{item.title}</h3>
                                     <div className='information-container'>
@@ -449,8 +460,8 @@ function TeamMemberTemplate({ data }) {
                         <AnimationContainer animateIn="fadeInUp">
                             <h2>trabalhos</h2>
                         </AnimationContainer>
-                        {data.work.map((item) => (
-                            <div className='item'>
+                        {data.work.map((item, index) => (
+                            <div key={index} className='item'>
                                 <AnimationContainer animateIn="fadeInUp">
                                     <h3>{item.title}</h3>
                                     <div className='information-container'>

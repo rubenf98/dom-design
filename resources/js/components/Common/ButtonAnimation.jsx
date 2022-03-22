@@ -60,8 +60,8 @@ const Container = styled.div`
         width: 101%;
         height: 100%;
         background: ${props => props.background};
-        -webkit-mask: url("icon/button-sprite.png");
-        mask: url("icon/button-sprite.png");
+        -webkit-mask: url("/icon/button-sprite.png");
+        mask: url("/icon/button-sprite.png");
         -webkit-mask-size: 3000% 100%;
         mask-size: 3000% 100%;
         border: none;

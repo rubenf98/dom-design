@@ -6,7 +6,7 @@ function Carolina() {
         <TeamMemberTemplate
             data={{
                 title: "carolina andrade",
-                previous: "michael",
+                previous: { name: "louis michael", link: "michael" },
                 next: "",
                 image: "/image/team/carolina",
                 about: {

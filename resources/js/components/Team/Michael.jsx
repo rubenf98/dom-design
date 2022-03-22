@@ -7,7 +7,7 @@ function Michael() {
             data={{
                 title: "louis michael",
                 previous: "",
-                next: "carolina",
+                next: { name: "carolina andrade", link: "carolina" },
                 image: "/image/team/michael",
                 about: {
                     title: "designer 3d",

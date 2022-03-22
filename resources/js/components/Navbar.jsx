@@ -15,10 +15,12 @@ const Container = styled.div`
     height: ${constant.navbarHeight + "px"};
     padding: 30px 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     z-index: 100;
+
+    
     
     .animated {
         z-index: 100;
@@ -40,6 +42,10 @@ const Container = styled.div`
         &::after {
             content: ".";
         }
+    }
+
+    @media (max-width: ${dimensions.lg}) {
+        padding: 30px 80px;
     }
 
     @media (max-width: ${dimensions.sm}) {
@@ -66,16 +72,19 @@ const LanguageIndicator = styled.span`
 
 function Navbar({ theme, menuVisible, handleMenu }) {
     const [active, setActive] = useState(0)
-    
+
 
     return (
 
         <Container>
             <NavbarMenu visible={menuVisible} />
-            <AnimationContainer animateIn="fadeInUp" offset={0}>
-                <Link style={{ zIndex: 100 }} to="/">
-                    <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
-                </Link></AnimationContainer>
+            <div style={{ marginRight: "auto" }}>
+                <AnimationContainer animateIn="fadeInUp" offset={0}>
+                    <Link style={{ zIndex: 100 }} to="/">
+                        <img src={theme === 'light' ? "/light_logo.svg" : "/dark_logo.svg"} alt="logo" />
+                    </Link></AnimationContainer>
+            </div>
+
             <AnimationContainer animateIn="fadeInUp" offset={0}>
                 <UnderlineEffect>
                     <p className='menu' style={{ zIndex: 100 }} onClick={() => handleMenu(!menuVisible)}>
@@ -83,12 +92,14 @@ function Navbar({ theme, menuVisible, handleMenu }) {
                     </p>
                 </UnderlineEffect>
             </AnimationContainer>
+            <div style={{ marginLeft: "auto" }}>
             <AnimationContainer animateIn="fadeInUp" offset={0}>
                 <div style={{ zIndex: 100 }} >
                     <LanguageIndicator active={active == 0} onClick={() => setActive(0)}>pt</LanguageIndicator>
                     <LanguageIndicator active={active == 1} onClick={() => setActive(1)}>eng</LanguageIndicator>
                 </div>
             </AnimationContainer>
+            </div>
         </Container>
 
     )
