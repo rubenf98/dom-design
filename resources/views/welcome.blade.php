@@ -15,6 +15,11 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
+    <meta name="keywords"
+        content="Gráfica,Criatividade,Webdesign,Produção,Producao,Dom,Design,Domdesign,Dom design,Branding,Rebranding,Logotipo,São,Vicente, madeira, island, ilha, criativo, creative, 3d, modelação, design, espaços, publicidade, funchal, rúben, freitas, ruben, louis, productions, michael, carolina, andrade">
+    <meta name="author" content="Rúben Freitas">
+    <meta name="description"
+        content="Caracterizado por ser uma empresa que aposta na inovação e na criatividade, através do Dom, atraindo clientes com a melhor imagem possível.">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
