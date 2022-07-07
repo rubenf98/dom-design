@@ -145,8 +145,8 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
             <Background  >
                 <AnimationContainer animateIn="fadeIn" duration={2.5} offset={0}>
                     <picture>
-                        <source media="(max-width: 599px)" srcset={theme === 'light' ? "/image/wallpaper_light_mobile.jpg" : "/image/wallpaper_dark_mobile.jpg"} />
-                        <source media="(min-width: 600px)" srcset={theme === 'light' ? "/image/wallpaper_light.jpg" : "/image/wallpaper_dark.jpg"} />
+                        <source media="(max-width: 599px)" srcSet={theme === 'light' ? "/image/wallpaper_light_mobile.jpg" : "/image/wallpaper_dark_mobile.jpg"} />
+                        <source media="(min-width: 600px)" srcSet={theme === 'light' ? "/image/wallpaper_light.jpg" : "/image/wallpaper_dark.jpg"} />
                         <img src={theme === 'light' ? "/image/wallpaper_light.jpg" : "/image/wallpaper_dark.jpg"} alt="Wallpaper" />
                     </picture>
                 </AnimationContainer>
