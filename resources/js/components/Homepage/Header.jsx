@@ -9,7 +9,33 @@ import AnimationContainer from '../Common/AnimationContainer';
 import UnderlineEffect from '../Common/UnderlineEffect';
 import { ThemeContext } from 'styled-components';
 
+const Background = styled.div`
+    width: 100vw;
+    height: 100vh;
+    top: ${-constant.navbarHeight + "px"};
+    position: absolute;
+    opacity: .3;
+    z-index: -1;
+
+    .animated{
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+`;
+
 const Container = styled.div`
+    width: 100%;
+   
+    position: relative;
+`;
+
+const Content = styled.div`
     width: 100%;
     min-height: calc(100vh - ${constant.navbarHeight + "px"});
     padding: 0px 100px ;
@@ -17,7 +43,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     white-space: nowrap;
 
     @media (max-width: ${dimensions.sm}) {
@@ -114,28 +139,41 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
     const themeContext = useContext(ThemeContext);
 
     return (
-        <AnimationContainer animateIn="fadeInUp" duration={1.5}>
-            <Container>
 
-                <TitleContainer>
-                    <Title>
-                        dom no <span>design</span>
-                        <br />
-                        & dom no <span>espaço.</span>
+        <Container>
 
-                    </Title>
-                    <SocialContainer color={themeContext.text}>
-                        <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>
-                        <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">instagram</a>
-                    </SocialContainer>
-                </TitleContainer>
-                <ScrollContainer>
-                    <ScrollIndicator />
-                </ScrollContainer>
-                <ThemeSwitch src={theme === 'light' ? "/icon/light_theme_switch.svg" : "/icon/dark_theme_switch.svg"} onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
+            <Background  >
+                <AnimationContainer animateIn="fadeIn" duration={2.5} offset={0}>
+                    <picture>
+                        <source media="(max-width: 599px)" srcset={theme === 'light' ? "/image/wallpaper_light_mobile.jpg" : "/image/wallpaper_dark_mobile.jpg"} />
+                        <source media="(min-width: 600px)" srcset={theme === 'light' ? "/image/wallpaper_light.jpg" : "/image/wallpaper_dark.jpg"} />
+                        <img src={theme === 'light' ? "/image/wallpaper_light.jpg" : "/image/wallpaper_dark.jpg"} alt="Wallpaper" />
+                    </picture>
+                </AnimationContainer>
+            </Background>
 
-            </Container>
-        </AnimationContainer>
+            <AnimationContainer animateIn="fadeInUp" duration={1.5}>
+                <Content>
+                    <TitleContainer>
+                        <Title>
+                            dom no <span>design</span>
+                            <br />
+                            & dom no <span>espaço.</span>
+
+                        </Title>
+                        <SocialContainer color={themeContext.text}>
+                            <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>
+                            <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">instagram</a>
+                        </SocialContainer>
+                    </TitleContainer>
+                    <ScrollContainer>
+                        <ScrollIndicator />
+                    </ScrollContainer>
+                    <ThemeSwitch src={theme === 'light' ? "/icon/light_theme_switch.svg" : "/icon/dark_theme_switch.svg"} onClick={theme === 'light' ? setDarkTheme : setLightTheme} />
+                </Content>
+            </AnimationContainer>
+        </Container>
+
     )
 }
 
