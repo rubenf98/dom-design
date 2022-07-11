@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { constant } from '../helper';
 import styled from 'styled-components';
 import { connect } from "react-redux";
@@ -71,7 +71,17 @@ const LanguageIndicator = styled.span`
 `;
 
 function Navbar({ theme, menuVisible, handleMenu }) {
-    const [active, setActive] = useState(0)
+    const [active, setActive] = useState("pt")
+
+    useEffect(() => {
+        setActive(localStorage.getItem("language"));
+    }, []);
+
+    function handleLanguageClick(language) {
+        localStorage.setItem("language", language);
+        setActive(language)
+        location.reload();
+    }
 
 
     return (
@@ -93,12 +103,12 @@ function Navbar({ theme, menuVisible, handleMenu }) {
                 </UnderlineEffect>
             </AnimationContainer>
             <div style={{ marginLeft: "auto" }}>
-            <AnimationContainer animateIn="fadeInUp" offset={0}>
-                <div style={{ zIndex: 100 }} >
-                    <LanguageIndicator active={active == 0} onClick={() => setActive(0)}>pt</LanguageIndicator>
-                    <LanguageIndicator active={active == 1} onClick={() => setActive(1)}>eng</LanguageIndicator>
-                </div>
-            </AnimationContainer>
+                <AnimationContainer animateIn="fadeInUp" offset={0}>
+                    <div style={{ zIndex: 100 }} >
+                        <LanguageIndicator active={active == "pt"} onClick={() => handleLanguageClick("pt")}>pt</LanguageIndicator>
+                        <LanguageIndicator active={active == "en"} onClick={() => handleLanguageClick("en")}>eng</LanguageIndicator>
+                    </div>
+                </AnimationContainer>
             </div>
         </Container>
 

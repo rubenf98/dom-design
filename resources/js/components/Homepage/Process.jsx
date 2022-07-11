@@ -62,7 +62,7 @@ const TitleContainer = styled.div`
 const StepsContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
 `;
 
@@ -129,7 +129,7 @@ function Process() {
                     <h2>Um processo de três etapas simples, mas eficaz.</h2>
                 </AnimationContainer>
                 <AnimationContainer animateIn="fadeInRight" >
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit purus vitae viverra tellus eget dignissim erat risus ultricies rhoncus non eget at.</p>
+                    <p>Este processo irá facilitar o trabalho para ambas as partes, conseguindo assim cumprir todos os objectivos pretendidos.</p>
                 </AnimationContainer>
             </TitleContainer>
             <StepsContainer>
@@ -139,7 +139,7 @@ function Process() {
                         <h3>01.</h3>
                         <h5>Passo 1</h5>
                         <h4>Idea do Projeto</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit purus vitae viverra tellus eget dignissim erat risus ultricies rhoncus non eget at.</p>
+                        <p>Envolve sempre, o conceito que o cliente idealiza para o seu espaço, para que o tornemos novo e excepcional</p>
                     </AnimationContainer>
                 </Step>
                 <Step>
@@ -147,7 +147,7 @@ function Process() {
                         <h3>02.</h3>
                         <h5>Passo 2</h5>
                         <h4>Brainstorming</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit purus vitae viverra tellus eget dignissim erat risus ultricies rhoncus non eget at.</p>
+                        <p>Método de criação de novas ideias, através de um pensamento estratégico.</p>
                     </AnimationContainer>
                 </Step>
                 <Step>
@@ -155,7 +155,7 @@ function Process() {
                         <h3>03.</h3>
                         <h5>Passo 3</h5>
                         <h4>Execução</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit purus vitae viverra tellus eget dignissim erat risus ultricies rhoncus non eget at.</p>
+                        <p>Após a aprovação do projeto conceitual, por meio da análise de ideias e dos conceitos pretendidos, estamos prontos para executar o melhor projeto.</p>
                     </AnimationContainer>
                 </Step>
             </StepsContainer>

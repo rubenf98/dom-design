@@ -28,7 +28,7 @@ function Homepage() {
             <Header />
 
             <div style={{ margin: "35vh 0px" }}>
-                <Citation quote="através das ideias da nossa equipa, idealize o que deseja." />
+                <Citation quote="Através das ideias da nossa equipa, idealize o que deseja." />
             </div>
 
 

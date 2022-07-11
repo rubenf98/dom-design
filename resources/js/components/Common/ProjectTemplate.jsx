@@ -105,7 +105,7 @@ const Info = styled.div`
 
 const TopContainer = styled.div`
     width: 100%;
-    margin: 75px auto 0px auto;
+    margin: 75px auto 75px auto;
     padding-right: 20px;
     box-sizing: border-box;
     display: flex;
@@ -150,7 +150,7 @@ function ProjectTemplate({ data }) {
 
             </DetailsContainer>
 
-            <Image src={data.images[2]} alt="project cover" loading='eager' />
+            <Image src={data.images[0]} alt="project cover" loading='eager' />
 
             <InformationTemplate
                 fieldTitle="descrição"

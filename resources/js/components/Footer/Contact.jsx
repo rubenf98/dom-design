@@ -171,7 +171,7 @@ function Contact() {
                 <Info>
                     <AnimationContainer animateIn="fadeInLeft">
                         <h2>vamos <span>falar.</span></h2>
-                        <h3>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </h3>
+                        <h3>Transforme as suas ideias em projetos 3D, para que as possa visualizar com mais clareza. Dê vida ao seu espaço.</h3>
 
                         <h4>EMAIL</h4>
                         <p>domdesign@outlook.pt</p>

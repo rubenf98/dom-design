@@ -118,12 +118,13 @@ const Item = styled.div`
 
 
 const items = [
-    { title: "Golden Grill", category: "restaurante", image: "/image/portfolio/golden_grill/01.jpg", to: "/project/braseiro351" },
-    { title: "Hotel Calhau", category: "hotel", image: "/image/portfolio/hotel_calhau/01.jpg", to: "lorem" },
-    { title: "Barber", category: "barbeiro", image: "/image/portfolio/barber/01.jpg", to: "lorem" },
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
-    { title: "lorem", category: "lorem", image: "/image/portfolio/placeholder.jpg", to: "lorem" },
+    { title: "Calhau Hotel", category: "hotel", image: "/image/portfolio/hotel_calhau/capa.jpg", to: "/project/hotelcalhau" },
+    { title: "Calamar", category: "bar", image: "/image/portfolio/calamar/capa.jpg", to: "/project/calamar" },
+    { title: "Restaurante Funchal", category: "restaurante", image: "/image/portfolio/restaurante_francisco_funchal/capa.jpg", to: "/project/restaurantefranciso" },
+    { title: "Casa Canhas", category: "casa", image: "/image/portfolio/casa_canhas/capa.jpg", to: "/project/casacanhas" },
+    { title: "Golden Grill", category: "hamburgaria", image: "/image/portfolio/golden_grill/capa.jpg", to: "/project/goldengrill" },
+    { title: "Elleven", category: "barbearia", image: "/image/portfolio/elleven/capa.jpg", to: "/project/elleven" },
+    { title: "Padaria Porto Moniz", category: "padaria", image: "/image/portfolio/padaria_luis/capa.jpg", to: "/project/padariapm" },
 ]
 function Portfolio() {
     const themeContext = useContext(ThemeContext);

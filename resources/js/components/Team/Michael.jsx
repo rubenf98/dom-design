@@ -12,8 +12,8 @@ function Michael() {
                 about: {
                     title: "designer 3d",
                     paragraphs: [
-                        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-                        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                        "Olá! Chamo-me Louis Michael e sou licenciado em Design e Mestre em Design Media Interactivos.",
+                        "Desde cedo tive grande paixão pelo 3D e de como era desenvolvido. Ao longo dos anos fui aprendendo, e criando diversos projectos no meu percurso académico, desde jogos, curtas-metragens e mais recentemente visualização 3D. Tento sempre que as nossas imagens 3D consigam ser o mais realistas possíveis transmitindo sempre o conceito pretendido aos clientes."
                     ],
                     social: {
                         facebook: "https://www.facebook.com/michael.sousa.967",
@@ -22,9 +22,9 @@ function Michael() {
                     }
                 },
                 skills: [
-                    { title: "modelador 3d", value: 90 },
-                    { title: "designer UX/UI", value: 70 },
-                    { title: "designer gráfico", value: 60 }
+                    { title: "blender", value: 90 },
+                    { title: "photoshop", value: 70 },
+                    { title: "unreal", value: 60 }
                 ],
                 education: [
                     { title: "universidade da madeira", subtitle: "International Master of Interactive Media Design", date: "2020-2022" },
@@ -32,7 +32,7 @@ function Michael() {
                     { title: "escola b+s d. lucinda andrade", subtitle: "artes visuais", date: "2011-2014" },
                 ],
                 work: [
-                    { title: "iti", subtitle: "Maritimo Traning Lab", date: "2021-2022" },
+                    { title: "iti", subtitle: "Maritimo Training Lab", date: "2021-2022" },
                     { title: "miti", subtitle: "Largescale", date: "2019-2021" },
                     { title: "dom design", subtitle: "designer / modelador", date: "2019-2022" },
                 ],

@@ -448,7 +448,7 @@ function TeamMemberTemplate({ data }) {
                                 <AnimationContainer animateIn="fadeInUp">
                                     <h3>{item.title}</h3>
                                     <div className='information-container'>
-                                        <p className='subtitle'>{item.title}</p>
+                                        <p className='subtitle'>{item.subtitle}</p>
                                         <p className='date'>{item.date}</p>
                                     </div>
                                 </AnimationContainer>
@@ -465,7 +465,7 @@ function TeamMemberTemplate({ data }) {
                                 <AnimationContainer animateIn="fadeInUp">
                                     <h3>{item.title}</h3>
                                     <div className='information-container'>
-                                        <p className='subtitle'>{item.title}</p>
+                                        <p className='subtitle'>{item.subtitle}</p>
                                         <p className='date'>{item.date}</p>
                                     </div>
                                 </AnimationContainer>

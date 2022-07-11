@@ -159,7 +159,7 @@ function About() {
                 </ScrollingRow>
 
 
-                <Citation quote="a nossa missão envolve sempre tornar os lugares ainda mais especiais." />
+                <Citation quote="A nossa missão envolve sempre tornar os lugares ainda mais especiais." />
             </CitationContainer>
             <AnimationContainer animateIn="fadeIn">
                 <ImageContainer >
