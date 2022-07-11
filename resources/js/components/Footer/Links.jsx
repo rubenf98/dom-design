@@ -13,6 +13,7 @@ const Container = styled.div`
     width: 100%; 
     padding: 130px 0px;
     box-sizing: border-box;
+    
 
     @media (max-width: ${dimensions.md}) {
         padding: 70px 0px;
@@ -103,7 +104,7 @@ const Copyright = styled.div`
         text-decoration: underline;
     }
 `;
-function Links({ theme }) {
+function Links({ theme, text }) {
     const themeContext = useContext(ThemeContext);
     let navigate = useNavigate();
     const { pathname } = useLocation();
@@ -130,9 +131,9 @@ function Links({ theme }) {
                 </AnimationContainer>
                 <AnimationContainer animateIn="fadeInUp">
                     <Pages>
-                        <UnderlineEffect><p onClick={() => handleClick('about-container')} >sobre nós</p></UnderlineEffect>
-                        <UnderlineEffect><p onClick={() => handleClick('Portfolio')} >portfólio</p></UnderlineEffect>
-                        <UnderlineEffect><p onClick={() => handleClick('Contact')} >contactos</p></UnderlineEffect>
+                        <UnderlineEffect><p onClick={() => handleClick('about-container')} >{text.about}</p></UnderlineEffect>
+                        <UnderlineEffect><p onClick={() => handleClick('Portfolio')} >{text.portfolio}</p></UnderlineEffect>
+                        <UnderlineEffect><p onClick={() => handleClick('Contact')} >{text.contact}</p></UnderlineEffect>
                     </Pages>
                 </AnimationContainer>
             </Content>

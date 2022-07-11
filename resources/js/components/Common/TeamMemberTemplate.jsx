@@ -363,7 +363,7 @@ const SkillTemplate = ({ fieldTitle, fieldVal, themeContext }) => (
     </Skill>
 )
 
-function TeamMemberTemplate({ data }) {
+function TeamMemberTemplate({ data, text }) {
     const themeContext = useContext(ThemeContext);
 
     return (
@@ -419,6 +419,9 @@ function TeamMemberTemplate({ data }) {
                     {data.skills.map((skill, index) => (
                         <p key={index}>{skill.title}</p>
                     ))}
+                    {data.skills.map((skill, index) => (
+                        <p key={index + 5}>{skill.title}</p>
+                    ))}
                 </ScrollingRow>
 
                 {false &&
@@ -441,7 +444,7 @@ function TeamMemberTemplate({ data }) {
 
                     <div className='item-container'>
                         <AnimationContainer animateIn="fadeInUp">
-                            <h2>educação</h2>
+                            <h2>{text[0]}</h2>
                         </AnimationContainer>
                         {data.education.map((item, index) => (
                             <div key={index} className='item'>
@@ -458,7 +461,7 @@ function TeamMemberTemplate({ data }) {
 
                     <div className='item-container'>
                         <AnimationContainer animateIn="fadeInUp">
-                            <h2>trabalhos</h2>
+                            <h2>{text[1]}</h2>
                         </AnimationContainer>
                         {data.work.map((item, index) => (
                             <div key={index} className='item'>

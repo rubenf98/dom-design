@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Contact from './Footer/Contact'
 import Links from './Footer/Links'
 import { useLocation } from 'react-router-dom'
 import AnimationContainer from './Common/AnimationContainer';
-import styled from 'styled-components';
+import styled, { ThemeContext, ThemeProvider } from 'styled-components';
 import { connect } from "react-redux";
 
 const Background = styled.div`
@@ -11,7 +11,7 @@ const Background = styled.div`
     height: 100vh;
     top: 0;
     position: absolute;
-    opacity: .3;
+    opacity: .15;
     z-index: -1;
 
     .animated{
@@ -28,14 +28,18 @@ const Background = styled.div`
 
 const LinksContainer = styled.div`
     position: relative;
+    background: ${props => "linear-gradient(180deg, " + props.from + " 0%, " + props.to + " 100%)"};
 `;
 
 function Footer({ theme }) {
     const location = useLocation();
+    const themeContext = useContext(ThemeContext)
+    const { text } = require('../assets/' + localStorage.getItem('language') + "/footer");
+
     return (
         <div>
-            {location.pathname.split('/')[1] !== "project" && <Contact />}
-            <LinksContainer>
+            {location.pathname.split('/')[1] !== "project" && <Contact text={text.form} />}
+            <LinksContainer from={themeContext.footerFrom} to={themeContext.footerTo}>
                 <Background  >
                     <AnimationContainer animateIn="fadeIn" duration={2.5} offset={0}>
                         <picture>
@@ -45,7 +49,7 @@ function Footer({ theme }) {
                         </picture>
                     </AnimationContainer>
                 </Background>
-                <Links />
+                <Links text={text.links} />
             </LinksContainer>
         </div>
     )

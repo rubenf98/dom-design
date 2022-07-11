@@ -85,6 +85,7 @@ const Container = styled.div`
 
 function NavbarMenu({ visible, handleMenu }) {
     const themeContext = useContext(ThemeContext);
+    const { text } = require('../../assets/' + localStorage.getItem('language') + "/footer");
     let navigate = useNavigate();
     const { pathname } = useLocation();
 
@@ -102,9 +103,9 @@ function NavbarMenu({ visible, handleMenu }) {
                 visible &&
                 <>
                     <div className='links-container'>
-                        <UnderlineEffect ><p onClick={() => handleClick('about-container')} >sobre nós</p> </UnderlineEffect>
-                        <UnderlineEffect ><p onClick={() => handleClick('Portfolio')} >portfólio</p> </UnderlineEffect>
-                        <UnderlineEffect ><p onClick={() => handleClick('Contact')} >contactos</p> </UnderlineEffect>
+                        <UnderlineEffect ><p onClick={() => handleClick('about-container')} >{text.links.about}</p> </UnderlineEffect>
+                        <UnderlineEffect ><p onClick={() => handleClick('Portfolio')} >{text.links.portfolio}</p> </UnderlineEffect>
+                        <UnderlineEffect ><p onClick={() => handleClick('Contact')} >{text.links.contact}</p> </UnderlineEffect>
                     </div>
                     <div className='social-container'>
                         <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>

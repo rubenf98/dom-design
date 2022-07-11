@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { text } from '../../assets/en/homepage';
 import { constant, dimensions } from "../../helper"
 import AnimationContainer from '../Common/AnimationContainer';
 
@@ -121,15 +122,15 @@ const Step = styled.div`
     }
 `;
 
-function Process() {
+function Process({ text }) {
     return (
         <Container>
             <TitleContainer>
                 <AnimationContainer animateIn="fadeInLeft" >
-                    <h2>Um processo de três etapas simples, mas eficaz.</h2>
+                    <h2>{text.title}</h2>
                 </AnimationContainer>
                 <AnimationContainer animateIn="fadeInRight" >
-                    <p>Este processo irá facilitar o trabalho para ambas as partes, conseguindo assim cumprir todos os objectivos pretendidos.</p>
+                    <p>{text.subtitle}</p>
                 </AnimationContainer>
             </TitleContainer>
             <StepsContainer>
@@ -137,25 +138,25 @@ function Process() {
                 <Step>
                     <AnimationContainer animateIn="fadeInUp">
                         <h3>01.</h3>
-                        <h5>Passo 1</h5>
-                        <h4>Idea do Projeto</h4>
-                        <p>Envolve sempre, o conceito que o cliente idealiza para o seu espaço, para que o tornemos novo e excepcional</p>
+                        <h5>{text.steps[0].title} 1</h5>
+                        <h4>{text.steps[0].subtitle}</h4>
+                        <p>{text.steps[0].description}</p>
                     </AnimationContainer>
                 </Step>
                 <Step>
                     <AnimationContainer animateIn="fadeInUp" delay={100}>
                         <h3>02.</h3>
-                        <h5>Passo 2</h5>
-                        <h4>Brainstorming</h4>
-                        <p>Método de criação de novas ideias, através de um pensamento estratégico.</p>
+                        <h5>{text.steps[1].title} 2</h5>
+                        <h4>{text.steps[1].subtitle}</h4>
+                        <p>{text.steps[1].description}</p>
                     </AnimationContainer>
                 </Step>
                 <Step>
                     <AnimationContainer animateIn="fadeInUp" delay={200}>
                         <h3>03.</h3>
-                        <h5>Passo 3</h5>
-                        <h4>Execução</h4>
-                        <p>Após a aprovação do projeto conceitual, por meio da análise de ideias e dos conceitos pretendidos, estamos prontos para executar o melhor projeto.</p>
+                        <h5>{text.steps[2].title} 3</h5>
+                        <h4>{text.steps[2].subtitle}</h4>
+                        <p>{text.steps[2].description}</p>
                     </AnimationContainer>
                 </Step>
             </StepsContainer>

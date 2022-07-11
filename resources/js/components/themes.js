@@ -4,6 +4,8 @@ export const light = {
     backgroundWithOpacity: 'rgba(255, 255, 255, 0.75)',
     toggleBorder: '#FFF',
     background: '#ffffff',
+    footerFrom: 'rgba(255,255,255,1)',
+    footerTo: 'rgba(0,212,255,0)',
 }
 
 export const dark = {
@@ -12,6 +14,8 @@ export const dark = {
     backgroundWithOpacity: 'rgba(0, 0, 0, 0.75)',
     toggleBorder: '#6B8096',
     background: '#000000',
+    footerFrom: 'rgba(0,0,0,1)',
+    footerTo: 'rgba(0,212,255,0)',
 }
 
 export function fetchTheme(aTheme) {

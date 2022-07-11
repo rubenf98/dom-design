@@ -13,7 +13,7 @@ import Carolina from "./components/Team/Carolina";
 import Braseiro351 from "./components/Portfolio/GoldenGrill";
 import CalhauHotel from "./components/Portfolio/CalhauHotel";
 import Calamar from "./components/Portfolio/Calamar";
-import Elleven from "./components/Portfolio/Elleven";
+import Eleven from "./components/Portfolio/Eleven";
 import RestauranteFunchal from "./components/Portfolio/RestauranteFunchal";
 import CasaCanhas from "./components/Portfolio/CasaCanhas";
 import PadariaPM from "./components/Portfolio/PadariaPM";
@@ -32,7 +32,7 @@ const Router = () => {
                     <Route exact path="/project/goldengrill" element={<Layout><Braseiro351 /></Layout>} />
                     <Route exact path="/project/hotelcalhau" element={<Layout><CalhauHotel /></Layout>} />
                     <Route exact path="/project/calamar" element={<Layout><Calamar /></Layout>} />
-                    <Route exact path="/project/elleven" element={<Layout><Elleven /></Layout>} />
+                    <Route exact path="/project/eleven" element={<Layout><Eleven /></Layout>} />
                     <Route exact path="/project/restaurantefranciso" element={<Layout><RestauranteFunchal /></Layout>} />
                     <Route exact path="/project/casacanhas" element={<Layout><CasaCanhas /></Layout>} />
                     <Route exact path="/project/padariapm" element={<Layout><PadariaPM /></Layout>} />

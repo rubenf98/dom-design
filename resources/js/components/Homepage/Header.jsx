@@ -14,7 +14,7 @@ const Background = styled.div`
     height: 100vh;
     top: ${-constant.navbarHeight + "px"};
     position: absolute;
-    opacity: .3;
+    opacity: .15;
     z-index: -1;
 
     .animated{
@@ -135,7 +135,7 @@ const ScrollContainer = styled.div`
     }
 `;
 
-function Header({ theme, setDarkTheme, setLightTheme }) {
+function Header({ theme, setDarkTheme, setLightTheme, text }) {
     const themeContext = useContext(ThemeContext);
 
     return (
@@ -155,11 +155,7 @@ function Header({ theme, setDarkTheme, setLightTheme }) {
             <AnimationContainer animateIn="fadeInUp" duration={1.5}>
                 <Content>
                     <TitleContainer>
-                        <Title>
-                            dom no <span>design</span>
-                            <br />
-                            & dom no <span>espaço.</span>
-
+                        <Title>{text.title}
                         </Title>
                         <SocialContainer color={themeContext.text}>
                             <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>

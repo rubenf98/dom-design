@@ -56,28 +56,30 @@ const Detail = styled.div`
         }
     }
 
-    p {
-        font-size: 19px;
-        letter-spacing: -1.14px;
-        font-weight: normal;
-        margin: 0px;
+        p {
+            font-size: 19px;
+            letter-spacing: -1.14px;
+            font-weight: normal;
+            margin: 0px;
 
-        @media (max-width: ${dimensions.md}) {
-            font-size: 13px;
-            letter-spacing: -.8px;
+            @media (max-width: ${dimensions.md}) {
+                font-size: 13px;
+                letter-spacing: -.8px;
+            }
         }
-    }
+    
+        
 `;
 
 const Image = styled.img`
     width: 100%;
-    margin: auto;
+    margin: 75px auto;
     display: block;
     max-width: ${constant.maxWidth + "px"};
 `;
 
 const Info = styled.div`
-    padding: 150px;
+    padding: 0px 150px 50px 150px;
     box-sizing: border-box;
     width: 100%;
     margin: auto;
@@ -95,12 +97,29 @@ const Info = styled.div`
         text-transform: uppercase;
     }
 
-    p {
-        font-size: 20px;
-        letter-spacing: -1.2px;
-        font-weight: 300;
-        margin: 50px 0px;
+    div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        p {
+            width: 46%;
+            text-align: justify;
+            font-size: 22px;
+            letter-spacing: -1.2px;
+            line-height: 1.5;
+            font-weight: 300;
+            margin: 50px 0px;
+            box-sizing: border-box;
+
+            @media (max-width: ${dimensions.md}) {
+                width: 100%;
+                margin: 30px 0px;
+            }
+        }
     }
+
+    
 `;
 
 const TopContainer = styled.div`
@@ -127,13 +146,17 @@ const DetailTemplate = ({ fieldTitle, fieldDesc }) => (
 const InformationTemplate = ({ fieldTitle, fieldDesc }) => (
     <Info>
         <h3>{fieldTitle}</h3>
-        {fieldDesc.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-        ))}
+        <div>
+            {fieldDesc.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+            ))}
+        </div>
     </Info>
 )
 
 function ProjectTemplate({ data }) {
+    const { text } = require('../../assets/' + localStorage.getItem('language') + "/portfolio");
+
     return (
         <div>
             <Title>{data.title}</Title>
@@ -143,26 +166,21 @@ function ProjectTemplate({ data }) {
             </ScrollContainer>
 
             <DetailsContainer>
-                <DetailTemplate fieldDesc={data.details[0]} fieldTitle="serviço" />
+                <DetailTemplate fieldDesc={data.details[0]} fieldTitle={text.service} />
                 <DetailTemplate />
-                <DetailTemplate fieldDesc={data.details[1]} fieldTitle="cliente" />
-                <DetailTemplate fieldDesc={data.details[2]} fieldTitle="ano" />
+                <DetailTemplate fieldDesc={data.details[1]} fieldTitle={text.place} />
+                <DetailTemplate fieldDesc={data.details[2]} fieldTitle={text.year} />
 
             </DetailsContainer>
 
-            <Image src={data.images[0]} alt="project cover" loading='eager' />
-
             <InformationTemplate
-                fieldTitle="descrição"
+                fieldTitle={text.concept}
                 fieldDesc={data.description}
             />
 
-            <Image src={data.images[1]} alt="description" loading='lazy' />
+            <Image src={data.images[0]} alt="project cover" loading='eager' />
 
-            <InformationTemplate
-                fieldTitle="conceito"
-                fieldDesc={data.concept}
-            />
+            <Image src={data.images[1]} alt="description" loading='lazy' />
 
             <Image src={data.images[2]} alt="concept" loading='lazy' />
 

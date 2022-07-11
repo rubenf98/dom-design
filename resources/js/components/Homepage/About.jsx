@@ -5,6 +5,7 @@ import { constant, dimensions } from '../../helper';
 import { Link } from 'react-router-dom';
 import AnimationContainer from '../Common/AnimationContainer';
 import ButtonAnimation from '../Common/ButtonAnimation';
+import { text } from '../../assets/en/homepage';
 
 const scroll = keyframes`
   0% {
@@ -146,20 +147,20 @@ function About() {
         <div >
             <CitationContainer>
                 <ScrollingRow stroke={themeContext.text} color={themeContext.background}>
-                    <p>design</p>
-                    <p>interior</p>
-                    <p>espaço</p>
-                    <p>3d</p>
-                    <p>inovação</p>
-                    <p>design</p>
-                    <p>interior</p>
-                    <p>espaço</p>
-                    <p>3d</p>
-                    <p>inovação</p>
+                    <p>{text.slider[0]}</p>
+                    <p>{text.slider[1]}</p>
+                    <p>{text.slider[2]}</p>
+                    <p>{text.slider[3]}</p>
+                    <p>{text.slider[4]}</p>
+                    <p>{text.slider[0]}</p>
+                    <p>{text.slider[1]}</p>
+                    <p>{text.slider[2]}</p>
+                    <p>{text.slider[3]}</p>
+                    <p>{text.slider[4]}</p>
                 </ScrollingRow>
 
 
-                <Citation quote="A nossa missão envolve sempre tornar os lugares ainda mais especiais." />
+                <Citation quote={text.citations[1]} />
             </CitationContainer>
             <AnimationContainer animateIn="fadeIn">
                 <ImageContainer >
@@ -174,7 +175,7 @@ function About() {
                         <ButtonAnimation
                             background={themeContext.text}
                             color={themeContext.background}
-                            text="sobre nós"
+                            text={text.about}
                         />
 
                     </Link>

@@ -162,7 +162,7 @@ const Form = styled.div`
 `;
 
 
-function Contact() {
+function Contact({ text }) {
     const themeContext = useContext(ThemeContext);
 
     return (
@@ -170,31 +170,31 @@ function Contact() {
             <Content>
                 <Info>
                     <AnimationContainer animateIn="fadeInLeft">
-                        <h2>vamos <span>falar.</span></h2>
-                        <h3>Transforme as suas ideias em projetos 3D, para que as possa visualizar com mais clareza. Dê vida ao seu espaço.</h3>
+                        <h2>{text.title}</h2>
+                        <h3>{text.subtitle}</h3>
 
                         <h4>EMAIL</h4>
                         <p>domdesign@outlook.pt</p>
-                        <h4>numero de telemovel</h4>
+                        <h4>{text.phone}</h4>
                         <p>968137466</p>
                     </AnimationContainer>
                 </Info>
                 <Form buttonText={themeContext.text} buttonBackground={themeContext.background} borderColor={themeContext.background} text={themeContext.background}>
                     <div className='container'>
                         <AnimationContainer animateIn="fadeInUp">
-                            <input placeholder='nome' />
+                            <input placeholder={text.name} />
                         </AnimationContainer>
                         <AnimationContainer animateIn="fadeInUp">
                             <input placeholder='email' />
                         </AnimationContainer>
                         <AnimationContainer animateIn="fadeInUp">
-                            <textarea rows="6" placeholder='fale connosco' />
+                            <textarea rows="6" placeholder={text.text} />
                         </AnimationContainer>
                         <AnimationContainer animateIn="fadeInUp">
                             <ButtonAnimation
                                 background={themeContext.background}
                                 color={themeContext.text}
-                                text="enviar"
+                                text={text.submit[0]}
                             />
                         </AnimationContainer>
                     </div>

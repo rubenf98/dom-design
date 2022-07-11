@@ -14,6 +14,7 @@ const Container = styled.div`
 
 function Homepage() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const { text } = require('../assets/' + localStorage.getItem('language') + "/homepage");
 
     useEffect(() => {
         var filter = searchParams.get("scrollTo");
@@ -25,19 +26,19 @@ function Homepage() {
 
     return (
         <Container >
-            <Header />
+            <Header text={text} />
 
             <div style={{ margin: "35vh 0px" }}>
-                <Citation quote="Através das ideias da nossa equipa, idealize o que deseja." />
+                <Citation quote={text.citations[0]} />
             </div>
 
 
-            <Portfolio />
+            <Portfolio text={text} />
             <div id="about-container" style={{ position: "relative", overflowX: "hidden" }}>
-                <About />
+                <About text={text} />
             </div>
 
-            <Process />
+            <Process text={text.process} />
         </Container>
     )
 }
