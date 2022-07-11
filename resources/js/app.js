@@ -18,6 +18,10 @@ const store = createStore(
         )
     )
 )
+if (!localStorage.language) {
+    localStorage.setItem("language", "pt")
+}
+
 
 ReactDOM.render(
     <Provider store={store}>
