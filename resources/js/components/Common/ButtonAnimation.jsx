@@ -88,11 +88,11 @@ const Container = styled.div`
     }
 `;
 
-function ButtonAnimation({ background, color, text }) {
+function ButtonAnimation({ background, color, text, loading = false }) {
     return (
         <Container background={background} color={color}>
             <span>{text}</span>
-            <button type="submit">{text}</button>
+            <button loading={loading}>{text}</button>
         </Container>
     )
 }

@@ -116,16 +116,6 @@ const Item = styled.div`
 
 `;
 
-
-const items = [
-    { title: "Calhau Hotel", category: "hotel", image: "/image/portfolio/hotel_calhau/capa.jpg", to: "/project/hotelcalhau" },
-    { title: "Casa Canhas", category: "casa", image: "/image/portfolio/casa_canhas/capa.jpg", to: "/project/casacanhas" },
-    { title: "Eleven", category: "barbearia", image: "/image/portfolio/eleven/capa.jpg", to: "/project/eleven" },
-    { title: "Restaurante Funchal", category: "restaurante", image: "/image/portfolio/restaurante_francisco_funchal/capa.jpg", to: "/project/restaurantefranciso" },
-    { title: "Padaria Porto Moniz", category: "padaria", image: "/image/portfolio/padaria_luis/capa.jpg", to: "/project/padariapm" },
-    { title: "Calamar", category: "bar", image: "/image/portfolio/calamar/capa.jpg", to: "/project/calamar" },
-    { title: "Golden Grill", category: "hamburgaria", image: "/image/portfolio/golden_grill/capa.jpg", to: "/project/goldengrill" },
-]
 function Portfolio({ text }) {
     const themeContext = useContext(ThemeContext);
     const [mousePosition, setMousePosition] = useState(undefined);

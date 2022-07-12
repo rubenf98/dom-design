@@ -1,9 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { constant, dimensions } from '../../helper';
-import styled, { ThemeContext } from 'styled-components'
+import styled, { ThemeContext, keyframes, withTheme } from 'styled-components'
 import AnimationContainer from '../Common/AnimationContainer';
 import ButtonAnimation from '../Common/ButtonAnimation';
+import axios from "axios";
 
+const spin = keyframes`
+  from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+`;
 
 
 const Container = styled.div`
@@ -161,9 +166,75 @@ const Form = styled.div`
     }
 `;
 
+const Loading = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    margin: -14px 0 0 -14px;
+
+    .maskedCircle {
+        width: 20px;
+        height: 20px;
+        border-radius: 12px;
+        border: ${props => "3px solid " + props.background};
+    }
+
+    /* Spinning circle mask */
+    .mask {
+        width: 12px;
+        height: 12px;
+        overflow: hidden;
+    }
+
+    /* Spinner */
+    .spinner {
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        width: 26px;
+        height: 26px;
+        animation: ${spin} 1s infinite linear;
+    }
+
+`;
 
 function Contact({ text }) {
+    const [form, setForm] = useState({ name: undefined, email: undefined, text: undefined })
+    const [messageState, setMessageState] = useState(0)
+    const [loading, setLoading] = useState(false)
     const themeContext = useContext(ThemeContext);
+
+    const onFinish = () => {
+        setLoading(true);
+        axios.post(`${window.location.origin}/api/contact`, form).then((response) => {
+            if (response.status == 201) {
+                setLoading(false);
+                var fields = document.getElementsByClassName('contact-fields');
+
+                Object.values(fields).map((field) => {
+                    console.log(field);
+                    field.value = field.defaultValue;
+                })
+                setMessageState(1);
+
+                setTimeout(() => {
+                    setForm({ name: undefined, email: undefined, text: undefined });
+                }, 300);
+
+                setTimeout(() => {
+                    setMessageState(0);
+                }, 3000);
+            }
+
+        }).catch(() => {
+            setLoading(false);
+        });
+
+
+
+    };
 
     return (
         <Container id="Contact" background={themeContext.text} text={themeContext.background}>
@@ -182,21 +253,31 @@ function Contact({ text }) {
                 <Form buttonText={themeContext.text} buttonBackground={themeContext.background} borderColor={themeContext.background} text={themeContext.background}>
                     <div className='container'>
                         <AnimationContainer animateIn="fadeInUp">
-                            <input placeholder={text.name} />
+                            <input className="contact-fields" placeholder={text.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
                         </AnimationContainer>
                         <AnimationContainer animateIn="fadeInUp">
-                            <input placeholder='email' />
+                            <input type="email" className="contact-fields" placeholder='email' onChange={(e) => setForm({ ...form, email: e.target.value })} />
                         </AnimationContainer>
                         <AnimationContainer animateIn="fadeInUp">
-                            <textarea rows="6" placeholder={text.text} />
+                            <textarea className="contact-fields" rows="6" placeholder={text.text} onChange={(e) => setForm({ ...form, text: e.target.value })} />
                         </AnimationContainer>
-                        <AnimationContainer animateIn="fadeInUp">
-                            <ButtonAnimation
-                                background={themeContext.background}
-                                color={themeContext.text}
-                                text={text.submit[0]}
-                            />
-                        </AnimationContainer>
+                        <div onClick={onFinish}>
+                            <AnimationContainer animateIn="fadeInUp">
+                                <ButtonAnimation
+                                    background={themeContext.background}
+                                    color={themeContext.text}
+                                    text={loading ? <Loading background={themeContext.text}>
+                                        <div class="loading">
+                                            <div class="spinner">
+                                                <div class="mask">
+                                                    <div class="maskedCircle" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Loading> : text.submit[messageState]}
+                                />
+                            </AnimationContainer>
+                        </div>
                     </div>
                 </Form>
 
