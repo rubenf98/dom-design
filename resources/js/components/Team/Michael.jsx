@@ -6,7 +6,7 @@ function Michael() {
 
     return (
         <TeamMemberTemplate
-            text={text.sections}
+            sections={text.sections}
             data={{
                 title: "louis michael",
                 previous: "",

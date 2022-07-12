@@ -6,7 +6,7 @@ function Carolina() {
 
     return (
         <TeamMemberTemplate
-            text={text.sections}
+            sections={text.sections}
             data={{
                 title: "carolina andrade",
                 previous: { name: "louis michael", link: "michael" },

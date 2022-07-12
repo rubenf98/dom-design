@@ -9,7 +9,7 @@ export const text = {
     },
     links: {
         about: "sobre nós",
-        portofolio: "portfólio",
+        portfolio: "portfólio",
         contact: "contactos",
     },
 } 

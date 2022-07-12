@@ -363,8 +363,9 @@ const SkillTemplate = ({ fieldTitle, fieldVal, themeContext }) => (
     </Skill>
 )
 
-function TeamMemberTemplate({ data, text }) {
+function TeamMemberTemplate({ data, sections }) {
     const themeContext = useContext(ThemeContext);
+    const { text } = require('../../assets/' + localStorage.getItem('language') + "/team");
 
     return (
         <div>
@@ -380,7 +381,7 @@ function TeamMemberTemplate({ data, text }) {
             <Content>
                 <AboutTitle>
                     <AnimationContainer animateIn="fadeIn">
-                        about me
+                        {text.subtitle}
                     </AnimationContainer>
                 </AboutTitle>
 
@@ -444,7 +445,7 @@ function TeamMemberTemplate({ data, text }) {
 
                     <div className='item-container'>
                         <AnimationContainer animateIn="fadeInUp">
-                            <h2>{text[0]}</h2>
+                            <h2>{sections[0]}</h2>
                         </AnimationContainer>
                         {data.education.map((item, index) => (
                             <div key={index} className='item'>
@@ -461,7 +462,7 @@ function TeamMemberTemplate({ data, text }) {
 
                     <div className='item-container'>
                         <AnimationContainer animateIn="fadeInUp">
-                            <h2>{text[1]}</h2>
+                            <h2>{sections[1]}</h2>
                         </AnimationContainer>
                         {data.work.map((item, index) => (
                             <div key={index} className='item'>

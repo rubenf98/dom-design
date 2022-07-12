@@ -140,7 +140,7 @@ const ImageContainer = styled.div`
 `;
 
 
-function About() {
+function About({ text }) {
     const themeContext = useContext(ThemeContext);
 
     return (
