@@ -178,11 +178,9 @@ function ProjectTemplate({ data }) {
                 fieldDesc={data.description}
             />
 
-            <Image src={data.images[0]} alt="project cover" loading='eager' />
-
-            <Image src={data.images[1]} alt="description" loading='lazy' />
-
-            <Image src={data.images[2]} alt="concept" loading='lazy' />
+            {data.images.map((image, index) => (
+                <Image key={index} src={image} alt="project cover" loading={index == 0 ? 'eager' : 'lazy'} />
+            ))}
 
             <TopContainer>
                 <TopIndicator />

@@ -12,7 +12,8 @@ function CasaCanhas() {
                 images: [
                     "/image/portfolio/casa_canhas/01.jpg",
                     "/image/portfolio/casa_canhas/02.jpg",
-                    "/image/portfolio/casa_canhas/03.jpg"
+                    "/image/portfolio/casa_canhas/03.jpg",
+                    "/image/portfolio/casa_canhas/05.jpg"
                 ],
                 description: text.casa_canhas.concept,
             }}

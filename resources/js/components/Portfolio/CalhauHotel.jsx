@@ -12,7 +12,8 @@ function CalhauHotel() {
                 images: [
                     "/image/portfolio/hotel_calhau/02.jpg",
                     "/image/portfolio/hotel_calhau/03.jpg",
-                    "/image/portfolio/hotel_calhau/05.jpg"
+                    "/image/portfolio/hotel_calhau/05.jpg",
+                    "/image/portfolio/hotel_calhau/07.jpg"
                 ],
                 description: text.posada_mediterraneo.concept,
             }}
