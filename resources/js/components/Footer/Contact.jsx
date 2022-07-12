@@ -120,6 +120,18 @@ const Form = styled.div`
         width: 100%;
     }
 
+    .button-parent-container {
+
+        .fadeInUp{
+            @media (max-width: ${dimensions.md}) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+
     .container {
         width: 90%;
         margin: auto;
@@ -261,7 +273,7 @@ function Contact({ text }) {
                         <AnimationContainer animateIn="fadeInUp">
                             <textarea className="contact-fields" rows="6" placeholder={text.text} onChange={(e) => setForm({ ...form, text: e.target.value })} />
                         </AnimationContainer>
-                        <div onClick={onFinish}>
+                        <div onClick={onFinish} className="button-parent-container">
                             <AnimationContainer animateIn="fadeInUp">
                                 <ButtonAnimation
                                     background={themeContext.background}
