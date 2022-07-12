@@ -105,6 +105,7 @@ const SocialContainer = styled.div`
         text-decoration: none;
         color: ${props => props.color};
         transition: opacity .3s linear;
+        font-weight: 900;
 
         &:hover {
             opacity:1;
@@ -158,8 +159,12 @@ function Header({ theme, setDarkTheme, setLightTheme, text }) {
                         <Title>{text.title}
                         </Title>
                         <SocialContainer color={themeContext.text}>
-                            <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">facebook</a>
-                            <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">instagram</a>
+                            <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">
+                                <UnderlineEffect color="#6a8aca" inline>facebook</UnderlineEffect>
+                            </a>
+                            <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">
+                                <UnderlineEffect color="#ea846d" inline>instagram</UnderlineEffect>
+                            </a>
                         </SocialContainer>
                     </TitleContainer>
                     <ScrollContainer>

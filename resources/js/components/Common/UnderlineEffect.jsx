@@ -3,34 +3,28 @@ import styled from 'styled-components';
 import { ThemeContext } from 'styled-components';
 
 const Container = styled.div`
-    position: relative;
     cursor: pointer;
     display: ${props => props.inline ? "inline" : "block"} ;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
+    transition: all .3s ease;
 
     &:hover {
-        .underline {
-            width: 100%;
-        }
+
+            -webkit-text-stroke: ${props => "1px " + props.color};
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        
     }
 `;
 
-const Underline = styled.div`
-    width: 0%;
-    height: 2px;
-    background: ${props => props.background};
-    position: absolute;
-    left: 0px; bottom: -5px;
-    transition: width .3s ease-in-out;
-`;
-
-function UnderlineEffect({ children, inline = false }) {
+function UnderlineEffect({ children, inline = false, color }) {
     const themeContext = useContext(ThemeContext);
 
 
     return (
-        <Container inline={inline}>
+        <Container color={color ? color : themeContext.text} inline={inline}>
+
             {children}
-            <Underline background={themeContext.text} className='underline' />
+
         </Container>
     )
 }

@@ -156,7 +156,7 @@ const InformationTemplate = ({ fieldTitle, fieldDesc }) => (
 
 function ProjectTemplate({ data }) {
     const { text } = require('../../assets/' + localStorage.getItem('language') + "/portfolio");
-
+    console.log(data);
     return (
         <div>
             <Title>{data.title}</Title>

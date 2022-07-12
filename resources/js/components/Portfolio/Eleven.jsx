@@ -14,7 +14,7 @@ function Eleven() {
                     "/image/portfolio/eleven/02.jpg",
                     "/image/portfolio/eleven/03.jpg"
                 ],
-                description: text.eleven.service,
+                description: text.eleven.concept,
             }}
         />
     )
