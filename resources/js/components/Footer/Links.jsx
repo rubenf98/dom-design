@@ -103,6 +103,10 @@ const Copyright = styled.div`
         font-weight: 900;
         text-decoration: underline;
     }
+
+    a{
+        color: inherit;
+    }
 `;
 function Links({ theme, text }) {
     const themeContext = useContext(ThemeContext);
@@ -139,7 +143,7 @@ function Links({ theme, text }) {
             </Content>
             <Copyright>
                 <AnimationContainer animateIn="fadeInUp" offset={20}>
-                    © Designed by <span>dom design</span> and developed by Rúben Freitas
+                    © Designed by <span>dom design</span> and developed by <a href='https://ruben-freitas.pt/' target="_blank">Rúben Freitas</a>
                 </AnimationContainer>
             </Copyright>
         </Container>

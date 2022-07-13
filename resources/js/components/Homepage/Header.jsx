@@ -159,10 +159,10 @@ function Header({ theme, setDarkTheme, setLightTheme, text }) {
                         <Title>{text.title}
                         </Title>
                         <SocialContainer color={themeContext.text}>
-                            <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/DomDesignCriativo">
+                            <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/domnodesign">
                                 <UnderlineEffect color="#6a8aca" inline>facebook</UnderlineEffect>
                             </a>
-                            <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domdesign_criativo/">
+                            <a rel="noreferrer noopener" target="_blank" href="https://www.instagram.com/domnodesign/">
                                 <UnderlineEffect color="#ea846d" inline>instagram</UnderlineEffect>
                             </a>
                         </SocialContainer>
