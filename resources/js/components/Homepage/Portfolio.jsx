@@ -6,10 +6,33 @@ import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from 'styled-components'
 import AnimationContainer from '../Common/AnimationContainer';
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     margin: 20vh 0px 20vh ${constant.horizontalPadding + "px"};
     box-sizing: border-box;
+    position: relative;
+
+    .button-control {
+            position: absolute;
+            bottom: -70px; 
+            opacity: .7;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 5;
+
+            img {
+                width:18px;
+            }
+        }
+
+        .right {
+            right: 45px;
+        }
+
+        .left {
+            left: 45px;
+        }
 
     @media (max-width: ${dimensions.md}) {
         margin-left: 0px;
@@ -34,6 +57,7 @@ const Title = styled.h2`
 const CarouselContainer = styled(Carousel)`
     min-height: 300px;
     width: 100%;
+    position: relative;
 
     .image-item {
         padding-right: 50px;
@@ -42,6 +66,8 @@ const CarouselContainer = styled(Carousel)`
             padding: 0px;
         }
     }
+
+    
 `;
 
 const Item = styled.div`
@@ -60,6 +86,7 @@ const Item = styled.div`
         background-size: cover;
         background-repeat: no-repeat;
         transition: scale 1s ease-in-out;
+        cursor: pointer;
 
         @media (min-width: ${dimensions.md}) {
             &:hover {
@@ -88,6 +115,8 @@ const Item = styled.div`
             transition: opacity .5s ease-in-out;
             opacity: 1;
         }
+
+        
     }
 
     
@@ -120,28 +149,46 @@ function Portfolio({ text }) {
     const themeContext = useContext(ThemeContext);
     const [mousePosition, setMousePosition] = useState(undefined);
     const carouselRef = useRef(null);
+    const navigate = useNavigate();
+
+
+    function handleClick(event, element, action) {
+        if (event.target != element) {
+            event.stopPropagation();
+            return;
+        }
+        if (action == "next") {
+            carouselRef.current.next();
+        } else {
+            carouselRef.current.previous();
+        }
+    }
+
+    function handleItemClick(event, element, route) {
+        navigate(route);
+    }
 
     useEffect(() => {
-        const DOM = document.getElementById("Portfolio");
+        // const DOM = document.getElementById("Portfolio");
 
-        const setFromEvent = (e) => setMousePosition(e.clientX / window.innerWidth);
+        // const setFromEvent = (e) => setMousePosition(e.clientX / window.innerWidth);
 
-        DOM.addEventListener("mousemove", setFromEvent);
+        // DOM.addEventListener("mousemove", setFromEvent);
 
-        return () => {
-            DOM.removeEventListener("mousemove", setFromEvent);
-        };
+        // return () => {
+        //     DOM.removeEventListener("mousemove", setFromEvent);
+        // };
 
     }, []);
 
     useEffect(() => {
-        if (mousePosition && carouselRef) {
-            if (mousePosition > .9) {
-                carouselRef.current.next();
-            } else if (mousePosition < .15) {
-                carouselRef.current.previous();
-            }
-        }
+        // if (mousePosition && carouselRef) {
+        //     if (mousePosition > .9) {
+        //         carouselRef.current.next();
+        //     } else if (mousePosition < .15) {
+        //         carouselRef.current.previous();
+        //     }
+        // }
     }, [mousePosition]);
 
     return (
@@ -152,9 +199,8 @@ function Portfolio({ text }) {
 
             <CarouselContainer
                 autoPlay={false}
-                interval={2000000000}
-                autoPlaySpeed={2000000000}
-                arrows={false}
+                interval={200000}
+                arrows={true}
                 draggable={false}
                 itemClass="image-item"
                 partialVisible
@@ -165,7 +211,7 @@ function Portfolio({ text }) {
             >
                 {text.portfolioItems.map((item, index) => (
                     <AnimationContainer key={index} animateIn="fadeInRight">
-                        <Link to={item.to}>
+                        <div>
                             <Item
                                 textColor={themeContext.text}
                                 background={item.image}
@@ -174,7 +220,8 @@ function Portfolio({ text }) {
                             >
 
                                 <div className='image-container'>
-                                    <div className='overlay' />
+                                    <div className='overlay' onClick={(e) => handleItemClick(e, this, item.to)} />
+
                                 </div>
 
                                 <div className='info' >
@@ -182,11 +229,13 @@ function Portfolio({ text }) {
                                     <p>{item.category}</p>
                                 </div>
                             </Item>
-                        </Link>
+
+                        </div>
+
                     </AnimationContainer>
                 ))}
-            </CarouselContainer>
 
+            </CarouselContainer>
         </Container>
     )
 }
